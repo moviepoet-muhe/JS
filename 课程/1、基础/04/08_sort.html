@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // sort() 可以进行排序
+        // var arr = ['d', 'b', 'a']
+        // arr.sort()
+        // console.log(arr)
+
+        // var arr = [5, 3, 7, 3, 1]
+        // arr.sort()
+        // console.log(arr)
+
+        // var arr = [5, 3, 12, 13, 7, 3, 1]
+        // 注意点：如果数字超过两位的话，那么数字和数字之间排序是按照位数排的
+        // arr.sort()
+        // console.log(arr)
+
+        //         a  b
+        var arr = [5, 3, 12, 13, 7, 3, 1]
+        // a - b 如果为正数，那么就是升序排列
+        // b - a 如果为正数，那么就是降序排列
+        arr.sort(function(a, b){
+            return a - b
+            // return b - a
+        })
+        console.log(arr)
+    </script>
+</body>
+</html>

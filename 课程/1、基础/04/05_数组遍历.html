@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        // var arr = ['王江', '陈辰', '邓为', '马彬', '吴林']
+        // 数组遍历方式1，使用 for 循环
+        // for 控制数组遍历开始和结束的位置
+        // for 无法遍历对象的
+        // for(var i=0; i<arr.length; i++){
+        //     console.log(typeof i)
+        // }
+
+        // 数组遍历方式2，使用 for in
+        // for in 无法控制数组开始和结束的位置
+        // for in 可以遍历对象（object）
+        // for(var i in arr){
+        //     console.log(typeof i)
+        // }
+
+        // 注意点：js 里面的对象属于一个大的范畴，数组其实也是对象里面的一种展示形式
+        // console.log(typeof arr) // object
+        // console.log(typeof document.querySelector('button')) // object
+
+        // 数组遍历方式3，for of
+        // for of 遍历没有下标，之前下标的位置的参数直接表示的就是当前的数组元素本身
+        // for(var item of arr){
+        //     console.log(i)
+        // }
+
+        // 数组遍历方式4，forEach() 是一个方法
+        // 参数是一个函数，这个作为参数的函数的参数
+        // 参数1表示当前的数组元素
+        // 参数2表示数组的下标
+        // 参数3表示数组本身（不常用）
+        // arr.forEach(function(item, index, ar){
+        //     console.log(item, index, ar)
+        // })
+    </script>
+</body>
+</html>

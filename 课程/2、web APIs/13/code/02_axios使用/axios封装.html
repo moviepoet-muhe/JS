@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./libs/axios.min.js"></script>
+    <script>
+        // 创建实例时配置默认值
+        // 这种封装优势：1、返回的对象是一个单例模式，可以做内存的优化  2、可以把一些请求常用的公共的代码提取出来放在一个地方，减少冗余代码
+        const servers = axios.create({
+            // 基准地址
+            baseURL: 'http://localhost:8888',
+            // 服务器超时时间（如果超过这个时间请求结果还是没有返回，默认返回失败）
+            timeout: 5000,
+            headers: {'content-type': 'application/x-www-form-urlencoded'}
+        })
+
+        // servers.get('/test/first').then(res=>{
+        //         console.log(res.data)
+        // })
+
+        // 注意点：如果不写method配置项，默认发送的是get请求
+        // servers({
+        //       url: '/test/third',
+        //     //   method: 'get',
+        //       params: {name: 'zhangsan', age: 18}
+        // }).then(res=>{
+        //       console.log(res.data)
+        // })
+
+       servers({
+          url: '/test/fourth',
+          method: 'post',
+          data: {name: 'zhangsan', age: 18},
+          // headers: {'content-type': 'application/x-www-form-urlencoded'},
+       }).then(res=>{
+          console.log(res.data)
+       })
+    </script>
+</body>
+</html>

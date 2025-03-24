@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>开启定时器</button>
+    <button>关闭定时器</button>
+    <h3></h3>
+    <script>
+        /*
+            setInterval()
+            + 定时器
+              => 会随着时间的改变，不断执行业务代码
+            + 参数
+              => 参数1 回调函数
+              => 参数2 表示的是时间
+            + 定时器的时间
+              => 默认是以毫秒计算的
+              => 1秒 === 1000毫秒
+            clearInterval()
+            + 清除定时器
+            + 定时器它的返回值是一个数字（id），表示的是开启的定时器的数量
+            + 参数
+              => 定时器返回的id
+        */
+        setInterval(function () {
+            console.log('呵呵！')
+        }, 1000) // 表示1秒钟执行一次回调函数
+
+        var i = 0
+        setInterval(function () {
+            i++
+            console.log(i)
+        }, 1000)
+
+        // 获取元素
+        var aBtn = document.querySelectorAll('button')
+        var h3 = document.querySelector('h3')
+
+        var count = 0
+        h3.innerHTML = count
+
+        /*
+            定时器累加问题
+            + 当连续点击按钮的时候，大家发现数字的执行速度越来越快了，并且点击关闭按钮的时候关闭了开启的定时器了，这个其实就是定时器累加问题
+            + 当点击一次按钮，是开启一个定时器，当连续点击按钮时，实际上是一次开启了多个定时器
+            + 为什么数字变化的速度越来越快呢？
+              => 一个定时器数字自增一次需要1秒钟中
+              => 多个定时器自增数字的时候，不是排队一秒一秒的去执行数字的变化，而是同时执行了数字的变化。相当于之前你一秒钟做一件事情，但是现在让你一秒钟
+              做很多的事情，当然你的速度会越来越快
+              => 多个定时器到了1秒钟后都会输出结果，而不是等待执行
+            + 当点击关闭定时器的时候，关闭的是当前的定时器，而不是之前的定时器，因此关闭不了
+
+            定时器累加问题解决方案
+            + 先清除，再开启
+        */
+        var timer = null
+
+        aBtn[0].onclick = function () {
+            // 先清除，再开启
+            clearInterval(timer)
+
+            timer = setInterval(function () {
+                count++
+                h3.innerHTML = count
+            }, 1000)
+        }
+
+        aBtn[1].onclick = function () {
+            clearInterval(timer)
+        }
+
+    </script>
+</body>
+
+</html>

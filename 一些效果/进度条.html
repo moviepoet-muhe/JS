@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>进度条拖拽效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 进度条容器 */
+    .progress-container {
+      margin-top: 200px;
+      margin-left: 500px;
+      width: 300px;
+      height: 50px;
+      text-align: center;
+      background-color: greenyellow;
+    }
+
+    /* 进度条 */
+    .progress-bar {
+      margin: 0 auto;
+      position: relative;
+      width: 200px;
+      height: 10px;
+      background-color: #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* 进度条填充 */
+    .progress-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #007bff;
+      border-radius: 5px;
+      width: 0;
+    }
+
+    /* 拖拽按钮 */
+    .progress-btn {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #007bff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      cursor: grab;
+    }
+
+    /* 进度百分比显示 */
+    .progress-text {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 进度条容器 -->
+  <div class="progress-container">
+    <!-- 进度条项目 -->
+    <div class="progress-bar">
+      <!-- 填充进度条 -->
+      <div class="progress-fill"></div>
+      <!-- 拖拽按钮 -->
+      <div class="progress-btn"></div>
+    </div>
+    <!-- 进度条百分比显示 -->
+    <span class="progress-text">0%</span>
+  </div>
+  <script>
+    // 获取 DOM 元素
+    const progressBar = document.querySelector('.progress-bar'); // 进度条容器
+    const progressFill = document.querySelector('.progress-fill'); // 进度填充条
+    const progressBtn = document.querySelector('.progress-btn'); // 拖拽按钮
+    const progressText = document.querySelector('.progress-text'); // 显示百分比的文本
+
+    // 申明是否拖拽标识，初始值为 false，表示未拖拽
+    let isDragging = false;
+
+    // 更新进度条的函数
+    function updateProgress(clientX) {
+      // 获取进度条的左侧相对父元素的位置(浏览器左边)
+      let barLeft = progressBar.offsetLeft;
+      console.log(barLeft);
+
+      // 动态获取进度条的总宽度
+      let barWidth = progressBar.offsetWidth;
+      console.log(barWidth);
+
+      // 计算鼠标点击或拖动点相对于进度条起点的偏移量 
+      // offsetX = 鼠标当前位置（全局） - 进度条左侧的起点位置
+      let offsetX = clientX - barLeft;
+
+      // 限制 offsetX 的范围，确保进度条不会超出左右边界
+      if (offsetX < 0) {
+        offsetX = 0; // 如果超出左边界，设为 0
+      } else if (offsetX > barWidth) {
+        offsetX = barWidth; // 如果超出右边界，设为进度条最大宽度
+      }
+
+      let percent = (offsetX / barWidth) * 100; // 计算百分比
+      progressFill.style.width = `${percent}%`; // 更新进度填充条的宽度
+      progressBtn.style.left = `${percent}%`; // 更新拖拽按钮的位置
+      progressText.textContent = `${Math.round(percent)}%`; // 更新显示的进度百分比
+    }
+
+    // 监听鼠标按下事件（用户开始拖动按钮）
+    progressBtn.addEventListener('mousedown', () => {
+      isDragging = true; // 设置拖拽状态为 true
+    });
+
+    // 监听鼠标移动事件（当拖拽时，不断更新进度条）
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) { // 仅在拖拽状态下执行
+        updateProgress(e.clientX); // 传入鼠标的 X 坐标，更新进度条
+      }
+    });
+
+    // 监听鼠标松开事件（用户释放鼠标，停止拖拽）
+    document.addEventListener('mouseup', () => {
+      isDragging = false; // 取消拖拽状态
+    });
+
+    // 监听进度条点击事件（用户点击进度条可直接调整进度）
+    progressBar.addEventListener('click', (e) => {
+      updateProgress(e.clientX); // 计算点击位置并更新进度
+    });
+  </script>
+</body>
+
+</html>

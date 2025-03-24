@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wechat {
+            width: 500px;
+            min-height: 300px;
+            margin: 50px auto;
+        }
+
+        .wechat textarea {
+            resize: none;
+            width: 100%;
+            height: 180px;
+        }
+
+        .wechat div {
+            height: 30px;
+        }
+
+        .wechat button {
+            float: right;
+        }
+
+        .wechat ul li {
+            list-style: none;
+            font-size: 14px;
+            line-height: 26px;
+            border-bottom: 1px dashed orange;
+        }
+
+        .wechat ul li span {
+            float: right;
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wechat">
+        <textarea></textarea>
+        <div>
+            <button>发送</button>
+        </div>
+        <ul></ul>
+    </div>
+    <script src="./js/tools.js"></script>
+    <script>
+        // 获取元素
+        const txt = $('textarea')
+        const btn = $('button')
+        const ul = $('ul')
+
+        // 给按钮绑定点击事件
+        btn.onclick = () => {
+            // 非空验证
+            if (txt.value.trim() === '') {
+                alert('亲，你还没有写什么东西！')
+                return
+            }
+            // 创建 li 标记
+            let li = document.createElement('li')
+            li.innerHTML = `${txt.value} <span>删除</span>`
+
+            // 获取 li 标记
+            const aLi = $('ul li', true)
+            // console.log(aLi)
+
+            // 追加到父元素
+            // ul.appendChild(li)
+            // 注意点：第一次添加的时候，只有一个 li 标记，因此第二个参数如果是 undefined 或者 null，直接默认添加到 ul
+            // ul.insertBefore(li, aLi[0])
+            ul.insertBefore(li, ul.firstChild)
+
+            // 自动清空
+            txt.value = ''
+
+            // 获取 span 
+            const span = $('ul li span', true)
+            // 遍历
+            for (let i = 0; i < span.length; i++) {
+                span[i].onclick = function () {
+                    this.parentNode.remove()
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

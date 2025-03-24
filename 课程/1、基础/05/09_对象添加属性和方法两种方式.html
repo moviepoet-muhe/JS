@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {}
+        // 第一种方式：.的形式，不能解析变量
+        // obj.a = 1
+
+        // 第二种方式：[]的形式，可以解析变量。如果中括号里面的字符加了引号当成对象的键（属性）直接添加，如果没有就当成变量来解析
+        // obj['b'] = 2
+
+        // 目前给对象添加的属性名不确定，需要根据你给变量的赋值来决定
+        // var key = 'b'
+        // obj.key = 1
+        // obj[key] = 1
+
+        var arr = ['word', '王江牌袜子']
+        // obj['word'] = '王江牌袜子'
+        obj[arr[0]] = arr[1]
+
+        console.log(obj)
+    </script>
+</body>
+</html>

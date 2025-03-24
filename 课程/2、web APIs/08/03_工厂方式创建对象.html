@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 这种创建对象的方式问题：冗余代码太多，值是固定化了
+        // const obj = {
+        //     name: '王江',
+        //     age: 18,
+        //     sex: '男',
+        //     xj(){
+        //         console.log(this.name + '喜欢洗脚！')
+        //     }
+        // }
+
+        // const obj2 = {
+        //     name: '王旭',
+        //     age: 18,
+        //     sex: '男',
+        //     sleep(){
+        //         console.log(this.name + '喜欢睡觉！')
+        //     }
+        // }
+
+        // 工厂方式创建对象，核心思想是批量创建对象，可以让创建对象更为灵活，减少冗余代码
+        function person(name, age){
+            // 创建一个对象（字面量和构造函数都可以）
+            const obj = new Object()
+            // 添加属性
+            obj.name = name
+            obj.age = age
+            // 添加方法
+            obj.say = function(){
+                console.log('喜欢演讲！')
+            }
+            // 把创建的对象返回给外界
+            return obj
+        }
+        const p1 = person('张三', 18)
+        const p2 = person('王旭', 20)
+        console.log(p1, p2)
+        console.log(p1.say == p2.say) // false
+    </script>
+</body>
+</html>

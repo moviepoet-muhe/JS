@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./libs/axios.min.js"></script>
+    <script>
+        // 注意点：axios会把后端返回的结果包装到一个对象里面给咱们返回
+        // then() 表示成功时的回调函数
+        // catch() 表示失败时的回调函数
+
+        // 发送get请求
+        // 第一种发送请求的方式
+        // axios.get('http://localhost:8888/test/third?name=zhangsan&age=18').then(res => {
+        //     console.log(res.data)
+        // })
+
+        // 第二种发送请求的方法
+        // axios.get('http://localhost:8888/test/third', { params: { name: 'zhangsan', age: 18 } })
+        //     .then(res => {
+        //         console.log(res.data)
+        //     })
+
+        // 发送post请求
+        // axios.post('http://localhost:8888/test/fourth', { name: 'zhangsan', age: 18 }).then(res => {
+        //     console.log(res.data)
+        // })
+
+        // 注意点：如果需要发送简单的请求，没有那么多的配置，可以直接使用axios.get() || axios.post()，如果需要配置很多，那么需要使用axios({})这种格式
+        axios({
+            url: 'http://localhost:8888/test/fourth',
+            method: 'post',
+            data: {
+                name: 'zhangsan',
+                age: 18
+            },
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        }).then(res => {
+            console.log(res.data)
+        })
+
+        /*
+            axios使用总结
+            + 如果需要发送简单的请求，没有那么多的配置，可以直接使用axios.get() || axios.post()
+              => post是没有办法携带参数
+              => get携带参数有两种方式，第一种直接地址后面拼接查询字符串，第二种在第二个参数那么传递一个对象，在对象里面填写params选项，选项值是一个对象
+              例如：{params: {name: 'zhangsan', age: 18}}
+            + 如果有很多配置，直接使用axios({})这种格式
+              => 这种格式里面可以配置请求头信息 例如：headers: {'content-type': 'application/x-www-form-urlencoded'}
+              => 如果是post请求，传递参数使用data配置项，值是一个对象。例如：data: {name: 'zhangsan', age: 18}
+              => 如果是get请求，传递参数使用params配置项，值是一个对象。例如：params: {name: 'zhangsan', age: 18}
+        */
+        // axios({
+        //     url: 'http://localhost:8888/test/third',
+        //     method: 'get',
+        //     params: {
+        //         name: 'zhangsan',
+        //         age: 18
+        //     }
+        // }).then(res => {
+        //     console.log(res.data)
+        // })        
+    </script>
+</body>
+
+</html>

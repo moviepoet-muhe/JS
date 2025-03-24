@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实例化ajax对象
+        const xhr = new XMLHttpRequest()
+        /*
+            填写请求信息
+            + 参数1表示请求方式 get、post、put、delete、all（那种请求类型都可以，适用于免费的接口地址）
+            + 参数2表示请求地址（后端地址 --- 接口 --- api）
+            + 参数3表示同步还是异步（默认异步）
+        */
+        // get请求携带参数，数据格式采用的是查询字符串方式
+        xhr.open('get', 'http://localhost:8888/test/third?name=zhangsan&age=18')
+        // 监听请求状态
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    console.log(JSON.parse(xhr.responseText))
+                } else {
+                    console.log('请求失败')
+                }
+            }
+        }
+
+        // 监听请求的方式
+        // xhr.onload = ()=>{
+        //     console.log(xhr.responseText)
+        // }
+
+        // 发送请求
+        xhr.send()
+    </script>
+</body>
+
+</html>

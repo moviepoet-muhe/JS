@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、函数定义阶段
+        // function fn(){}
+        // const fn2 = ()=>{}
+        // const fn3 = function(){}
+
+        // 2、函数调用阶段
+        // fn()
+        // fn2()
+        // fn3()
+
+        // 注意点：正常的情况下，当函数执行完毕后，函数的执行空间会被销毁掉，但是如果给外界返回一个引用数据类型，那么函数的之心空间就不会被销毁
+        function fn(){
+            let a = 10
+            return {a}
+        }
+        const res = fn()
+        console.log(res)
+        res = null
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <button data-id="1">加入购物车1</button>
+        <button data-id="2">加入购物车2</button>
+        <button data-id="3">加入购物车3</button>
+    </div>
+    <script src="./data/mi.js"></script>
+    <script>
+        // find() 根据条件查找满足条件第一个在数组里面出现的元素
+        // const goods = product_list.find(item=>{
+        //     return item.id === 2
+        // })
+        // const goods = product_list.find(item=>item.id === 2)
+        // console.log(goods)
+
+        // findIndex() 根据条件查找满足条件第一个在数组里面出现的元素的下标（索引号）
+        // const index = product_list.findIndex(item=>{
+        //     return item.id === 2
+        // })
+        // const index = product_list.findIndex(item=>item.id === 2)
+        // console.log(index)
+
+        // some() 检查数组里面是否有满足条件的，只要有一个满足的就返回true
+        // const myId = 7
+        // const res = product_list.some(item=> item.id === myId)
+        // console.log(res)
+
+        // const age = [10, 20, 30, 60, 80]
+        // const res = age.some(item=> item>=30)
+        // console.log(res)
+
+        // every() 检查数组里面是否有满足条件的，需要所有的都满足才返回true
+        const res = age.every(item => item <= 80)
+        console.log(res)
+
+        // HTML5自定义属性
+        const container = document.querySelector('.container')
+        container.addEventListener('click', (e) => {
+            let t = e.target
+            if (t.nodeName === 'BUTTON') {
+                // dataset.属性名称 第一个表示设置自定义属性，第二个表示获取自定义属性的值
+                // console.log(t.dataset.id)
+                t.dataset.index = 1
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // parseInt() 可以提取整型，可以把提取出来的字符转成数值类型。遇到非整型的字符会停止提取
+        // var price = 12.66
+        // var price = '12px'
+        // console.log(parseInt(price))
+
+        // parseFloat() 可以提取浮点型，可以把提取出来的字符转成数值类型。遇到非浮点型的字符会停止提取
+        // console.log(parseFloat('12.66元'))
+
+        // 为抵抗洪水，战士连续作战89小时，编程计算共多少天零多少小时？
+        // var allHours = 89
+        // var day = parseInt(89/24)
+        // var hours = 89%24
+        // document.write('共'+day+'天零'+hours+'小时')
+
+        // 小明要到美国旅游，可是那里的温度是以华氏度为单位记录的。它需要一个程序将华氏温度（80度）转换为摄氏度，并以华氏度和摄氏度为单位分别显示该温度。
+        // 提示：摄氏度与华氏度的转换公式为：摄氏度 = 5/9.0*(华氏度-32)
+        var hsd = 80
+        var ssd = 5/9.0*(hsd-32)
+        // toFixed() 可以取小数位，会进行四舍五入，会把数值转成字符串类型
+        console.log(ssd.toFixed(2))
+    </script>
+</body>
+</html>

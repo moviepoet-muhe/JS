@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>查询</button>
+    <script>
+        /*
+            find() 查找
+            + 根据条件查找满足的数组元素，功能和filter类似，filter返回的结果的一个数组，而find返回的结果直接是当前数组元素
+            + 参数是函数
+            + 作为参数的函数的参数
+              => 参数1表示当前数组元素
+              => 参数2表示当前数组元素下标
+              => 参数3表示当前数组
+            + 注意点
+              => filter会把满足条件的所有数组元素筛选出来放在一个新数组里面
+              => find只会把第一个满足条件的数组元素直接返回
+
+            findIndex() 查找数组元素在当前数组中的位置
+            + 和 indexOf() 功能类似，indexOf只能处理简单数据的，而findIndex可以处理复杂数据
+            + 参数是函数
+            + 作为参数的函数的参数
+              => 参数1表示当前数组元素
+              => 参数2表示当前数组元素下标
+              => 参数3表示当前数组
+        */
+        var info = [
+            {
+                id: 1,
+                name: '陈辰',
+                tel: 13266082325,
+                score: 70
+            },
+            {
+                id: 2,
+                name: '王江',
+                tel: 13366082326,
+                score: 80
+            },
+            {
+                id: 3,
+                name: '邓为',
+                tel: 13166082328,
+                score: 86
+            }
+        ]
+        var result = info.filter(function (item) {
+            return item.score >= 80
+        })
+        var result2 = info.find(function (item) {
+            return item.score >= 80
+        })
+        console.log(result)
+        console.log(result2)
+
+        var arr = ['a', 'b', 'c']
+        var index = arr.indexOf('a')
+        console.log(index)
+        console.log(arr[index])
+
+        var index = info.findIndex(function (item) {
+            return item.id === 2
+        })
+        console.log(index)
+        console.log(info[index])
+
+        /*
+            includes
+            + 是数组方法，也是字符串方法
+            + 根据字符串里面的某个字符查找出当前这个数据（查找这个字符是否在这个字符串里面存在）
+            + 也可以查找数组元素是否在数组里面存在
+        */
+        var str = 'hello'
+        console.log(str.includes('e'))
+
+        var arr = ['a', 'b', 'c']
+        console.log(arr.includes('b'))
+
+        var str = 'qf-丁伟'
+        // qf-
+        // el-
+        // 根据字符串某个开头字符查找字符是否存在
+        console.log(str.startsWith('qf'))
+
+        // 根据字符串某个结尾字符查找字符是否存在
+        var str = '王江vip'
+        console.log(str.endsWith('vip'))
+
+        var res = str.endsWith('vip')
+        if (res) {
+            document.write('这是vip内容，请查看更多精彩！')
+        } else {
+            document.write('普通用户内容，请开头vip，查看更多精彩！')
+        }
+
+        var shoppingList = [
+            {
+                id: 1,
+                title: '小米电视',
+                price: 2999,
+            },
+            {
+                id: 2,
+                title: '华为mate70',
+                price: 9999,
+            },
+            {
+                id: 3,
+                title: '小米15',
+                price: 4999,
+            }
+        ]
+
+        var txt = document.querySelector('input')
+        var btn = document.querySelector('button')
+
+        btn.onclick = function () {
+            var result = shoppingList.filter(function (item) {
+                return item.title.includes(txt.value)
+            })
+            console.log(result)
+        }
+    </script>
+</body>
+
+</html>

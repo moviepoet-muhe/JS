@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串创建 --- 字面量
+        // var str = 'hello'
+        // js规定：规定基本数据类型是无法使用属性和方法，只有引用数据类型才能使用属性和方法
+        // console.log(str)
+        // console.log(str.length)
+        // console.log(str[0])
+        // console.log(str[1])
+
+        // 字符串既是基本数据类型，也可以看做对象类型，所以也称之为字符串对象
+        // 字符串创建 --- 构造函数
+        // var str2 = new String('hello')
+        // console.log(str2)
+        // console.log(typeof str2) // object
+
+        // 字符串创建 --- 包装类
+        // var str3 = String('hello')
+        // console.log(str3)
+        // console.log(typeof str3) // string
+
+        /*
+            包装类
+            + 规定基本数据类型是无法使用属性和方法，只有引用数据类型才能使用属性和方法
+            + 但是开发中需求是多变的，有时候需要基本数据类型能使用属性和方法
+            + 但是规定是不能被破坏的，不然这个规定其实没有意义了
+            + 为了解决这个问题，提出了包装类类型
+            + 基本数据类型在使用属性和方法的时候，为了不破坏规定（规则），会先把基本数据类型转成引用数据类型让它来使用属性和方法，当使用完毕后又转成
+            基本数据类型，把这种情况称之为包装类
+            + 包装类
+              => String()
+              => Number()
+              => Boolean()
+        */ 
+        // var str = 'hello'
+        // 当使用属性和方法的时候，默认会去调用包装类型，包装类会自动把基本数据类型转成引用数据类型
+        // console.log(str.length)
+
+        // var price = 12.666666
+        // console.log(price.toFixed(2))
+    </script>
+</body>
+</html>

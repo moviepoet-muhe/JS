@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // split() 是一个用于把字符串切割成数组的方法，可以根据字符串里面某个字符来切割
+        // var str = 'abc'
+        // console.log(str.split('b'))
+        
+        // var url = 'https://www.jd.com?username=zhangsan&password=123'
+        // console.log(url.split('?')[1])
+
+        var url = 'https://localhost:8080?word=王江牌袜子&price=9.9'
+        var str = url.split('?')[1]
+        var arr = str.split('&')
+        // 把查询字符串转成对象形式
+        var obj = {}
+
+        arr.forEach(function(item){
+            var newArr = item.split('=')
+            obj[newArr[0]] = newArr[1]
+        })
+        console.log(obj)
+    </script>
+</body>
+</html>

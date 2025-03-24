@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            callback 回调函数
+            + 简称 cb
+            + 如果把函数的指针（地址）作为参数传递给另一个函数，当这个指针被用来调用其所指的函数时，我们就说这是回调函数
+            + 把一个函数作为参数给另一个函数使用，当主体（另一个函数）函数执行完毕后，再去执行作为参数的这个函数，把这种情况称之为回调函数
+            + 作用
+              => 控制函数的执行时机
+              => 可以让代码进行复用
+              => 是异步代码的解决机制
+              => ...
+        */
+        // arr.sort(function(){})
+        // arr.map(function(){})
+        // arr.filter(function(){})
+        // arr.find(function(){})
+        // arr.forEach(function(){})
+        // arr.findIndex(function(){})
+
+        // 控制函数的执行时机
+        // 主体函数
+        // function ccFn(callback, num){
+        //     console.log('我是主体函数')
+        //     if(num >= 10){
+        //         callback()
+        //     }
+        // }
+        // ccFn(function(){
+        //     console.log('我是回调函数')
+        // }, 8)
+
+        // function haha(){
+        //     console.log('我是一个很随便的函数！')
+        // }
+        // haha = '你个老六...'
+        // function ccFn(num){
+        //     console.log('我是主体函数')
+        //     if(num >= 10){
+        //         haha()
+        //     }
+        // }
+        // ccFn(10)
+
+        // function dwFn(){
+        //     console.log('我是回调函数')
+        // }
+        // // 可以让代码进行复用
+        // function ccFn(callback){
+        //     console.log('我是主体函数')
+        //     callback()
+        // }
+        // ccFn(dwFn)
+
+        // function wjFn(callback){
+        //     console.log('我是王江，也是主体函数')
+        //     callback()
+        // }
+        // wjFn(dwFn)
+
+        // 是异步代码的解决机制
+        // 例如：发送网络请求，有成功时需要执行的代码，也有失败时需要执行的代码
+        // function requestFn(success, error){
+        //     // 发送请求了
+        //     if('成功了'){
+        //         success()
+        //     }else{
+        //         error()
+        //     }
+        // }
+        // // 等待1秒后，请求回来了
+        // requestFn(function(){
+        //     console.log('成功了')
+        // }, function(){
+        //     console.log('失败了')
+        // })
+    </script>
+</body>
+</html>

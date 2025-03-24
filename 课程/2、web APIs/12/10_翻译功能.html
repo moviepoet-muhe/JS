@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            width: 200px;
+            height: 200px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <textarea></textarea>
+    <button>翻译</button>
+    <textarea></textarea>
+    <script src="./js/ajax.js"></script>
+    <script>
+        const txt1 = document.querySelectorAll('textarea')[0]
+        const txt2 = document.querySelectorAll('textarea')[1]
+        const btn = document.querySelector('button')
+
+        btn.onclick = ()=>{
+            if(txt1.value.trim() === ''){
+                alert('请输入城市！')
+                return
+            }
+            ajax_get({
+                url: 'http://api.mhimg.cn/api/baidu_fanyi',
+                querystr: {txt: txt1.value.trim()},
+                success(res){
+                    txt2.value = res
+                }
+            })
+        }   
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            width: 200px;
+            height: 200px;
+            resize: none;
+            display: block;
+        }
+        button{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <textarea class="txt1"></textarea>
+    <button>过滤</button>
+    <textarea class="txt2"></textarea>
+    <script>
+        // replace() 替换，参数1表示你需要替换的字符 参数2表示替换成什么样的字符
+        // console.log('md你小子'.replace('md', '*'))
+        // console.log('王江很色，哈哈色'.replace('色', '*'))
+        // 正则：验证字符的规则，叫做正则
+        // /色/ 制定规则
+        // g 表示全局查找（整个字符串中）
+        // console.log('王江很色，哈哈色'.replace('色', '*'))
+        // console.log('王江很色，哈哈色'.replace(/色/g, '*'))
+        // console.log('王江很色，哈哈色，md'.replace(/色|md/g, '*'))
+        // console.log('王江很色，哈哈色，md'.replace(/[色md]/g, '*'))
+
+        function $(ele){
+            return document.querySelector(ele)
+        }
+
+        var txt1 = $('.txt1')
+        var txt2 = $('.txt2')
+        var btn = $('button')
+        
+        btn.onclick = function(){
+            if(txt1.value.trim()===''){
+                alert('不能为空！')
+                return
+            }
+            txt2.value = txt1.value.replace(/色|md/g, '*')
+        }
+
+    </script>
+</body>
+</html>

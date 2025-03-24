@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">王江</button>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <ul>
+        <li>哈哈哈1</li>
+        <li>哈哈哈2</li>
+        <li>哈哈哈3</li>
+        <li>哈哈哈4</li>
+        <li>哈哈哈5</li>
+    </ul>
+    <input type="text">
+    <input type="number">
+    <script>
+        // 第一种方式，当元素有id名称时，可以在 js 里面直接使用id名称获取到元素
+        // 最早支持这种方式出现在 IE 浏览器里面，而其他的浏览器是不支持的。只是后面慢慢的其他的浏览器才支持了这种方式，但是还是存在某些低版本浏览器不支持
+        console.log(btn)
+
+        // 第二种方式，document.getElementById() 在网页中通过 id 方式获取元素
+        // 是被所有的浏览器所支持的，它兼容性比较好
+        console.log(document.getElementById('btn'))
+
+        // 第三种方式，document.getElementsByClassName() 通过 类名 来获取元素，结果是一个数组（数据的集合）
+        // HTMLCollection 标记集合 
+        console.log(document.getElementsByClassName('box'))
+        console.log(document.getElementsByClassName('box')[0])
+        console.log(document.getElementsByClassName('box')[1])
+
+        // 第四种方式，document.getElementsByTagName() 通过 标记 名称来获取元素，结果是一个数组（数据的集合）
+        console.log(document.getElementsByTagName('div'))
+        console.log(document.getElementsByTagName('div')[0])
+        console.log(document.getElementsByTagName('div')[1])
+
+        // 第五种方式，document.querySelector() ES5新增 支持 css 选择器的写法。获取一个，如果存在多个，那么默认获取第一个
+        console.log(document.querySelector('div'))
+        console.log(document.querySelector('.box'))
+
+        console.log(document.querySelector('ul li:nth-child(1)'))
+        console.log(document.querySelector('ul li:nth-child(2)'))
+
+        console.log(document.querySelector('input[type="text"]'))
+        console.log(document.querySelector('input[type="number"]'))
+
+
+        // 第六种方式，document.querySelectorAll() ES5新增 支持 css 选择器的写法。获取到的是一组
+        console.log(document.querySelectorAll('ul li'))
+        console.log(document.querySelectorAll('ul li')[0])
+        console.log(document.querySelectorAll('ul li')[1])
+    </script>
+</body>
+
+</html>

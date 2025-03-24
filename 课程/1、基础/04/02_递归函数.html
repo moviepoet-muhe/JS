@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 一个函数调用另一个函数
+        // function fn1(){
+        //     console.log('我是fn1')
+        //     fn2()
+        // }
+        // fn1()
+        // function fn2(){
+        //     console.log('我是fn2')
+        // }
+
+        // 递归函数：是函数自己调用自己，类似于循环，效果循环结构是一样的
+        var i = 0
+        function wjFn(){
+            i++
+            console.log(i+'王江函数是一个递归')
+            // 注意点：递归需要一个出口（结束条件）
+            if(i<10){
+                wjFn()
+            }
+        }
+        wjFn()
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 300px;
+            background-color: hotpink;
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <a href="https://www.jd.com">哈哈</a> -->
+    <div></div>
+    <script>
+        // 右键菜单
+        // oncontextmenu = (e)=> {
+        //     // e.preventDefault()
+        //     return false
+        // }
+
+        // document.querySelector('a').onclick = ()=> {
+        //     return false
+        // }
+
+        const box = document.querySelector('div')
+
+        oncontextmenu = (e)=> {
+            box.style.display = 'block'
+            let x = e.pageX
+            let y = e.pageY
+            box.style.left = x + 'px'
+            box.style.top = y + 'px'
+            return false
+        }
+
+        document.onclick = ()=> {
+            box.style.display = 'none'
+        }
+    </script>
+</body>
+</html>

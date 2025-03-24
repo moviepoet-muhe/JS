@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 预解析：不会直接去解析代码，会把代码加工处理，把加工处理代码的过程称之为预解析
+        // 预解析有点儿像明星包装
+        // 预解析步骤：1、变量和函数声明提升，默认提升到当前作用域的最顶端  2、逐行执行代码
+
+        // console.log(wj) // undefined
+        // var wj = '王小江'
+
+        /*
+            0 级作用域预解析
+            var wj
+            console.log(wj) // undefined
+            wj = '王小江'
+        */
+
+        // fn()
+        // function fn(){
+        //     console.log('函数执行了')
+        // }
+
+        /*
+            0 级作用域预解析
+            function fn(){
+                console.log('函数执行了')
+            }
+            fn()    
+        */
+
+
+
+        fn()
+        function fn() {
+            console.log(a)
+            var a = 10
+            function fn2() {
+                console.log(b)
+                var b = 66
+            }
+            var fn2 = 88
+            fn2()
+        }
+
+
+        function fn() {
+            var a
+            var fn2
+            function fn2() {
+                var b
+                console.log(b)
+                b = 66
+            }
+            console.log(a)
+            a = 10
+            fn2 = 88
+            fn2()
+        }
+        fn()
+
+
+
+    </script>
+</body>
+
+</html>

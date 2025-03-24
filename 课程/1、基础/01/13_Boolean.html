@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Boolean() 把其他类型转成布尔类型
+
+        // 把数值类型转成布尔类型
+        // 注意点6：把0和NaN转成布尔值结果是false，其他的是true
+        // var data = 10
+        // var data = 0
+        // var data = Infinity
+        // var data = NaN
+        // console.log('现在的值', data)
+        // console.log('现在值的类型', typeof data)
+        // var res = Boolean(data)
+        // console.log('转换后的值', res)
+        // console.log('转换后值的类型', typeof res)
+
+        // 把字符串转成布尔类型
+        // 注意点7：把空字符串转成布尔类型结果是false，其他结果是true。如果空字符串里面有一个空格，结果也是true
+        // var data = '10'
+        // var data = 'abc'
+        // var data = ''
+        var data = ''
+        console.log('现在的值', data)
+        console.log('现在值的类型', typeof data)
+        var res = Boolean(data)
+        console.log('转换后的值', res)
+        console.log('转换后值的类型', typeof res)
+
+        // 把null和undefined转成布尔类型
+        // 注意点8：把null和undefined转成布尔类型结果是false
+        // var data = null
+        // var data = undefined
+        // console.log('现在的值', data)
+        // console.log('现在值的类型', typeof data)
+        // var res = Boolean(data)
+        // console.log('转换后的值', res)
+        // console.log('转换后值的类型', typeof res)
+    </script>
+</body>
+
+</html>

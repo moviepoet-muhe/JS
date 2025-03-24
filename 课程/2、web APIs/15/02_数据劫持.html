@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            Object.defineProperty() 
+            + 数据劫持，所谓的数据劫持就是对对象的操作可以做一些限定
+            + 配置项:
+              => value: 该属性对应的值,
+              => configurable 改属性是否能被删除
+              => writable: 该属性时候可被重写, 默认是 false
+              => emunerable: 该属性是否可被枚举, 默认是 false
+              => get: 是一个函数, 叫做 getter 获取器, 可以来决定该属性的值
+                -> get 函数的返回值, 就是当前这个属性的值
+                -> 注意: 不能和 value 和 writable 一起使用, 会报错
+              => set: 是一个函数, 叫做 setter 设置器, 当你需要修改该属性的值的时候, 会触发该函数
+        */
+        // 一个对象没有做任何限定，可以任意进行操作。数据劫持就可以限定你对对象可以做哪些操作，哪些操作不能做
+        let obj = {
+            name: '张三',
+            age: 18
+        }
+        obj.name = '王江'
+        delete obj.age
+        console.log(obj)
+        for (let key in obj) {
+            console.log(obj[key])
+        }
+
+        let obj = {}
+        // 参数1表示你要对那个对象做限定（目标对象）, 参数2表示对对象里面的那个属性进行限定，参数3表示配置项（是一个对象）
+        Object.defineProperty(obj, 'name', {
+            value: '邓为',
+            configurable: false,
+            writable: true,
+            enumerable: false
+        })
+        // delete obj.name
+        obj.name = '王江'
+        for (let key in obj) {
+            console.log(obj[key])
+        }
+        console.log(obj)
+    </script>
+</body>
+
+</html>

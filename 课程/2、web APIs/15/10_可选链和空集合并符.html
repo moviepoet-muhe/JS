@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ? 可选链：可以防止一个未知的属性报错
+        // const obj = {
+        //     name: "Alice",
+        //     cat: {
+        //         name: "Dinah",
+        //     },
+        //     // dog: {
+        //     //     name: '小黑'
+        //     // }
+        // }
+        // console.log(obj.dog?.name)
+
+        // ?? 空集合并符
+        // num 表示输入框输入的数量
+        let num = 20
+        let count = 0
+        count += num ?? 1 
+        console.log(count)
+        let total = 1000 * count
+    </script>
+</body>
+</html>

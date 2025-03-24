@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .sy1{
+            color: #ccc;
+        }
+        .sy2{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="tel"><span></span>
+    <script>
+        /*
+            手机号
+            + 11位
+            + 以1开头
+            + 第二位是3-9
+            + 从第三位开始 0-9
+            + 正则
+              => /^1[3-9]\d{9}$/
+        */
+        const tel = document.querySelector('input')
+        const desc = document.querySelector('span')
+
+        tel.onfocus = ()=> {
+            desc.innerHTML = '请输入你的手机号'
+            desc.className = 'sy1'
+        }
+
+        // const telReg = /^1[3-9]\d{9}$/
+
+        // 手机号验证封装
+        const telRegFn = val=> /^1[3-9]\d{9}$/.test(val) 
+
+        // function telRegFn(val){
+        //     const reg = /^1[3-9]\d{9}$/
+        //     return reg.test(val) 
+        // }
+
+        tel.onblur = function(){
+            // if(telReg.test(this.value.trim())){
+            //     desc.innerHTML = '✅'
+            // }else{
+            //     desc.innerHTML = '手机号格式不正确'
+            //     desc.className = 'sy2'
+            // }
+
+            if(telRegFn(this.value.trim())){
+                desc.innerHTML = '✅'
+            }else{
+                desc.innerHTML = '手机号格式不正确'
+                desc.className = 'sy2'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <span>123</span>
+    </div>
+
+    <button>编辑</button>
+    <script>
+        const box = document.querySelector('.box')
+        const span = document.querySelector('span')
+
+        // 创建标记
+        let p = document.createElement('p')
+        p.innerHTML = '我是新创建的'
+        
+        // 追加到网页中
+        // document.body.appendChild(p)
+        // box.appendChild(p)
+        // 参数1表示你要追加那个标记  参数2表示要追加到那个标记的前
+        box.insertBefore(p, span)
+
+        // 删除标记
+        // box.removeChild(span)
+        // p.remove()
+
+        // 替换标记
+        // let b = document.createElement('b')
+        // b.innerHTML = 'b标记'
+        // box.replaceChild(b, span)
+        
+        const edit = document.querySelector('button')
+        let input = document.createElement('input')
+        input.type = 'text'
+
+        edit.onclick = ()=>{
+            document.body.replaceChild(input, edit)
+        }
+
+        // 失去焦点事件
+        input.onblur = function(){
+            edit.innerHTML = this.value
+            document.body.replaceChild(edit, input)
+        }
+
+        // 克隆标记
+        // 参数是布尔值，如果是true表示把这个元素的子元素也会克隆出来， 如果是false则不会（默认值）
+        let cloneEle = box.cloneNode(true)
+        // console.log(cloneEle)
+        document.body.appendChild(cloneEle)
+    </script>
+</body>
+</html>

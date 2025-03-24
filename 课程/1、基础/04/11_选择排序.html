@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            选择排序
+            + 思路
+              => 一组无序的数，先使用前面一个和后面所有的数挨个进行比较，如果那个大就和小的交互位置，直到比较完毕
+        */
+        var arr = [5, 3, 7, 1]
+        for(var i=0; i<arr.length-1; i++){
+            for(var j=i+1; j<arr.length; j++){
+                // console.log(i, j)
+                if(arr[i]>arr[j]){
+                    var temp
+                    temp = arr[i]
+                    arr[i] = arr[j]
+                    arr[j] = temp
+                }
+            }
+            // console.log('---------')
+        }
+        console.log(arr)
+    </script>
+</body>
+</html>

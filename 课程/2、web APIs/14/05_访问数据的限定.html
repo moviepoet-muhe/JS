@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3></h3>
+    <script>
+        function modifyFn(){
+            // 私有变量
+            let myName = 'admin'
+            // 私有函数
+            function getData(){
+                return myName
+            }
+            function modifyData(val){
+                myName = val
+            }
+            // 访问数据权限设定
+            return {
+                getData,
+                modifyData
+            }
+        }
+        const objFn = modifyFn()
+        objFn.modifyData('王江')
+
+        const h3 = document.querySelector('h3')
+        h3.innerHTML = `欢迎：${objFn.getData()}`
+    </script>
+</body>
+</html>

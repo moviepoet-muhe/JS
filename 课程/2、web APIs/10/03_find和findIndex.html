@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // let arr = ['王江', '王旭', '杨磊']
+        // let res = arr.find(item=> item === '王旭')
+        // console.log(res)
+
+        // let index = arr.findIndex(item=> item === '王旭')
+        // console.log(index)
+        // arr[index] = '杨策'
+        // arr.splice(index, 1)
+        // console.log(arr)
+
+        // let list = [{id: 1, car_num: 0}, {id: 2, car_num: 0}]
+        // let res = list.find(item=> item.id === 2)
+        // console.log(res)
+        // res.car_num++
+
+        // let index = list.findIndex(item=> item.id === 2)
+        // console.log(index)
+        // list[index].car_num++
+        // list.splice(index, 1)
+        // console.log(list)
+
+        // let arr = []
+        // 注意点：如果数组为空，不会遍历，直接返回true
+        // let res = arr.every(item=> item<=30)
+        // console.log(res)
+
+        const box = document.querySelector('div')
+        let state = false
+        box.innerHTML = `
+            <input type="checkbox" ${state && 'checked'}>
+        `
+    </script>
+</body>
+</html>

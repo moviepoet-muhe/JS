@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        /*
+            json 数据格式
+            + json 语法和 js 对象的语法是一样的，区别在于要求 json 的属性名和值必须加双引号
+            + 历史原因
+              => 前端开发语言 html、css、js
+              => 后端开发语言 java、python、c、c++、.net、c#、ruby、php、node.js、Go...
+              => 公司里面后端开发选择那种语言，这个真不确定！
+              => 每种后端语言都有自己独立的语法，和前端进行数据交互，那么不同语言之间标准也不一样，导致开发成本非常高
+              => 为了解决这个不统一的问题，提出了无论那种语言都使用一样的规范和标准来进行数据交互，这样就便利开发减少不必要的开发成本
+              => xml、json就这样产生了
+            + xml 可扩展标记语言
+              => 它的语法和html是一样的
+              => xml里面的标记可以自定义，而html标记是不能自定义的
+            + json
+              => 目前使用最多的
+              => 你会js对象，就会写json，区别在于外层加单引号，里面的属性名加双引号
+              => json其实也属于一种特殊的字符串格式
+        */
+        // var obj = '{"a": 1, "b":2}'
+        // var arr = '[{"name" : "张三", "age" : 18, "sex" : "男"},{ "name" : "李思","age" : 20,"sex": "女"}]'
+
+        // var arr = [
+        //     {name : '张三', age : 18, sex: '男'},
+        //     {name : '李思', age : 20, sex: '女'}
+        // ]
+        // JSON.stringify() 把js对象转成json
+        // console.log(JSON.stringify(arr))
+
+        // var arr = '[{"name" : "张三", "age" : 18, "sex" : "男"},{ "name" : "李思","age" : 20,"sex": "女"}]'
+        // JSON.parse() 把json转成js对象
+        // console.log(JSON.parse(arr))
+
+        // var str = "alert('hello')";
+        // eval(str);
+
+        // var obj = '{a: 1}'
+        // console.log(eval(obj))
+
+        // var obj = eval("("+'{a:1}'+")");  
+        // console.log(obj)
+
+        // console.log(eval('for(var i=0; i<10; ){console.log(i)}'))
+    </script>
+</ody>
+</html>

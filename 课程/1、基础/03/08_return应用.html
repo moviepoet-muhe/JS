@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getMax(x, y){
+            // x > y ? console.log(x) : console.log(y)
+            // if(x>y){
+            //     return x
+            // }else{
+            //     return y
+            // }
+            
+            var max = 0
+            // if(x>y){
+            //     max = x
+            // }else{
+            //     max = y
+            // }
+
+            x > y ? max = x : max = y
+            return max
+        }
+        console.log(getMax(10, 20))
+        document.write(getMax(22, 66))
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const box = document.querySelector('div')
+        onkeydown = (e)=> {
+            // 38 上 
+            // 40 下
+            // 37 左
+            // 39 右
+            let step = 10
+            if(e.altKey){
+                step = 100
+            }
+            switch(e.keyCode){
+                case 39 :
+                    box.style.left = box.offsetLeft + step + 'px'
+                    break
+                case 37 :
+                    box.style.left = box.offsetLeft - step + 'px'
+                    break
+                case 38 :
+                    box.style.top = box.offsetTop - step + 'px'
+                    break
+                case 40 :
+                    box.style.top = box.offsetTop + step + 'px'
+                    break
+            }
+        }
+    </script>
+</body>
+</html>

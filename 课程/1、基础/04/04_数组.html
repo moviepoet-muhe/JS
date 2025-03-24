@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            array 数组
+            + 一组数据的集合
+            + 主要是用来存储大量的数据的，因为单个存储数据相对灵活性没有那么好，所以引用数据类型一般都是一次可以存储多条数据
+            + 数组声明方式
+              => [] 字面量
+              => new Array() 构造函数（是面向对象编程里面的创建对象的一种方式）
+            + 数组下标
+              => index（索引）
+              => 为了区分数组里面的元素（成员），在创建数组的时候，会默认给每一个元素设置一个编号，把这个编号称之为下标
+              => 作用：用来操作数组（获取、增加、删除、替换等等）
+              => 数组下标默认是从 0 开始的
+            + length
+              => 数组属性
+              => 表示数组的长度（数组元素的个数）
+        */
+        // 求全班同学年龄的平均值？
+        // var age1 = 19
+        // var age2 = 20
+        // var age3 = 22
+        // var age4 = 25
+        // var age5 = 26
+
+        // 字面量
+        // var arr1 = [19, 20, 33, 25, 26]
+
+        // 构造函数
+        // var arr2 = new Array(19, 20, 33, 25, 26)
+        // console.log(arr1)
+        // console.log(arr2)
+
+        // var arr = ['王江', '陈辰', '邓为', '马彬', '吴林']
+        // 获取数组元素
+        // console.log(arr[0])
+        // console.log(arr[1])
+
+        // 动态获取最后一个数组元素
+        // console.log(arr[arr.length-1])
+
+        // 添加数组元素
+        // 注意点：如果添加数组元素的时候，不是按照下标顺序来设置，那么会把跳过的下标位置预留下来
+        // arr[5] = '汤健'
+        // arr[8] = '杨测'
+
+        // 替换数组元素
+        // arr[0] = 'a'
+
+        // 删除数组元素
+        // 注意点：使用 delete 关键字删除数组元素，被删除元素的位置依旧存在
+        // delete arr[0]
+        // console.log(arr)
+
+        // var arr = [19, 20, 33, 25, 26]
+        // var sum = 0
+        // 遍历数组
+        // for(var i=0; i<arr.length; i++){
+        //     sum += arr[i]
+        // }
+        // console.log(sum / arr.length)
+    </script>
+</body>
+</html>

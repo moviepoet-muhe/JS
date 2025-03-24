@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" value="">
+        <span></span>
+        <button>按钮</button>
+    </form>
+    <script>
+        const txt = document.querySelector('input')
+        const desc = document.querySelector('span')
+        const fm = document.querySelector('form')
+        // onselect：当用户选中文本框(input 或 textarea)中的一个或多个字符触发
+        // txt.onselect = ()=> {
+        //     console.log('触发了')
+        //     desc.style.opacity = 1
+        // }
+
+        // onchange：当用户改变文本框(input 或 textarea)内容时且失去焦点后触发
+        // txt.onchange = ()=> {
+        //     desc.innerHTML = '用户名已经修改'
+        //     desc.style.opacity = 1
+        // }
+
+        // onfocus：当页面或者元素获得焦点时触发
+        // txt.onfocus = ()=> {
+        //     desc.innerHTML = '请输入手机号'
+        //     desc.style.opacity = 1
+        // }
+
+        // onblur：当页面或元素失去焦点时触发
+        // txt.onblur = ()=> {
+        //     desc.innerHTML = '输入正确'
+        // }
+
+        // onsubmit：当用户点击提交按钮在<form>元素上触发  
+
+        // oninput 事件在用户输入时触发
+        // txt.oninput = function(){
+        //     console.log(this.value)
+        // }
+
+        fm.onsubmit = ()=> {
+            if(!confirm('你确认提交吗？')){
+                return false
+            }
+            fm.action = 'https://www.jd.com'
+        }
+    </script>
+</body>
+</html>

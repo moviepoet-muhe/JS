@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+            width: 500px;
+            min-height: 300px;
+            border: 1px solid;
+            margin: 50px auto;
+        }
+        .tab .btn{
+            height: 35px;
+            background-color: orange;
+            display: flex;
+            text-align: center;
+            line-height: 35px;
+        }
+        .tab .btn span{
+            width: 20%;
+            cursor: pointer;
+        }
+        .tab .btn span.bg{
+            background-color: greenyellow;
+        }
+        .tab ul{
+            height: 265px;
+            background-color: hotpink;
+        }
+        .tab ul li{
+            height: 265px;
+            list-style: none;
+            text-align: center;
+            line-height: 265px;
+            display: none;
+            font-size: 30px;
+        }
+        .tab ul li.show{
+            display: block;
+        }
+
+
+        .tab2{
+            width: 300px;
+            min-height: 300px;
+            border: 1px solid;
+            margin: 50px auto;
+        }
+        .tab2 .btn{
+            height: 35px;
+            background-color: orange;
+            display: flex;
+            text-align: center;
+            line-height: 35px;
+        }
+        .tab2 .btn span{
+            width: 20%;
+            cursor: pointer;
+        }
+        .tab2 .btn span.bg{
+            background-color: greenyellow;
+        }
+        .tab2 ul{
+            height: 265px;
+            background-color: gold;
+        }
+        .tab2 ul li{
+            height: 265px;
+            list-style: none;
+            text-align: center;
+            line-height: 265px;
+            display: none;
+            font-size: 30px;
+        }
+        .tab2 ul li.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="btn">
+            <span class="bg">新闻</span>
+            <span>体育</span>
+            <span>娱乐</span>
+            <span>军事</span>
+            <span>游戏</span>
+        </div>
+        <ul>
+            <li class="show">新闻</li>
+            <li>体育</li>
+            <li>娱乐</li>
+            <li>军事</li>
+            <li>游戏</li>
+        </ul>
+    </div>
+
+    <hr/>
+
+    <div class="tab2">
+        <div class="btn">
+            <span class="bg">新闻</span>
+            <span>体育</span>
+            <span>娱乐</span>
+            <span>军事</span>
+            <span>游戏</span>
+        </div>
+        <ul>
+            <li class="show">新闻</li>
+            <li>体育</li>
+            <li>娱乐</li>
+            <li>军事</li>
+            <li>游戏</li>
+        </ul>
+    </div>
+    <script>
+        // 面向对象编程
+        // OOA 面向对象分析，需要从各个方面对这个功能进行分析，看代码怎么写比较合理方便后期的使用
+        // OOD 面向对象设计，确定功能职责（每一个模块，一个模块在对象里面就是一个函数）
+        // function Tab(btn, content){
+        //     // 获取元素
+        //     this.aBtn = document.querySelectorAll(btn)
+        //     this.aLi = document.querySelectorAll(content)
+        //     // 在构造函数内部调用原型上面的方法
+        //     this.init()
+        // }
+        // 初始化
+        // Tab.prototype.init = function(){
+        //     this.switching()
+        // }
+        // 切换功能
+        // Tab.prototype.switching = function(){
+        //     let _this = this
+        //     for(let i=0; i<this.aBtn.length; i++){
+        //         this.aBtn[i].onclick = function(){
+        //             _this.clearStyle()
+        //             this.className = 'bg'
+        //             _this.aLi[i].className = 'show'
+        //         }
+        //     }
+        // }
+        // 排他功能
+        // Tab.prototype.clearStyle = function(){
+        //     for(let j=0; j<this.aBtn.length; j++){
+        //         this.aBtn[j].className = ''
+        //         this.aLi[j].className = ''
+        //     }
+        // }
+
+        class Tab{
+            constructor(btn, content){
+                // 获取元素
+                this.aBtn = document.querySelectorAll(btn)
+                this.aLi = document.querySelectorAll(content)
+                // 在构造函数内部调用原型上面的方法
+                this.init()
+            }
+            init(){
+                this.switching()
+            }
+            switching(){
+                let _this = this
+                for(let i=0; i<this.aBtn.length; i++){
+                    this.aBtn[i].onclick = function(){
+                        _this.clearStyle()
+                        this.className = 'bg'
+                        _this.aLi[i].className = 'show'
+                    }
+                }
+            }
+            clearStyle(){
+                for(let j=0; j<this.aBtn.length; j++){
+                    this.aBtn[j].className = ''
+                    this.aLi[j].className = ''
+                }
+            }
+        }
+        new Tab('.tab .btn span', '.tab ul li')
+        new Tab('.tab2 .btn span', '.tab2 ul li')
+    </script>
+</body>
+</html>

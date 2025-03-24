@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实例化ajax对象
+        // 注意点：ajax 并不是一个新的技术，而是几个技术的结合，发送请求还是通过 http 超文本传输协议完成的
+        const xhr = new XMLHttpRequest()
+        /*
+            填写请求信息
+            + 参数1表示请求方式 get、post、put、delete、all（那种请求类型都可以，适用于免费的接口地址）
+            + 参数2表示请求地址（后端地址 --- 接口 --- api）
+            + 参数3表示同步还是异步（默认异步）
+        */
+        // console.log(xhr.readyState) // 0时-未初始化,对象已建立,尚未调用open()
+
+        xhr.open('get', 'http://localhost:8888/test/first')
+        // console.log(xhr.readyState) // 1时-初始化,对象建立未调用send()
+        // 监听请求状态
+        xhr.onreadystatechange = () => {
+            /*
+               xhr.readyState = 2时-发送数据, send()方法调用，但是当前的状态及http头未知,请求未完成
+               xhr.readyState = 3时-数据传输中, 接受部分数据（如果返回的数据量比较大的，那么只能接收到部分数据。如果返回的数据较为简单，那么会直接拿到结果）
+               xhr.readyState = 4时-响应内容解析完成
+           */
+            // console.log(xhr.readyState)
+            // 注意点：xhr.readyState 为 4 的时候表示ajax请求状态已经完成，但是返回的结果是否正确还是无法确定，因为最终请求是由 http 发送请求出的
+            // 只有 ajax 的状态为4，http 状态为200的时候，才能证明拿到是正确返回结果
+            if (xhr.readyState === 4) {
+                // 200 是http的状态码 200表示成功 404表示路径错误
+                if (xhr.status === 200) {
+                    // 接收后端返回的数据
+                    console.log(xhr.responseText)
+                } else {
+                    console.log('请求失败')
+                }
+            }
+
+            // 注意点：这样写可以拿到正确的结果，但是无法处理失败的情况的
+            // if(xhr.readyState === 4 && xhr.status === 200){
+            //     console.log(xhr.responseText)
+            // }
+        }
+        // 发送请求
+        xhr.send()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Promise
+            + 承诺
+            + 作用
+              => 用来解决回调地狱问题的
+            + 状态
+              => 三种状态，分别是：pending（正在进行时）、fulfilled（成功）、rejected（失败）
+              => 注意点：Promise失败的状态，必须手动抛出一个失败的异常才能显示 例如：return Promise.reject('失败')
+            + 回调函数
+              => 成功时的回调：resolve() --- then() 当resolve调用了，会自动执行
+              => 失败时的回调：reject() --- catch() 当reject调用了，会自动执行
+              => finally：无论成功还是失败都会自动执行的回调函数
+        */
+        const p = new Promise((resolve, reject)=>{
+            resolve('邓为')
+            // reject()
+        })
+        .then((a)=>{
+            console.log('参数：'+a)
+            console.log('成功')
+        })
+        .catch(()=>{
+            console.log('失败')
+            return Promise.reject('失败')
+        })
+        .finally(()=>{
+            console.log('执行了')
+        })
+        console.log(p)
+    </script>
+</body>
+</html>

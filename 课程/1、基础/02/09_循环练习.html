@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 输出1000次，一定要完成作业？思考如何让其他倒叙排列？
+        // var i = 10
+        // while(i>=1){
+        //     // document.write('<h3 style="color:red;">'+i+'、王江喜欢上课讨论学习英语！</h3>')
+        //     document.write('<h3>'+i+'、王江喜欢上课讨论学习英语！</h3>')
+        //     i--
+        // }
+
+        // 输出1-100之间的偶数？并求出偶数的和？
+        // var i = 1
+        // var sum = 0
+        // while(i<=100){
+        //     if(i%2==0){
+        //         sum += i // sum = sum + i
+        //     }
+        //     i++
+        // }
+        // console.log(sum)
+
+        // 求1-10之间的奇数？
+
+        // 求5的阶乘？5! = 1 * 2 * 3 * 4 * 5
+        // var i = 1
+        // var result = 1
+        // while(i<=5){
+        //     result *= i
+        //     i++
+        // }
+        // console.log(result)
+
+        // 打印100以内7的倍数？
+
+        // 输出1000-2000之间的所有闰年? 
+        // var i = 1000
+        // while(i<=2000){
+        //     if(i%4==0 && i%100!=0 || i%400==0){
+        //         console.log(i)
+        //     }
+        //     i++
+        // }
+
+        // 输出456-789的所有可以被2，3，4整除的数值?  
+
+        // 输出一个3行5列的表格？
+        // 双层循环执行规则：外层执行一次，内层执行一轮
+        var str = '<table border="1" width="500" height="300">'
+            // 外层循环控制的是行
+            var i = 1
+            while(i<=3){
+                str += '<tr>'
+                    var j = 1
+                    while(j<=5){
+                        str += '<td></td>'
+                        j++
+                    }
+                str += '</tr>'
+                i++
+            }
+        str += '</table>'
+        document.write(str)
+    </script>
+</body>
+</html>

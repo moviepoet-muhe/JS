@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            ... 扩展运算符
+            + 展开数组
+            + 合并数组
+            + 赋值对象里面的属性
+        */
+        // let arr = [10, 20, 30]
+        // function fn(a, b, c){
+        //     console.log(a, b, c)
+        // }
+        // fn(arr[0], arr[1], arr[2])
+        // 展开数组
+        // fn(...arr)
+
+        // 合并数组
+        // function fn(...data){
+        //     console.log(data)
+        // }
+        // fn(10, 20, 30)
+
+        // let arr = [...['a', 'b', 'c'], ...[1, 2, 3]]
+        // console.log(arr[0][0])
+        // console.log(arr)
+
+        let obj = {
+            a: 10,
+            b: 20
+        }
+        let obj2 = {
+            ...obj
+        }
+
+        // let obj2 = obj
+        console.log(obj2)
+        // console.log(obj === obj2)
+    </script>
+</body>
+
+</html>

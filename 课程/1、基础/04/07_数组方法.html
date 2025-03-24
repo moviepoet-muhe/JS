@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr = ['a', 'b', 'c', 'd', 'f', 'e']
+        // shift()：删除数组中第一个元素，并将长度减1
+        // console.log(arr.shift())
+        
+        // pop():删除数组中最后一个元素，并将长度减1
+        // console.log(arr.pop())
+
+        // unshift():往数组前面添加一个或多个数组元素，长度要改变。
+        // console.log(arr.unshift('王江', '邓为'))
+
+        // push():往数组结尾添加一个或多个数组元素，长度要改变。
+        // arr.push(1, 2)
+
+        // concat() : 方法用于连接两个或多个数组, 不改变原数组。返回一个新的数组
+        // var arr2 = ['王江', '陈辰']
+        // console.log(arr.concat(arr2))
+
+        // reverse()  逆向排序, 原数组也被逆向排序了 
+        // console.log(arr2.reverse())
+        // console.log(arr2)
+
+        // toString() 将数组转成字符串
+        // console.log(arr2.toString())
+
+        // join(“拼接符”)将数组转成字符串，中间以拼接符连接
+        // console.log(arr2.join('-'))
+        // console.log(arr2.join('|'))
+
+        // slice(start,end):  不修改原数组, 将原数组中的指定区域数据提取出来。start开始 end结束。 如果参数是负值表示从倒数开始。不含结束位置
+        // var arr3 = ['a', 'b', 'c', 'd', 'f', 'e']
+        // console.log(arr3.slice(0, 3))
+
+        // splice()
+        // 删除，参数1表示从什么位置开始，参数2表示删除几个（项数）
+        // 替换，参数1表示从什么位置开始，参数2表示删除几个（项数），参数3表示需要替换的元素
+        // 新增， 参数1表示从什么位置开始，参数2表示删除几个（项数）必须为0，参数3表示新增的元素
+        // arr3.splice(0, 3)
+        // arr3.splice(1, 2, '王', '江')
+        // arr3.splice(1, 0, '哈哈', '呵呵')
+        // console.log(arr3)
+
+        // 要求将数组中的0项去掉，将不为0的值存入一个新的数组
+        // var arr = [0, 'a', 0, 'b', 0, 0, 'c', 0]
+        // var newArr = []
+        // for(var i=0; i<arr.length; i++){
+        //     if(arr[i]===0){
+        //         continue
+        //     }
+        //     newArr.push(arr[i])
+        // }
+        // console.log(newArr)
+    </script>
+</body>
+</html>

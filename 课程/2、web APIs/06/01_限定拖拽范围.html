@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .parent{
+            width: 500px;
+            height: 500px;
+            background-color: hotpink;
+            margin: 50px auto;
+            position: relative;
+        }
+        .parent .son{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            position: absolute;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="son"></div>
+    </div>
+    <script>
+        const parent = document.querySelector('.parent')
+        const son = document.querySelector('.son')
+
+        son.onmousedown = (e)=> {
+            let l = e.offsetX
+            let t = e.offsetY
+            document.onmousemove = (e)=> {
+                let x = e.clientX - l - parent.offsetLeft
+                let y = e.clientY - t - parent.offsetTop
+                if(x<=0){
+                    x = 0
+                }else if(x>=parent.offsetWidth - son.offsetWidth){
+                    x = parent.offsetWidth - son.offsetWidth
+                }
+                if(y<=0){
+                    y = 0
+                }else if(y>=parent.offsetHeight - son.offsetHeight){
+                    y = parent.offsetHeight - son.offsetHeight
+                }
+                son.style.left = x + 'px'
+                son.style.top = y + 'px'
+            }
+        }
+        son.onmouseup = ()=> {
+            document.onmousemove = null
+        }
+    </script>
+</body>
+</html>

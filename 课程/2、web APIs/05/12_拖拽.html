@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+            position: absolute;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const box = document.querySelector('div')
+        // 当鼠标在盒子上按下时
+        box.onmousedown = (e) => {
+            // 当鼠标按下时，确定光标的相对于盒子的位置
+            let l = e.offsetX
+            let t = e.offsetY
+            // 进行盒子的移动
+            // 问题：当鼠标移动过快时，大家发现元素移动会出现卡顿现象
+            // 原因：由于移动事件绑定给 box 的，当移动过快时，移出了 box 范围，获取不到鼠标坐标，因此无法赋值就出现了卡顿
+            document.onmousemove = (e) => {
+                // 获取鼠标坐标
+                let x = e.clientX - l
+                let y = e.clientY - t
+                // 进行赋值操作
+                box.style.left = x + 'px'
+                box.style.top = y + 'px'
+            }
+        }
+        // 当鼠标抬起时，取消移动事件
+        box.onmouseup = () => {
+            document.onmousemove = null
+        }
+    </script>
+</body>
+
+</html>

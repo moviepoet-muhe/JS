@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>登录</button>
+    <h3></h3>
+    <script src="./js/ajax.js"></script>
+    <script>
+        const btn = document.querySelector('button')
+        const h3 = document.querySelector('h3')
+
+        btn.onclick = ()=>{
+            ajax_post({
+                url: 'http://localhost:8888/users/login',
+                querystr: {
+                    username: 'wj_000',
+                    password: 'wj_000',
+                },
+                success(res){
+                    // console.log(JSON.parse(res))
+                    const {code, token, message, user} = JSON.parse(res)
+                    console.log(user)
+                    // if(code === 1){
+                    //     console.log(token, user)
+                    //     localStorage.setItem('token', token)
+                    //     localStorage.setItem('username', user.username)
+                    //     location.href = './14_index.html'
+                    // }else{
+                    //     h3.innerHTML = message
+                    // }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

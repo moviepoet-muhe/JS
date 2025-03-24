@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 300px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示/隐藏</button>
+    <div style="display: none;"></div>
+    <script>
+        const box = document.querySelector('div')
+        const btn = document.querySelector('button')
+        // flag 技巧可以简化判断条件，其实有些东西无法进行判断的，例如：颜色值
+        let flag = true
+        btn.onclick = () => {
+            // if(box.style.display === 'none'){
+            //     box.style.display = 'block'
+            // }else{
+            //     box.style.display = 'none'
+            // }
+
+            if (flag) {
+                box.style.display = 'block'
+                flag = false
+            } else {
+                box.style.display = 'none'
+                flag = true
+            }
+        }
+    </script>
+</body>
+
+</html>

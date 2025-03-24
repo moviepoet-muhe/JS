@@ -1,0 +1,114 @@
+
+/* 公共样式 - 顶部导航与网页尾部 */
+
+/* ---------------------------顶部导航 start  html: 32行 */
+.global-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 28px;
+  background-color: #545652;
+  font-size: 12px;
+  line-height: 28px;
+  color: #d5d5d5;
+}
+
+/* 左右侧分离 */
+.global-nav ul,
+.global-nav ol {
+  display: flex;
+  height: 100%;
+}
+
+/* 单个导航选项  */
+.global-nav li {
+  height: 100%;
+}
+
+.global-nav ul li a,
+.global-nav ol li a {
+  display: inline-block;
+  padding: 0 12px;
+  height: 100%;
+  color: #d5d5d5;
+}
+
+/* 单个选项鼠标移入效果 */
+.global-nav a:hover,
+nav a:hover {
+  background: none;
+  color: #fff;
+}
+
+/* 右侧最后一个选项旁的字体图标 */
+.global-nav ol li:last-child .iconfont {
+  margin: 0 2px;
+  font-size: 6px;
+}
+
+/* 右侧第一个选项 作为下拉菜单父级定位 */
+.global-nav ol li:first-child {
+  position: relative;
+}
+
+/* 右侧第一个选项-下拉菜单 */
+.global-nav .more-items {
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: -50px;
+  padding: 10px 20px 30px;
+  width: 211px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #111;
+}
+
+/* 右侧第一个选项-下拉菜单移入展示 */
+.global-nav ol li:first-child:hover .more-items {
+  display: block;
+  border-top: 0;
+}
+
+/* 下拉菜单-文字标题 */
+.global-nav .more-items .appintro-title {
+  padding-top: 170px;
+  background: url(../assets/images/nav_doubanapp_6.png) no-repeat center;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* 下拉菜单-扫码文本与背景图 */
+.global-nav .more-items .qrcode {
+  padding-top: 160px;
+  margin-top: 30px;
+  background: url(../assets/images/nav_doubanapp_6_qrcode.png) no-repeat center;
+  font-size: 0;
+}
+
+/* 下拉菜单-下载文本 */
+.global-nav .more-items .download {
+  margin-top: 10px;
+}
+
+/* 下拉菜单-下载 a 标签  */
+.global-nav .more-items .download a {
+  padding: 0;
+  font-size: 12px;
+  font-weight: normal;
+  color: #37a;
+}
+
+
+/* ---------------------------尾部区域 start html: 591行 */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  margin-top: 40px;
+  border-top: 1px dashed #ddd;
+  color: #999;
+}

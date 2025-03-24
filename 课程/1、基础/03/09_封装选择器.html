@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <div class="box">123</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 选择器封装
+        // function $(ele){
+        //     return document.querySelector(ele)
+        // }
+
+        function $(ele, all){
+            if(all){
+                return document.querySelectorAll(ele)
+            }else{
+                return document.querySelector(ele)
+            }   
+        }
+        // console.log($('button'))
+        // console.log($('.box'))
+
+        console.log($('ul li', true))
+
+    </script>
+</body>
+</html>

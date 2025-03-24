@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 内部方式 -->
+    <script>
+        // 注释
+        // 单行注释 
+        /* 
+            多行注释 
+        */
+        /*
+            document.write()
+            + 在网页中输出信息
+            + 注意点
+              => 如果括号里面输出的是除了数字以外其他的字符，必须加单引号或者双引号，否则会报错
+              => document.write() 方法可以解析html标记
+              => + 号有两种意思，第一种表示字符链接（拼接），第二种表示加法运算
+              => js每句代码的结束可以加分号，也可以不加，都是支持的
+        */
+        // document.write(123+'<br/>')
+        // 注意点：如果直接输出一个字母或者单词的话，它会当成变量来解析，但是没有定义变量，那么会报错。加了引号就会当成正常的字符来解析
+        // document.write('a')
+        // document.write('<p>哈哈</p>')
+
+        /*
+            console.log()
+            + 在浏览器控制台输出信息（日志）
+            + 注意点
+              => 不能解析html标记
+              => 控制台换行，可以使用转义字符 \n 
+            console.error()
+            + 输出一个错误信息，更给自己或者其他使用者一个提示
+        */
+        // console.log('王江喜欢学习js\n\n，但是他更喜欢学习英文！')
+        // console.error('你的代码存在错误，请检查！')
+
+        /*
+            alert() 
+            + 弹窗
+        */
+        // alert('亲，你输入的内容有误，请重新输入！')
+
+        /*
+            confirm()
+            + 带有取消和确定按钮的弹窗
+        */
+        // confirm('你确定你很帅吗？')
+
+        /*
+            prompt()
+            + 带有输入框的弹窗
+        */
+        // prompt('请输入一个用户名！')
+    </script>
+</body>
+</html>

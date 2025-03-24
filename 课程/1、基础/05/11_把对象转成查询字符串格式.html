@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            word: '王江牌袜子',
+            price: 9.9
+        }
+        // str = 'https://www.jd.com?word=王江牌袜子&price=9.9'
+        var str = '?'
+        for(var key in obj){
+            str += key +'='+ obj[key] + '&'
+        }
+        str = str.slice(0, -1)
+        console.log(str)
+    </script>
+</body>
+</html>

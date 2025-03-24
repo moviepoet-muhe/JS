@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>哈哈1</li>
+        <li>哈哈2</li>
+        <li>哈哈3</li>
+        <li>哈哈4</li>
+        <li>哈哈5</li>
+    </ul>
+    <script>
+        // 判断数据类型是否为数组
+        // console.log(Array.isArray('10'))
+        // console.log(Array.isArray({}))
+        // console.log(Array.isArray([]))
+
+        // flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
+        // 数组扁平化：可以把多维数组转成一位数组
+        // const arr = [['a', 'b'], [1, 2, 3, ['10', '20', ['王江', [1, 2]]]]]
+        // console.log(arr.flat(2))
+        // Infinity 无论几维数组，都可以转成一位数组
+        // console.log(arr.flat(Infinity))
+
+        // const arr = ['a', 'b', 'c']
+        // includes() 查看数组里面是否存在某个元素
+        // console.log(arr.includes('s'))
+        // console.log('hello'.includes('e'))
+        // console.log('hello'.includes('s'))
+
+        // console.log('hello'.startsWith('h'))
+        // console.log('hello'.endsWith('h'))
+
+        // 把其他的类型转成数组类型
+        // const aLi = document.querySelectorAll('ul li')
+        // console.log(Array.from(aLi))
+        // console.log(Array.from('hello'))
+
+        /*
+            reduce()
+            + 累加器
+              => 可以把数组里面的元素进行相加
+            + 参数
+              => 回调函数
+            + 回调函数的参数
+              => 参数1表示的是数组的第一个要进行计算的元素（这个值不断变化的）。是每次相加计算的结果
+              => 参数2表示的是其他要计算的数组元素
+        */
+        // const arr = [10, 20, 30, 40, 50, 60]
+        // const result = arr.reduce((first, item)=>{
+        //     return first + item
+        // }, 0) // 默认值
+        // console.log(result)
+
+        // const cartList = [
+        //     {id: 1, name: '小米手机', num:3, price: 2000},
+        //     {id: 2, name: '华为手机', num:1, price: 6000},
+        //     {id: 3, name: '苹果手机', num:2, price: 5000},
+        // ]
+        // 计算购物车的总价
+        // const result = cartList.reduce((first, item)=>{
+        //     return first += item.num * item.price
+        // }, 0)
+        // console.log(result)
+
+        // reduceRight() 是从后面往前面相加
+        // const arr = [10, 20, 30, 40, 50, 60]
+        // const result = arr.reduceRight((first, item)=>{
+        //     console.log(first)
+        // })
+    </script>
+</body>
+</html>

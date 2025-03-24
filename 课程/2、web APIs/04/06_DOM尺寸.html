@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 2px solid orange;
+            background-color: yellow;
+            margin: 20px;
+            padding: 20px;
+        }
+        section{
+            width: 180px;
+            height: 300px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" style="width: 300px; height: 300px;"></div>
+    <div class="box2" style="width: 300px;"></div>
+    <div class="box3" style="overflow: auto;">
+        <section>123</section>
+    </div>
+    <div class="box4" style="border: 3px solid;"></div>
+    <script src="./js/tools.js"></script>
+    <script>
+        /*
+            box.style.width
+            box.style.height
+            只能获取到内联style属性的CSS样式中的宽和高，如果有，获取;如果没有，则返回空
+        */
+        // console.log($('.box1').style.width)
+        // console.log($('.box1').style.height)
+
+        /*
+            box.clientWidth
+            box.clientHeight
+            返回了元素大小，但没有单位，默认单位是px，如果设置了其他的单位，比如100em之类，返回出来的结果还会转换为px像素（不含边框） width + padding值
+        */
+        // console.log($('.box2').clientWidth)
+        // console.log($('.box2').clientHeight)
+
+        /*
+            box.clientLeft
+            box.clientTop    获取左边框和上边框的宽度
+        */
+        // console.log($('.box2').clientLeft)
+        // console.log($('.box2').clientTop)
+
+        /*
+            box.scrollWidth
+            box.scrollHeight
+            获取滚动内容的元素大小（当元素出现滚动条时，此属性指全部滚动内容的宽高）返回了元素大小，默认单位是px。如果没有设置任何CSS的宽和高度，它会得到计算后的宽度和高度  整个内容的
+        */
+        // console.log($('.box3').scrollWidth)
+        // console.log($('.box3').scrollHeight)
+
+        /*
+            box.offsetWidth
+            box.offsetHeight
+            返回了元素大小，默认单位是px。如果没有设置任何CSS的宽和高度，他会得到计算后的宽度和高度
+            包含盒模型中除margin以外的宽高（包含边框）最稳定，使用最频繁
+        */
+        // console.log($('.box4').offsetWidth)
+        // console.log($('.box4').offsetHeight)
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['a', 'a', 'a', 'b', 'b', 'c', 'd', 'c', 'c', 'd']
+        // indexOf() 默认查找的是某个数组元素第一次在数组里面出现的位置
+        var result = arr.filter(function(item, index){
+            // arr.indexOf('a') 0 === 0 满足条件，放入新的数组
+            // arr.indexOf('a') 0 === 1 不满足，不放入数组
+            // ...
+            return arr.indexOf(item) === index
+        })
+        console.log(result)
+    </script>
+</body>
+</html>

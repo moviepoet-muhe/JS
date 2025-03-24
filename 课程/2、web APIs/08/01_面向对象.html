@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装
+        // 继承：从已有对象上，继承出新对象
+        // 多态：一个父类的引用变量，可以指向其任意一个子类对象。简单来说就是同一操作，作用于不同的对象，会产生不同的解释和行为
+        // const obj = {
+        //     name: '王江',
+        //     age: 18
+        // }
+        // const obj2 = {
+        //     ...obj
+        // }
+        // const obj2 = {}
+        // for(let key in obj){
+        //     obj2[key] = obj[key]
+        // }
+        // console.log(obj2)
+
+        // toString() 把其他类型转成字符串类型
+        // const obj = {a: 1, b: 2}
+        // const arr = ['a', 'b']
+        // console.log(obj.toString()) // [object Object]
+        // console.log(arr.toString()) // a,b
+
+        // 封装
+        const tools = {
+            $(ele){
+                return document.querySelector(ele)
+            }
+        }
+        tools.$('button')
+    </script>
+</body>
+</html>

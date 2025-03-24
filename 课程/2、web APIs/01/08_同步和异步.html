@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>快来点我！</button>
+    <script>
+        /*
+            同步和异步
+            + js 是一个单线程的语言，所谓的单线程就是每次只能做一件事情
+            + 单线程会导致代码执行的阻塞问题
+            + 为了解决阻塞问题，js 提出了一个异步编程方案，因此 js 里面代码的类型分为同步代码和异步代码
+            + 同步
+              => 指的就是事情要一件一件做。等做完前一件才能做后一件任务
+            + 异步
+              => 不受当前任务的影响，两件事情同时进行，做一件事情时，不影响另一件事情的进行
+            + 异步代码有哪些？
+              => 事件
+              => 定时器、延时器
+              => ajax （前后端数据交互技术）
+              => new Promise()
+              => async、await
+              => ...
+        */
+        // 同步代码
+        console.log('开始')
+        // for(var i=0; i<1000; i++){
+        //     console.log(i)
+        // }
+
+        // 异步代码
+        var btn = document.querySelector('button')
+        btn.onclick = function(){
+            console.log('hello，你看我执行不！')
+        }
+
+        // 同步代码
+        console.log('结束')
+    </script>
+</body>
+</html>

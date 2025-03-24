@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest()
+        xhr.open('post', 'http://localhost:8888/test/fourth')
+        // setRequestHeader 设置请求头信息
+        // 'application/x-www-form-urlencoded' 表示传输数据的格式像form表单格式一样
+        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = ()=>{
+            if(xhr.readyState === 4){
+                if(xhr.status === 200){
+                    console.log(xhr.responseText)
+                }
+            }
+        } 
+        // 传递数据的格式：formData
+        xhr.send('name=zhangsan&age=18')
+    </script>
+</body>
+</html>

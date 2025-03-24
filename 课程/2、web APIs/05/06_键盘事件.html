@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // onkeydown：当用户按下键盘上任意键触发，如果按住不放，会重复触发  
+        // onkeydown = ()=> {
+        //     console.log('按下')
+        // }
+
+        // onkeyup：当用户释放键盘上的键触发 - 当按键抬起时触发
+        // onkeyup = ()=> {
+        //     console.log('抬起')
+        // }
+
+        // onkeypress：当用户按下键盘上的字符键触发，如果按住不放，会重复触发  不能触发 例如：ALT, CTRL, SHIFT, ESC --- 不是字符键
+        // onkeypress = ()=> {
+        //     console.log(666)
+        // }
+
+        // 使文本框输入不了数字
+        // 文本框里面输入内容，其实属于浏览器的默认行为，return false 可以禁止浏览器的默认行为
+        onkeydown = (e)=> {
+            // 需要找到那几个键是属于数字键，根据 e.keyCode 这个属性来查找
+            // console.log(e.keyCode)
+            // 48 --- 57 是不包含小键盘
+            if(e.keyCode>=48 && e.keyCode<=57){
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

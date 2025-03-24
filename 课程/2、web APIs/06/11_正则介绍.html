@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 如：从杂乱的字符串中找数字
+        let str = "asd68asd687as6da78sd123123zcacas"
+        // let arr = []
+        // for(let i=0; i<str.length; i++){
+        //     if(str[i]>=0 && str[i]<=9){
+        //         arr.push(str[i])
+        //     }
+        // }
+        // console.log(arr)
+
+        // 使用正则
+        // \d 表示的是0-9的数字
+        // g 表示全局匹配
+        let arr = str.match(/\d/g)
+        console.log(arr)
+    </script>
+</body>
+
+</html>

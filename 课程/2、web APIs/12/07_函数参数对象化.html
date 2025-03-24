@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn(num, arr){
+        //     console.log(num + 10)
+        //     for(let i=0; i<arr.length; i++){
+        //         console.log(arr[i])
+        //     }
+        // }
+        // fn(10, ['a', 'b', 'c'])
+
+        // 注意点：如果封装的时候，函数的参数过多的情况，为了避免参数顺序问题，可以把参数对象化
+        // options --- {}
+        function fn(options){
+            console.log(options.num + 10)
+            for(let i=0; i<options.arr.length; i++){
+                console.log(options.arr[i])
+            }
+        }
+        fn({
+            num: 10,
+            arr: ['a', 'b', 'c']
+        })
+    </script>
+</body>
+</html>

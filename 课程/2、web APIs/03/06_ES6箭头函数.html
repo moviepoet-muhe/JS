@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            ES6 箭头函数
+            + 是对普通函数的一种简化
+            + 箭头函数没有自己的 this，它的 this 指向的是上一级代码
+            + 箭头函数只能写成表达式形式
+        */
+        function fn() { }
+
+        // 箭头函数语法
+        const fn = () => {
+            console.log('hello')
+        }
+        fn()
+
+        // 箭头函数如果只有一个参数的时候，可以省略小括号。多个参数的时候必须加小括号
+        const fn = a => {
+            console.log(a)
+        }
+        fn(10)
+
+        // 箭头函数可以省略花括号，当不写画括号的时候，默认会箭头后面的代码当成返回值
+        const fn = a => {
+            return a + 10
+        }
+
+        const fn = a => a + 10
+        console.log(fn(10))
+
+        // 注意点：如果给外界的返回值是一个对象的话，那么需要把对象使用小括号包裹起来
+        const fn = a => ({ name: a })
+        console.log(fn(10))
+
+        // 箭头函数没有自己的 this，它的 this 指向的是上一级代码
+        const fn = () => {
+            console.log(this)
+        }
+        fn()
+
+        let obj = {
+            name: '张三',
+            say() {
+                // 注意点：当定时器或者延时器调用函数时，函数里面的 this 指向的是 window
+                // setTimeout(function(){
+                //     console.log(this)
+                // }, 2000)
+                console.log(this)
+
+                setTimeout(() => {
+                    console.log(this)
+                }, 2000)
+            }
+        }
+        obj.say()
+
+        arr.sort((a, b) => a - b)
+        arr.find(() => { })
+        arr.filter(item => { })
+    </script>
+</body>
+
+</html>

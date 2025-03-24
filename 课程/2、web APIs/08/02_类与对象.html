@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建对象提供的模板
+        // 类（class）指的是一个范围，描述的是一类事物。怎么描述这个事物（对象），使用属性和方法来描述
+        // 例如：描述这个人呢？特征（属性，静态的东西，例如：这个小伙子长的很高，体重240，年龄...）、行为（方法，动态的东西，例如：会开车、喜欢洗脚...）
+        const obj = new Object()
+        obj.name = '王江'
+        obj.say = function () { }
+
+        const obj2 = {
+            name: '王旭',
+            say() { }
+        }
+
+        // 面试题
+        console.log({} == {}) // false
+        console.log([] == []) // false
+    </script>
+</body>
+
+</html>

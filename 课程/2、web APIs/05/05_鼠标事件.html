@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击两次</button>
+    <div style="width: 200px; height: 200px; background-color: orange;"></div>
+    <script>
+        // ondblclick：当用户双击主鼠标按钮时触发 - 连续点击两次
+        // document.querySelector('button').ondblclick = ()=> {
+        //     console.log('test')
+        // }
+
+        // onmousemove：当鼠标指针在元素上移动时触发  
+        const box = document.querySelector('div')
+        // box.onmousemove = ()=> {
+        //     console.log('王江来了')
+        // }
+        // box.onmouseover = ()=> {
+        //     console.log('王江来了')
+        // }
+
+        // onmousedown：当用户按下了鼠标还未弹起时触发 - 弹窗测试最明显
+        box.onmousedown = ()=> {
+            console.log('按下')
+        }
+
+        // onmouseup：当用户释放鼠标按钮时触发 - 鼠标抬起
+        box.onmouseup = ()=> {
+            console.log('抬起')
+        }
+    </script>
+</body>
+</html>

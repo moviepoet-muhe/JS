@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数：构造函数是工厂函数的简写形式，对代码和存储方式做了优化
+        // Person 构造函数（模板 --- class（类））
+        function Person(name, age){
+            // name、age 实例属性、say 实例方法
+            this.name = name
+            this.age = age
+            this.say = function(){
+                console.log('喜欢演讲！')
+            }
+            // console.log(this)
+        }
+        /*
+            当咱们使用new关键字来调用函数的时候，函数内部做了以下处理：
+            + 第一步
+              => 会先在函数内部创建一个对象 const obj = new Object() || const obj = {}
+            + 第二步
+              => 会把创建的对象赋值给当前的执行上下文对象this this = obj
+            + 第三步
+              => 可以使用this进行设置属性和方法
+            + 第四步
+              => 最终会把this返回给外界 return this --- obj
+        */
+        // this 指向总结：当使用new关键字来调用函数的时候，函数内部的this指向的是当前的实例化对象
+        // p1 和 p2 实例化对象
+        const p1 = new Person('王旭', 18)
+        const p2 = new Person('张三', 20)
+
+        // Person() this 指向总结：如果是函数名加括号来调用函数，那么函数内部的this指向的是全局对象window
+
+        // 注意点：在js里面，万物皆对象，你可以把任何东西都当作一个对象来使用
+        // 把直接给构造函数添加属性和方法的这种行为，称之为静态属性和方法
+        // 重点：静态属性和方法只能给构造函数本身使用，实例属性和方法只能给实例化对象使用，相互之间不能混用
+        // money 静态属性
+        // Person.money = '一个小目标'
+        // xj 静态方法
+        // Person.xj = function(){
+        //     console.log('洗脚')
+        // }
+        // console.log(Person.money)
+        // Person.xj()
+
+        // console.log(Person.age) // undefined
+
+        // const p1 = new Person('王旭', 18)
+        // console.log(p1.money) // undefined
+    </script>
+</body>
+</html>

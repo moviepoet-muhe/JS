@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .base{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        .fs{
+            font-size: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        const box = document.querySelector('div')
+        // className 可以给标记设置类名
+        // box.className = 'base'
+        // box.className = 'fs'
+
+        box.classList.add('base')
+        box.classList.add('fs')
+
+        box.classList.remove('fs')
+
+        // toggle 如果存在类名，就是删除，不存在就添加
+        box.classList.toggle()
+    </script>
+</body>
+</html>

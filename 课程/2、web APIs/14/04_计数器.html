@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 80px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1">0</button>
+    <button class="btn2">0</button>
+    <script>
+        const btn1 = document.querySelector('.btn1')
+        const btn2 = document.querySelector('.btn2')
+
+        // let count = 0
+        // btn1.onclick = ()=>{
+        //     count++
+        //     btn1.innerHTML = count
+        // }
+        // btn2.onclick = ()=>{
+        //     count++
+        //     btn2.innerHTML = count
+        // }
+
+        function countFn(){
+            // 保护私有变量，延长变量生命周期
+            let count = 0
+            return function(){
+                count++
+                return count
+            }
+        }
+        const addFn1 = countFn()
+        const addFn2 = countFn()
+        btn1.onclick = ()=>{
+            btn1.innerHTML = addFn1()
+        }
+        btn2.onclick = ()=>{
+            btn2.innerHTML = addFn2()
+        }
+    </script>
+</body>
+</html>

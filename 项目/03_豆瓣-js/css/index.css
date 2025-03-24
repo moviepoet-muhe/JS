@@ -1,0 +1,679 @@
+/* 主页样式  index.html ： 68行 */
+
+/* ----------------主页导航 index.html ： 68行 */
+nav {
+  margin-bottom: 50px;
+  width: 100%;
+  height: 74px;
+  background: #edf4ed;
+}
+
+/* 主页导航版心  左右侧分离 */
+nav .wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 主页导航左侧 */
+nav .left {
+  display: flex;
+  align-items: center;
+}
+
+/* 主页导航左侧 logo */
+nav .nav-logo {
+  margin-right: 20px;
+  width: 184px;
+  height: 57px;
+  background: url(../assets/images/lg_main@2x.png) no-repeat center;
+  background-size: 90%;
+  font-size: 0;
+}
+
+nav .nav-logo a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 主页导航左侧导航 */
+nav .left ul {
+  display: flex;
+}
+
+/* 主页导航左侧导航单个选项 */
+nav .left ul li {
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+nav .left ul li a {
+  color: #072;
+}
+
+nav .left ul li a:hover {
+  background-color: #072;
+  color: #fff;
+}
+
+nav .left ul li:last-child a {
+  position: relative;
+}
+
+nav .left ul li:last-child img {
+  position: absolute;
+  top: -7px;
+  right: -13px;
+  width: 17px;
+  height: 7px;
+}
+
+/* 主页导航右侧表单区域 */
+nav .right form {
+  display: flex;
+  justify-content: space-between;
+  width: 278px;
+  height: 28px;
+  border: 1px solid #e1e9e1;
+  background: #fff;
+}
+
+/* 搜索按钮 */
+nav .right .btn {
+  width: 30px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0) url(../assets/images/bn_srh_1.png) no-repeat 50% 50%;
+  font-size: 0;
+  cursor: pointer;
+}
+/* 输入框 */
+nav .right .inpt {
+  padding-left: 10px;
+  flex: 1;
+}
+
+
+/* ----------------------主要内容区域 html:97行  左右分离 */
+.content {
+  display: flex;
+}
+
+/* 左侧内容区域 */
+.content section {
+  padding-right: 40px;
+  width: 675px;
+}
+
+/* 用户档案  数据由 index.js:第4行开始 渲染 */
+section .usr-profile {
+  display: flex;
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+/* 用户头像 */
+section .usr-profile .usr-pic {
+  position: relative;
+  margin-right: 12px;
+  width: 52px;
+  height: 56px;
+}
+
+section .usr-profile .usr-pic a img {
+  width: 52px;
+  height: 56px;
+}
+
+section .usr-profile .usr-pic .icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: url(../assets/images/ic_verify@2x.png) no-repeat center/cover;
+
+}
+
+/* 用户资料 */
+section .usr-profile .usr-info h1 {
+  padding: 0 0 4px 0;
+  font-weight: bold;
+  color: #494949;
+}
+
+/* 签名档  功能由 index.js:第26行开始实现*/
+section .usr-profile .usr-info h1 .signature {
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: normal;
+  color: #666666;
+}
+
+/* 签名档输入框 按钮  */
+section .usr-profile .usr-info h1 .signature input {
+  margin-right: 3px;
+  border: 1px solid;
+  vertical-align: middle;
+}
+
+/* 签名档输入框 */
+section .usr-profile .usr-info h1 .signature .signature-input {
+  padding-left: 3px;
+}
+
+/* 用户菜单导航 */
+section .usr-profile .usr-info ul li {
+  display: inline;
+  margin-right: 1em;
+}
+
+section .usr-profile .usr-info ul li:nth-child(7) {
+  margin-right: 0;
+}
+
+/* 操作伪类作为分隔符 */
+section .usr-profile .usr-info ul .sub-menu::before {
+  content: '|';
+  display: inline-block;
+  margin: -3px 3px 0 0;
+  width: 1px;
+  height: 14px;
+  background: #bbb;
+  vertical-align: middle;
+  font-size: 0;
+}
+
+/* 用户作品 */
+section .works {
+  margin-bottom: 35px;
+}
+
+/* 标题 */
+section .works h2 {
+  color: #072;
+  margin: 0 0 8px 0;
+}
+
+section .works h2 a:last-child {
+  color: #494949;
+}
+
+section .works h2 a:last-child:hover {
+  background: none;
+}
+
+/* 作品列表 */
+section .works .work-wrapper {
+  display: flex;
+}
+
+/* 单个作品item */
+section .works .work-wrapper .work-item {
+  border: 1px solid #fcefe1;
+
+}
+
+section .works .work-wrapper .work-item a {
+  display: flex;
+  padding: 15px;
+  transition: all 0.6s ease;
+}
+
+section .works .work-wrapper .work-item a:hover {
+  background: none;
+  box-shadow: 5px 5px 8px rgba(155, 155, 155, 0.5) ;
+  transform: translateY(-2px);
+}
+
+/* 作品封面 */
+section .works .work-wrapper .work-item .cover {
+  margin-right: 12px;
+  display: flex;
+  height: 90px;
+  line-height: 1;
+}
+
+/* 作品信息 */
+section .works .work-wrapper .work-item .info {
+  color: #9b9b9b;
+}
+
+/* 作品信息标题 */
+section .works .work-wrapper .work-item .info .work-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  color: #494949;
+}
+
+/* 评价 */
+ section .works .work-wrapper .work-item .info .rating {
+  margin: 4px 0;
+}
+
+/* 作者 */
+section .works .work-wrapper .work-item .info .role {
+  display: inline-block;
+  padding: 3px;
+  margin-top: 4px;
+  border: 1px solid rgba(155, 155, 155, 0.5);
+  border-radius: 3px;
+  line-height: 1;
+}
+
+
+/* entry 条目通用样式 --------- 我的游戏 */
+/* 原始 html ：165行 */
+section .entry {
+  margin-bottom: 35px;
+}
+/* 标题 */
+.entry .entry-title {
+  margin: 0 0 12px 0;
+  display: flex;
+  justify-content: space-between;
+  color: #072;
+  cursor: move;
+}
+
+/* 鼠标点击标题 使条目改变样式 js：90行 */
+section .hovered{
+  border: 1px dashed ;
+  opacity: 0.6;
+}
+
+.entry .entry-title:hover {
+  background: #f2fbf2;
+}
+
+/* 通用样式 entry 条目 右侧按钮 html:241行启用 */
+.entry .entry-title .entry-title-btn {
+  margin-left: 10px;
+  padding: 0 10px 0 10px;
+  border: 1px solid #edded4;
+  border-radius: 2px;
+  background: #fcf7f3;
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* 右侧按钮前 ‘+’ 样式  */
+.entry .entry-title .entry-title-btn i {
+  margin-right: 4px;
+  vertical-align: baseline;
+  font-size: 16px;
+  color: #432d0f;
+}
+
+/* 条目内容 */
+.entry-content {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* 条目内容左侧标题 */
+.entry-content .entry-content-title{
+  width: 26px;
+  white-space: nowrap;
+}
+
+/* 条目内容父容器 ul */
+.entry-content ul {
+  display: flex;
+}
+
+/* 每一个子项目 li */
+.entry-content .entry-content-li {
+  margin: 0 0 20px 35px;
+  width: 85px;
+  height: 128px;
+  transition: all 0.6s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.entry-content .entry-content-li:hover{
+  box-shadow: 5px 5px 8px rgba(155, 155, 155, 0.5) ;
+  transform: translateY(-2px);
+}
+
+.entry-content .entry-content-li a{
+  display: inline-block;
+}
+
+/* 子项目图片 */
+.entry-content .entry-content-li .climg {
+  width: 100%;
+  height: auto;
+}
+
+
+/* 我的日记 */
+/* 复用 CSS 270行 entry 条目通用样式 */
+/* 通用样式原始 html：178行  */
+.note-content-item {
+  margin-bottom: 20px;
+}
+
+/* 日记内容摘要 */
+.note-content-item .note-abstract {
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;  
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  /* white-space: pre-wrap; 保留文本空格与换行*/
+  /* 动态计算盒子高度满足五行显示 */
+  max-height: calc(1.5em * 5);
+  width: 100%;
+  line-height: 1.5;
+}
+
+/* 我的照片 */
+/* 复用 CSS 270行 entry 条目通用样式 */
+/* 通用样式原始 html：178行  */
+.photo-content ul{
+  display: flex;
+  overflow: hidden;
+}
+
+.photo-content ul li{
+  margin-right: 40px;
+  width: 100px;
+  transition: all 0.6s ease;
+}
+
+.photo-content ul li:hover{
+  box-shadow: 2px 5px 8px rgba(155, 155, 155, 0.5) ;
+  transform: translateY(-2px);
+}
+
+
+.photo-content .photo-img{
+  padding: 5px 8px 8px 5px;
+  height: auto;
+  background: url(../assets/images/photo_bk.gif)  no-repeat;
+  background-size: 100%;
+}
+
+/* 我读 */
+/* 复用 CSS 270行 entry 条目通用样式 */
+/* 通用样式原始 html：178行  */
+
+/* 我听 */
+/* 复用 CSS 270行 entry 条目通用样式 */
+/* 通用样式原始 html：178行  */
+.music .entry-content .entry-content-li{
+  height: 85px;
+}
+
+/* 留言板 */
+/* 复用 CSS 270行 entry 条目通用样式 */
+/* 通用样式原始 html：178行  */
+/* JS ：124行*/
+
+.board form textarea{
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  padding: 10px; 
+  font-family: Arial, sans-serif; 
+  font-size: 14px;
+  transition: all 0.6s ease;
+}
+
+.board form textarea:focus{
+  height: 100px;
+}
+
+
+.board form .total {
+  float: right;
+  color: #999;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.board form .show{
+  opacity: 1;
+}
+
+
+.board form  ul{
+  width: 100%;
+  word-wrap: break-word;
+  overflow: hidden;
+  padding: 20px 0 0;
+}
+
+
+/* 追加留言 */
+.board form  ul li{
+  font-size: 16px; 
+  line-height: 1.5; 
+  padding: 8px 0; 
+  border-bottom: 1px solid #f1f1f1; 
+}
+
+/* 删除留言 */
+.board form ul li span{
+  float: right;
+  cursor: pointer;
+  color: red; 
+  font-weight: bold; 
+}
+
+
+/* 按钮样式 */
+.board form button {
+  background-color: #45a049; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 14px;
+}
+
+.board form button:hover {
+  background-color: #072;
+}
+
+/* -------------------------------右侧内容区域 */
+.content aside {
+  width: 300px;
+}
+
+/* 用户档案 */
+.profile{
+  margin-bottom: 35px;
+  word-wrap: break-word;
+  padding: 4px 9px;
+  background: #fff6ed;
+  border: 1px solid #faefe3;
+  overflow: hidden;
+}
+
+
+/* 基本信息 */
+.profile .basic-info{
+  display: flex;
+}
+
+/* 用户图片 */
+.profile .basic-info .userface{
+
+  width: 160px;
+  height: 160px;
+  margin: 1px 10px 8px 0;
+}
+
+/* 创作者认证 */
+
+.profile .profile-verify{
+  display: inline-block;
+  position: relative;
+  background: #ff9000;
+  color: #fff;
+  margin: 15px 10px 15px 15px;
+  padding: 0 10px;
+  font-size: 11px;
+  border-radius: 0 16px 16px 0;
+}
+
+.profile .user-verify a{
+  display: inline-block;
+  position: relative;
+}
+
+
+/* 认证图标 */
+.profile-verify::before {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  content: '';
+  position: absolute;
+  transform: translateX(-50%);
+  left: -2px;
+  bottom: -6px;
+  background:url(../assets/images/ic_verify_profile.png)  no-repeat;
+}
+/* 认证图标移入显示 */
+.profile .user-verify a::after{
+  display: inline-block;
+  content: attr(aria-label);
+  left: 100%;
+  padding: 5px 8px;
+  height: 18px;
+  width: 72px;
+  font-size: 12px;
+  background: #545652;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.profile .user-verify a:hover{
+  background: none;
+}
+
+.profile .user-verify a:hover::after{
+  opacity: 1;
+}
+
+/* 分割线 */
+.sep-line {
+  height: 0;
+  border-bottom: 1px solid #f5e9db;
+  margin: 5px;
+}
+
+/* 我的广播 */
+
+/* 标题 复用 */
+aside h2{
+  color: #072;
+  line-height: 150%;
+  margin-bottom: 12px;
+}
+
+/* 每条广播 */
+.broadcast-item{
+  border-bottom: 1px solid #eee;
+  padding: 14px 0;
+  min-height: 48px;
+  line-height: 1.62;
+}
+
+.broadcast .broadcast-item:first-of-type{
+  padding-top: 0;
+}
+
+/* 文字 */
+.broadcast-item .text{
+  margin: 0 0 5px 0;
+  word-break: break-all;
+}
+
+.broadcast-item .created_at a,
+.broadcast-item .like-count {
+  color: #aaa;
+}
+
+.broadcast-item .created_at a:hover{
+  background-color:#aaa ;
+  color: #fff;
+}
+
+/* 评分 */
+.broadcast-item .text .star{
+  margin: 0 0 0 4px;
+  display: inline-block;
+  width: 55px;
+  height: 11px;
+  background:url(../assets/images/ic_rating_s.png) no-repeat 0 -22px;
+}
+
+.broadcast-item .text .star-2{
+  background:url(../assets/images/ic_rating_s.png) no-repeat 0 -11px;
+}
+
+.broadcast-item .text .star-3{
+  background:url(../assets/images/ic_rating_s.png) no-repeat 0 -33px;
+}
+
+
+/* 我的关注 */
+.friend{
+  margin-top: 12px;
+}
+
+.sort img{
+  width: 48px;
+  height: 48px;
+}
+
+.sort ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sort ul li {
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.sort .dis{
+  margin-top: 15px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* 被关注 */
+.rev-link{
+  margin-bottom: 30px ;
+}
+
+.feed{
+  background: url(../assets/images/feed1.png) no-repeat;
+  font-size: 14px;
+  padding-left: 20px;
+}

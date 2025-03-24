@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="one">第一个按钮</button>
+    <button class="two">第二个按钮</button>
+    <script>
+        const one = document.querySelector('.one')
+        const two = document.querySelector('.two')
+
+        // 事件绑定
+        // 事件绑定，给同一个元素无法绑定相同的多个事件。如果绑定多个，后面的会把前面的给覆盖掉
+        // 事件绑定操作简单，兼容性会更好
+        // one.onclick = ()=> {
+        //     alert('事件绑定1')
+        // }
+        // one.onclick = ()=> {
+        //     alert('事件绑定2')
+        // }
+
+        // 事件监听
+        // 参数1表示监听那个事件，事件名称不需要加on。参数2是一个回调函数（callback）。参数3表示捕获（true）还是冒泡（false，默认）
+        // two.addEventListener('click', ()=> {
+        //     alert('事件监听1')
+        // })
+        // two.addEventListener('click', ()=> {
+        //     alert('事件监听2')
+        // })
+
+        let fn1 = ()=> {
+            alert('事件监听1')
+        }
+        let fn2 = ()=> {
+            alert('事件监听2')
+        }
+        two.addEventListener('click', fn1)
+        two.addEventListener('click', fn2)
+
+        // 注意点：如果要取消监听的事件，监听事件的时候不要使用匿名函数
+        two.removeEventListener('click', fn1)
+    </script>
+</body>
+</html>

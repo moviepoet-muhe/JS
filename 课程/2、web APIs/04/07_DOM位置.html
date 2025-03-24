@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .parent {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            margin-left: 100px;
+            /* position: relative; */
+        }
+
+        .parent .son {
+            width: 180px;
+            height: 180px;
+            background-color: hotpink;
+            /* margin-left: 50px; */
+            position: absolute;
+            left: 100px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="son"></div>
+    </div>
+    <script src="../../js/tools.js"></script>
+    <script>
+        /*
+            box.offsetLeft  需要定位参照  
+            box.offsetTop   获取元素当前相对于offsetParent父元素的位置
+
+            parentNode
+            parentElement
+            offsetParent --- 查看父元素是否存在定位流
+        */
+        // console.log($('.son').offsetLeft)
+        // console.log($('.son').offsetTop)
+
+        console.log($('.son').parentNode)
+        console.log($('.son').parentElement)
+        console.log($('.son').offsetParent)
+    </script>
+</body>
+
+</html>

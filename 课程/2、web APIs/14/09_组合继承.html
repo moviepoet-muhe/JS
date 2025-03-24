@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 组合继承
+        function Father(name, age){
+            this.name = name
+            this.age = age
+        }
+        Father.prototype.money = function(){
+            console.log('非常能赚钱！')
+        }
+
+        function Son(name, age){
+            // 借用构造函数继承
+            Father.call(this, name, age)
+        }
+        // 原型继承
+        Son.prototype = new Father()
+
+        Son.prototype.love = function(){
+            console.log('潇洒恋爱')
+        }
+        const s = new Son('王小江', 18)
+        console.log(s)
+        s.money()
+    </script>
+</body>
+</html>

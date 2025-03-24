@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Number() 把其他类型转成数值类型
+
+        // 把字符串转成数值类型
+        // var data = 'a' // NaN
+        // var data = '10' // 10
+        // var data = '' // 0
+        var data = '      ' // 0
+        // var data = 'abc' // NaN
+        // 注意点1：把空字符串和字符串里面只有一个空格的字符串转成数值类型结果是0
+        // 注意点2：字符串里面如果不是纯数字的字符，那么转成数值类型后结果是NaN（not a number）
+        console.log('现在的值', data)
+        console.log('现在值的类型', typeof data)
+        var res = Number(data)
+        console.log('转换后的值', res)
+        console.log('转换后值的类型', typeof res)
+
+        // 把布尔类型转成数值类型
+        // 注意点3：把布尔值true和false转成数值类型，结果分别是1和0
+        // var data = true
+        // var data = false
+        // console.log('现在的值', data)
+        // console.log('现在值的类型', typeof data)
+        // var res = Number(data)
+        // console.log('转换后的值', res)
+        // console.log('转换后值的类型', typeof res)
+
+        // 把 null 和 undefined 转成数值类型
+        // var data = null
+        // 注意点4：把null转成数值类型结果是0
+        // 注意点5：把undefined转成数值类型结果是NaN
+        // var data = undefined
+        // console.log('现在的值', data)
+        // console.log('现在值的类型', typeof data)
+        // var res = Number(data)
+        // console.log('转换后的值', res)
+        // console.log('转换后值的类型', typeof res)
+    </script>
+</body>
+
+</html>

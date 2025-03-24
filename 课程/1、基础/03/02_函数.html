@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/tools.js"></script>
+    <script>
+        /*
+            function 函数
+            + 对于反复使用的功能对其封装成一个代码块，可以多次使用，把这种代码块称之为函数
+            + 函数是引用（复杂、复合）数据类型
+            + 函数规则
+              => 函数内部的数据，函数外部是无法进行访问的
+            + 声明函数
+              => function 函数名称(形参1, 形参2...){
+                  功能代码
+              }
+              => 函数名称(实参1, 实参2...)
+            + 说明
+              => function 系统关键字，表示函数
+              => 函数名称，命名遵循是变量的命名规则
+              => 函数不调用，函数内部的代码不会执行。函数调用方式，通过函数名称加括号 例如：fn()
+            + 函数参数
+              => 形参，形式上的参数，起了一个占位的作用，相当于声明了一个变量，但是这个变量是不需要通过 var 关键字来声明
+              => 实参，就是实际上要使用的数据
+              => 函数的参数可以让函数本身在使用的时候变得更为灵活
+              => 函数的形参要和实参一一对应（映射）
+              => 函数的参数传递可以是任意数据类型
+            + 函数参数默认值
+              => 这个特性是 ES6 新增的
+        */
+        // 问题：命名冲突，可以在任意的地方进行修改，并且这个名称不能再次使用
+        // var desc = '王江进步很大！'
+        // var desc = '邓为'
+        // document.write('<h1>'+desc+'</h1>')
+
+        // 问题：逻辑是一样的，但是代码重复太多
+        // var num1 = 10
+        // var num2 = 20
+        // if(num1>num2){
+        //     console.log(num1)
+        // }else{
+        //     console.log(num2)
+        // }
+
+        // var x = 66
+        // var y = 88
+        // if(x>y){
+        //     console.log(x)
+        // }else{
+        //     console.log(y)
+        // }
+
+        // 声明函数
+        // function fn(){
+        //     console.log('王江喜欢黑丝！')
+        //     // var myName = '王江vip'
+        // }
+        // fn()
+        // fn()
+        // fn()
+        // fn()
+        // fn()
+        // console.log(typeof fn) // function
+
+        // function getMax(x, y){
+        //     // if(x > y){
+        //     //     console.log(x)
+        //     // }else{
+        //     //     console.log(y)
+        //     // }
+
+        //     x > y ? console.log(x) : console.log(y)
+        // }
+        // getMax(30, 20)
+        // getMax(66, 88)
+
+        // 形参可以设置默认值
+        // function fn2(name='admin', age=18){
+        //     document.write('欢迎：'+ name + '，今年：'+age)
+        // }
+        // fn2('王江')
+
+        // getMax(10, 20)
+    </script>
+</body>
+</html>

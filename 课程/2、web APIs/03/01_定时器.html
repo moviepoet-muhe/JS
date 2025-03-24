@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            setInterval()
+            + 定时器，可以根据不同的时间，不断去执行代码
+            + params
+              => 参数1 callback 回调函数
+              => 参数2 时间 s 表示秒 ms 毫秒 默认是毫秒
+        */
+        var i = 0
+        setInterval(function () {
+            i++
+            console.log(i)
+        }, 1000)
+
+        function addFn() {
+            i++
+            console.log(i)
+        }
+        setInterval(addFn, 1000)
+
+        setInterval(function () {
+            var random = Math.random()
+            console.log(random)
+        }, 1000)
+
+        // 取范围随机数公式 random = Math.random()*(max-min)+min  max = 20  min = 10
+        var max = 999999
+        var min = 100000
+        function randomColor() {
+            var random = parseInt(Math.random() * (max - min) + min)
+            document.body.bgColor = '#' + random
+        }
+        // 初始化调用
+        randomColor()
+        setInterval(randomColor, 1000)
+
+        // document.documentElement html
+        // document.body body
+        // document.head head
+        // document.title 获取标题和设置标题
+        // console.log(document.head)
+        // console.log(document.title)
+        // document.title = '这是一个标题'
+    </script>
+</body>
+
+</html>

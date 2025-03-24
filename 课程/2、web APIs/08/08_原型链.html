@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、构造函数线索
+        // 问题：Person构造函数（对象）是由那个构造函数实例化出来的呢？Function构造函数（顶层）
+        // 总结：对于构造函数来说，所有的构造函数都是由Function构造函数实例化出来的
+        function Person(name, age){
+            this.name = name
+            this.age = age
+        }
+        Person.prototype.say = function(){
+            console.log('喜欢演讲！原型对象')
+        }
+        const p1 = new Person('王旭', 18)
+
+        // Function构造函数（顶层）
+        // console.log(Function)
+        // Function构造函数原型对象
+        // console.log(Function.prototype) // ƒ () { [native code] }
+        // console.log(Function.prototype.constructor)
+
+        // Person隐式原型对象
+        // console.log(Person.__proto__)
+
+        // Object隐式原型对象
+        // console.log(Object.__proto__)
+
+        // Array隐式原型对象
+        // console.log(Array.__proto__)
+
+        // 2、原型对象线索
+        // 问题：原型对象也是对象，那么原型对象是由谁实例化出来的呢？Object原型对象实例化出来的
+        console.log(Object.prototype)
+        console.log(Person.prototype.__proto__)
+        console.log(Function.prototype.__proto__)
+        console.log(Object.prototype.__proto__) // null
+    </script>
+</body>
+</html>

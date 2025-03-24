@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name){
+                this.name = name
+            }
+            say(){
+                console.log(this.name + '喜欢演讲！')
+                return this
+            }
+            running(){
+                console.log(this.name + '喜欢跑步')
+            }
+        }
+        // new Person('王江').say() 函数调用，接收返回值是 this --- new Person()
+        new Person('王江')
+        .say()
+        .running()
+    </script>
+</body>
+</html>

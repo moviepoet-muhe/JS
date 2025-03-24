@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+            // this.say = function(){
+            //     console.log('喜欢演讲！构造函数内部')
+            // }
+        }
+        /*
+            prototype 原型对象
+            + 每一个构造函数都存在一个prototype属性，这个属性指向一个对象，对象里面存储的属性和方法可以对所有的这个
+            构造函数的实例化对象所共享，把这个对象称之为原型对象
+            + 查找规则
+              => 如果构造函数本身具有这个方法就直接使用
+              => 如果没有这个方法，就去构造函数的原型对象上去找
+        */
+        Person.prototype.say = function () {
+            console.log('喜欢演讲！原型对象')
+        }
+        console.log(Person.prototype)
+        // 实例化对象
+        const p1 = new Person('王旭', 18)
+        const p2 = new Person('张三', 20)
+        p1.say()
+        console.log(p1.say == p2.say) // true
+
+        console.log(Array.prototype)
+        console.log(Date.prototype)
+
+        let arr = [10, 20, 30, 60, 80]
+        // 给内置对象数组的原型上面添加了一个计算和的方法
+        Array.prototype.getSum = function () {
+            let sum = 0
+            for (let i = 0; i < this.length; i++) {
+                sum += this[i]
+            }
+            return sum
+        }
+        console.log(arr.getSum())
+    </script>
+</body>
+
+</html>

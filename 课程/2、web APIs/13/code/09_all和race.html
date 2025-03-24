@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <ul></ul>
+    <script src="./js/ajax.js"></script>
+    <script>
+        // Promise.all() 当有多个请求的时候，必须所有的请求都完成时才返回结果
+        // const res1 = pAjax({url: 'http://localhost:2402/user/request1'})
+        // const res2 = pAjax({url: 'http://localhost:2402/user/request2'})
+        // Promise.all([res1, res2]).then(data=>{
+        //     console.log(data)
+        // })
+
+        // Promise().race() 当有多个请求的时候，那个请求回来的快就返回那个请求
+        // Promise.race([res1, res2]).then(data=>{
+        //     console.log(data)
+        // })
+
+        const ul = document.querySelector('ul')
+        pAjax({url: 'http://localhost:2402/user/pic'}).then(res=>{
+            const list = JSON.parse(res).slice(0, 200)
+            list.forEach(item=>{
+                ul.innerHTML += `
+                     <li>
+                        <img src="${item.src}">
+                        <p>${item.title}</p>
+                    </li>
+                `
+            })
+        })
+    </script>
+</body>
+</html>

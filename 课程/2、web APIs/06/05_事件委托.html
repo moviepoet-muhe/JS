@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            background-color: hotpink;
+            padding: 20px;
+        }
+        ul li{
+            background-color: gold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="li1">王江爱学习1</li>
+        <li>王江爱学习2</li>
+        <li>王江爱学习3</li>
+        <li>王江爱学习4</li>
+        <li id="li5">王江爱学习5</li>
+        <span style="background-color: greenyellow;">哈哈</span>
+    </ul>
+    <script>
+        // const aLi = document.querySelectorAll('ul li')
+        const ul = document.querySelector('ul')
+
+        // 问题：后面创建li是没有绑定上事件的，相同的元素相同的事件绑定了很多次
+        // for(let i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = ()=> {
+        //         alert('123')
+        //     }
+        // }
+
+        // 解决方案：可以使用事件委托
+        ul.onclick = (e)=> {
+            // e.target 事件目标对象
+            // alert('123')
+            // console.log(e.target)
+            if(e.target.className === 'li1' ){
+                alert('123')
+            }
+            if(e.target.id === 'li5' ){
+                alert('666')
+            }
+            if(e.target.nodeName === 'SPAN' ){
+                alert('888')
+            }
+        }
+
+        // 动态创建几个li
+        for(let j=0; j<5; j++){
+            let li = document.createElement('li')
+            li.innerHTML = `王江抄1遍！${j+1}`
+            ul.appendChild(li)
+        }
+    </script>
+</body>
+</html>

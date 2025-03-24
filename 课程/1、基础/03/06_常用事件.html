@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+        }
+    </style>
+    <script>
+        // var box = document.querySelector('div')
+        // console.log(box) // null
+
+        // onload = function(){
+        //     var box = document.querySelector('div')
+        //     console.log(box)
+        // }
+
+        window.onload = function () {
+            var box = document.querySelector('div')
+            console.log(box)
+        }
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // onmouseover 鼠标移入到某个元素的时候触发
+        // onmouseout 鼠标移出时触发
+        // css :hover{} 类似它的组合
+
+        // style 内联样式表
+
+        var box = document.querySelector('div')
+        box.onmouseover = function () {
+            // console.log('当鼠标移入时')
+            box.style.backgroundColor = 'orange'
+        }
+        // box.onmouseout = function(){
+        //     // console.log('当鼠标移出时')
+        //     box.style.backgroundColor = 'hotpink'
+        // }
+
+        // onload 加载事件。当网页中所有的内容加载完毕后，才执行这个事件
+
+        // var box = document.querySelector('div')
+        // console.log(box)
+    </script>
+</body>
+
+</html>

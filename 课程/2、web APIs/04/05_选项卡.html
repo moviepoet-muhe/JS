@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab{
+            width: 500px;
+            height: 300px;
+            border: 1px solid orange;
+            margin: 50px auto;
+        }
+        .tab .btn{
+            height: 40px;
+            background-color: gold;
+        }
+        .tab .btn span{
+            float: left;
+            width: 20%;
+            height: 40px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .tab .btn .active{
+            background-color: greenyellow;
+        }
+        .tab .content{
+            height: 260px;
+            background-color: hotpink;
+        } 
+        .tab .content div{
+            width: 100%;
+            height: 100%;
+            line-height: 50px;
+            display: none;
+        }
+        .tab .content .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- tab 切换 -->
+    <div class="tab">
+        <div class="btn">
+            <span class="active">新闻1</span>
+            <span>新闻2</span>
+            <span>新闻3</span>
+            <span>新闻4</span>
+            <span>新闻5</span>
+        </div>
+        <div class="content">
+            <div class="show">联播+｜推陈出“新” 解码中国经济增长关键动力</div>
+            <div>浙东的江南小城台州临海，“藏”了哪些惊喜</div>
+            <div>“喊十句口号，不如做一件实事”</div>
+            <div>男子在刘谦面前表演魔术 刘谦看完都长大嘴巴惊到了</div>
+            <div>文化奇遇记 | 这趟特别的地铁专列一定要乘坐，体验流动的“中轴线”文化！</div>
+        </div>
+    </div>
+    <script src="./js/tools.js"></script>
+    <script>
+        // 获取元素
+        const aBtn = $('.btn span', true)
+        const acontent = $('.content div', true)
+        
+        // 点击按钮改变背景颜色
+        for(var i=0; i<aBtn.length; i++){
+            // 可以使用自定义属性
+            aBtn[i].setAttribute('index', i)
+            // aBtn[i].index = i
+            aBtn[i].onclick = function(){
+                for(var j=0; j<aBtn.length; j++){
+                    aBtn[j].classList.remove('active')
+                    acontent[j].classList.remove('show')
+                }
+                this.classList.add('active')
+                // acontent[i].classList.add('show')
+                // console.log(i)
+                // console.log(this.getAttribute('index'))
+                // console.log(this.index)
+                let _index = this.getAttribute('index')
+                acontent[_index].classList.add('show')
+            }
+        }
+    </script>
+</body>
+</html>

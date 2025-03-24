@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 隐式数据类型转换，当在使用运算符的时候，运算符会根据规则默认进行数据类型转换
+        
+        // 1.字符串加数字,数字就会转成字符串。
+
+        // 2.数字减字符串，字符串转成数字。如果字符串不是纯数字就会转成NaN。字符串减数字也一样。两个字符串相减也先转成数字。
+
+        // 3.乘，除，大于，小于跟减的转换也是一样。
+
+        // console.log(10 + '10')
+        // console.log(10 - '5')
+        // console.log(10 * '5')
+        // console.log(10 / '5')
+
+        // console.log(10 > '5')
+        // console.log(10 < '5')
+
+        // console.log(10 - '5px')
+        // console.log(10 - '$5')
+
+
+        // 1.undefined等于null
+        // console.log(undefined == null)
+      
+        // 2.字符串和数字比较时，字符串转数字
+        // console.log(10 == '10')
+
+        // 3.数字和布尔比较时，布尔转数字
+        // console.log(1 == true)
+        // console.log(2 == true)
+
+        // 4.字符串和布尔比较时，两者转数字
+        console.log('1' == true)
+        console.log('0' == false)
+    </script>
+</body>
+</html>

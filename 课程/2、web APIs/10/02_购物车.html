@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+
+<body>
+    <div class="cartTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>全选</th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" value="" class="select"></td>
+                    <td>
+                        <img src="">
+                        <span style="font-size:14px;">小米手机</span>
+                    </td>
+                    <td><span>150</span></td>
+                    <td>
+                        <button class="sub">-</button>
+                        <input type="text" value="2" class="count">
+                        <button class="add" data-id=${item.id}>+</button>
+                    </td>
+                    <td><span class="price">300元</span></td>
+                    <td><span class="del">删除</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">
+            <div class="left">
+                <input type="checkbox" value="" class="allCheck" ${_state && "checked" } />
+                <span class="dlAll">删除</span>
+            </div>
+            <div class="rirght">
+                <div class="allNum">已选商品<b class="totalNum">3</b>件</div>
+                <div class="allCount">合计 ￥<b class="money">200</b>元</div>
+                <div class="calc">结算</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/cart.js"></script>
+</body>
+
+</html>

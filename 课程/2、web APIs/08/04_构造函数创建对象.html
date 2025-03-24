@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数：构造函数是工厂函数的简写形式，对代码和存储方式做了优化
+        // 要求1：建议构造函数名称首字母大写，这样做主要是为了和其他函数做区分
+        function Person(name, age){
+            // 要求2：构造函数内部全部使用this来添加属性和方法
+            this.name = name
+            this.age = age
+            this.say = function(){
+                console.log('喜欢演讲！')
+            }
+        }
+        // 要求3：构造函数的调用需要使用new关键字
+        const p1 = new Person('王旭', 18)
+        const p2 = new Person('张三', 20)
+        console.log(p1, p2)
+
+        /*
+            当咱们使用new关键字来调用函数的时候，函数内部做了以下处理：
+            + 第一步
+              => 会先在函数内部创建一个对象 const obj = new Object() || const obj = {}
+            + 第二步
+              => 会把创建的对象赋值给当前的执行上下文对象this this = obj
+            + 第三步
+              => 可以使用this进行设置属性和方法
+            + 第四步
+              => 最终会把this返回给外界 return this --- obj
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            作用域链访问规则
+            + 先在当前的作用域里面进行访问，如果找到就使用，没有就去上一级作用域里面查找
+            + 如果找到 0 级作用域里面还是没有就报错
+            + 注意点
+              => 作用域链的访问都是从里面往外面进行查找
+              => 不能从外面访问里面
+        */
+        // 0 级作用域
+        var a = 'a'
+        function wjFn(){
+            // 1 级作用域
+            var b = 'nb'
+            function sonFn(){
+                // 2 级作用域
+                var c = 'cc'
+                function fn(){
+                    // 3 级作用域
+                    var c = 'ccc'
+                    console.log(c)
+                }
+                fn()
+            }
+            sonFn()
+        }
+        wjFn()
+    </script>
+</body>
+</html>

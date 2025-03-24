@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt1">
+    +
+    <input type="text" id="txt2">
+    <button>=</button>
+    <input type="text" id="txt3">
+    <script>
+        // 获取元素
+        var txt1 = document.querySelector('#txt1')
+        var txt2 = document.querySelector('#txt2')
+        var txt3 = document.querySelector('#txt3')
+
+        var btn = document.querySelector('button')
+
+        // 表单的值是存储在 value 属性里面的
+        // console.log(txt1.value)
+        // console.log(txt2.value)
+
+        // 当输入值后，再进行计算
+        // function calcFn(){
+        //     console.log(txt1.value)
+        //     console.log(txt2.value)
+        // }
+        
+        // 通过事件调用函数，事件指的是用户在网页中一些列的操作。例如：onclick 点击事件
+        // 绑定事件（给元素）
+
+        // 第一种写法：事件调用函数
+        // btn.onclick = calcFn
+
+        // 第二种写法：事件调用函数
+        // 注意点：把没有名称的函数称之为匿名函数
+        btn.onclick = function(){
+            // console.log(typeof txt1.value)
+            // console.log(typeof txt2.value)
+            // alert(Number(txt1.value) + Number(txt2.value))
+
+            // txt3.value = Number(txt1.value) + Number(txt2.value)
+
+            // 非空验证
+            if(txt1.value === '' || txt2.value === ''){
+                alert('亲，表单不能为空！')
+                return
+            }
+
+            var num1 =  Number(txt1.value)
+            var num2 =  Number(txt2.value)
+            txt3.value = num1 + num2
+
+            // var num1 =  Number(txt1.value)
+            // var num2 =  Number(txt2.value)
+            // result 拿到的是 txt3.value 里面的值，并不是表示的是 txt3.value
+            // var result = txt3.value
+            // 相当于 把值赋值给 result 这个变量了，而不是 txt3.value，因此不会显示
+            // result = num1 + num2
+        }
+    </script>
+</body>
+</html>

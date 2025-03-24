@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+    <ul></ul>
+    <a href="./02_购物车.html">
+        <div class="count">
+            商品共<span>0</span>件
+        </div>
+    </a>
+    <script src="./data/mi.js"></script>
+    <script>
+        class AddCart {
+            constructor() {
+                // 获取元素
+                this.ul = document.querySelector('ul')
+                this.count = document.querySelector('.count>span')
+                this.data = product_list
+
+                // 初始化调用
+                this.init()
+            }
+            init() {
+                this.render()
+                this.bindEvent()
+                this.caclCount()
+            }
+            // 根据数据渲染列表
+            render() {
+                this.data.forEach(item => {
+                    this.ul.innerHTML += `
+                        <li>
+                            <div class="pic">
+                                <img src="${item.url}">
+                            </div>
+                            <p class="title">${item.title}</p>
+                            <p class="des">${item.des}</p>
+                            <p class="price">${item.price}元</p>
+                            <button data-id=${item.id}>加入购物车</button>
+                        </li>
+                    `
+                })
+            }
+            bindEvent() {
+                this.ul.addEventListener('click', (e) => {
+                    if (e.target.nodeName === 'BUTTON') {
+                        /*
+                            加入购物车的逻辑分析
+                            + 购物车数据结构是一个数组，数组里面存储对象 [{}, {}, {}]
+                            + 一个页面的数据不能给另一个页面使用，可以使用到加入购物车（数组）数据存储到localStorage里面。购物车名称统一存储使用cart
+                            + 当点击一个按钮后需要把这个列表的数据拿到才能加入到准备的数组（购物车）里面
+                              => 通过H5自定义属性，给按钮绑定id
+                              => 通过拿到按钮的id和数据里面的id对比即可
+                        */
+                        // 拿到当前按钮的id
+                        let id = e.target.dataset.id - 0
+                        // 通过和数据里面的id对比
+                        let goods = this.data.find(item => item.id === id)
+                        // 先从购物车里面获取数据，看购物车里面是否存在数据
+                        let list = JSON.parse(localStorage.getItem('cart')) || []
+                        if (!list.length) {
+                            goods.cart_num = 1
+                            list.push(goods)
+                        } else {
+                            // 查看是否有重复的数据
+                            let res = list.some(item => item.id === id)
+                            if (res) {
+                                list.find(item => item.id === id).cart_num++
+                            } else {
+                                goods.cart_num = 1
+                                list.push(goods)
+                            }
+                        }
+                        localStorage.setItem('cart', JSON.stringify(list))
+                        this.caclCount()
+                    }
+                })
+            }
+            caclCount() {
+                let list = JSON.parse(localStorage.getItem('cart')) || []
+                let num = 0
+                list.forEach(item => {
+                    num += item.cart_num
+                })
+                this.count.innerHTML = num
+            }
+        }
+        new AddCart()
+    </script>
+</body>
+
+</html>

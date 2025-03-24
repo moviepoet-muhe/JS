@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            自执行函数
+            + 立即执行函数
+            + IIFE
+            + 所谓的自执行函数，就是不需要通过其他的途径调用，会自己直接执行
+            + 自执行函数执行完毕后，存储空间会自动销毁，而普通函数存储空间依旧存在
+            + 语法
+              => (function(){})()
+              => (function(){}())
+              => !function(){}()
+              => ~function(){}()
+            + 作用
+              => 可以做页面初始化的东西
+              => 可以和闭包一起使用
+              => 可以做伪模块化
+        */
+        // 注意点：如果使用自执行函数这种语法，推荐在函数前面添加一个分号，作为分隔符，不然代码会报错
+        ; (function () {
+            console.log('你好啊')
+        })()
+            ; (function () {
+                console.log('你好啊')
+            })()
+
+                (function () {
+                    console.log('嘿嘿')
+                }())
+
+        !function () {
+            console.log('呵呵')
+        }()
+
+        ~function () {
+            console.log('嘻嘻')
+        }()
+
+        const fn1 = (function () {
+            console.log('你好啊')
+        })()
+        console.log(fn1)
+
+        const fn2 = function () {
+            console.log('哈哈')
+        }
+        fn2()
+        console.log(fn2)
+    </script>
+</body>
+
+</html>

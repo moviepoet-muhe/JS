@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // 防抖：指的是用户触发事件过于频繁，只要最后一次事件的操作
+        // 例如：生活中乘电梯
+        const txt = document.querySelector('input')
+        let timer = null
+        txt.oninput = function(){
+            if(timer !== null){
+                clearInterval(timer)
+            }
+            timer = setTimeout(()=>{
+                console.log(this.value)
+            }, 500)
+        }
+    </script>
+</body>
+</html>

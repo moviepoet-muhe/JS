@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <a href="./05_列表页面.html">去列表页面</a>
+    <script>
+        /*
+            问题
+            + 一个网页不能访问另一个网页里面的数据
+            + 为了数据在不同的页面之间进行共享，所以在HTML5的标准中出现了一个存储方式，可以解决这个问题
+            HTML5存储方式
+            + 本地存储 --- 默认是存储在浏览器里面的，存储其实就是浏览器给你的一个小型的数据库
+            + localStorage --- 长期存储，如果不主动删除，会一直存在
+              => getItem()
+              => setItem()
+              => removeItem()
+              => clear() 
+            + sessionStorage --- 会话级别的存储（当网页关闭后，数据会自动清除掉）
+              => getItem()
+              => setItem()
+              => removeItem()
+              => clear()
+        */
+        // const list = [{a: 1}, {b: 2}]
+        // console.log(list)
+
+        // localStorage.setItem('username', '王江')
+        // localStorage.setItem('password', '123')
+
+        // 注意点：当拿不到数据的时候返回的是一个null
+        // localStorage.removeItem('username')
+
+        // localStorage.clear()
+
+        // 存储多条数据的时候，要使用json格式
+        // localStorage.setItem('cart', JSON.stringify(list))
+
+        // localStorage.setItem('a', '哈哈')
+        // sessionStorage.setItem('b', '呵呵')
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">哈哈</div>
+    <img src="./img/1.jpg">
+    <script>
+        const box = document.querySelector('.box')
+        /*
+            属性分类
+            + html 属性（属于标记天生的，没有的你设置了也没有作用）  
+            + css 属性（可以给所有标记设置）
+            + 自定义属性（根据开发需求给标记自定义是属性）
+        */ 
+        const pic = document.querySelector('img')
+        // 设置属性 setAttribute()  无论这个属性是否支持都可以给你设置上
+        // pic.setAttribute('width', '200')
+        // pic.setAttribute('src', './img/1.jpg')
+
+        // pic.src = './img/1.jpg' // 如果标记本身不支持这个属性，即使你设置了也没有作用
+
+        // 注意点：直接设置的属性，如果标记本身是支持的，那么会显示，如果不支持那么会变成隐式的设置（虽然你看不见，但是可以用）。setAttribute()无论是否支持都会显示在标记上面
+        // box.src = './img/1.jpg'
+        // box.setAttribute('src', './img/1.jpg')
+        // console.log(box.src)
+
+        pic.setAttribute('width', '200')
+        pic.setAttribute('height', '300')
+
+        // 删除设置的属性
+        // pic.removeAttribute('height')
+
+        // 获取属性值
+        console.log(pic.getAttribute('width'))
+
+        // 获取属性
+        console.log(pic.getAttributeNode('width').nodeName)
+        console.log(pic.getAttributeNode('width').nodeType)
+        console.log(pic.getAttributeNode('width').nodeValue)
+    </script>
+</body>
+</html>

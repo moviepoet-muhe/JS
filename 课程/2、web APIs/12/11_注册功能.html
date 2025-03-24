@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>注册</button>
+    <h3></h3>
+    <script src="./js/ajax.js"></script>
+    <script>
+        const btn = document.querySelector('button')
+        const h3 = document.querySelector('h3')
+
+        btn.onclick = ()=>{
+            ajax_post({
+                url: 'http://localhost:8888/users/register',
+                querystr: {
+                    username: 'wj_000',
+                    password: 'wj_000',
+                    rpassword: 'wj_000',
+                    nickname: 'wj_000'
+                },
+                success(res){
+                    const {code, message} = JSON.parse(res)
+                    if(code === 1){
+                        if(!confirm('是否去登录？')){
+                            return 
+                        }
+                        location.href = './13_登录页面.html'
+                    }else{
+                        h3.innerHTML = message
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>

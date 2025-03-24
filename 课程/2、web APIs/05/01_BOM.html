@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>王江回来了</button>
+    <a href="#">王江</a>
+    <a href="./02_test.html">测试</a>
+    <script>
+        /*
+            BOM
+            + 浏览器对象模型
+            + 提供了操作浏览器各组件的方式，例如：刷新页面、地址跳转、历史记录（前进、后退）...
+            + window
+              => document 文档（网页）
+              => location 地址栏
+              => history 历史记录
+              => screen 屏幕
+              => navigator 浏览器软件信息对象（浏览器的版本号、电脑的相关的芯片信息等等）
+        */
+        // console.log(document)
+        // console.log(location)
+        // console.log(screen)
+        // console.log(history)
+        // console.log(navigator)
+        // console.log(navigator.userAgent) // 可以判断用户使用的是什么浏览器
+
+        // 文档对象的
+        // window.document.write()
+        // document.documentElement
+        // document.body
+        // document.head
+        // document.title
+
+        // 地址栏对象
+        // console.log(location.href) // 可以获取完整地址，可以进行网页的跳转
+        // console.log(location.hash) // 哈希值（锚点）
+        // console.log(location.search) // 获取查询字符串
+        // console.log(location.protocol) // 获取协议 --- http 超文本传输协议，规定了如何上网
+        // console.log(location.port) // 端口号
+
+
+        // document.querySelector('button').onclick = ()=> {
+        //     location.href = 'https://www.4399.com'
+        // }
+        // const a = document.querySelector('a')
+        // a.href = 'https://www.4399.com'
+
+        // 历史记录
+        // history.back() // 后退
+        // history.forward() // 前进
+        // history.go() // 前进（传入参数是整数就是前进）和后退（传入参数是负数就是后退）
+
+
+        // document.querySelector('button').onclick = ()=> {
+        //     // history.forward()
+        //     history.go(1)
+        // }
+
+        // 屏幕
+        // console.log(screen.width)
+        // console.log(screen.height)
+        // console.log(screen.availWidth) // 有效宽度（不包含任务栏）
+        // console.log(screen.availHeight) // 有效高度（不包含任务栏）
+
+        // window 方法
+        // document.querySelector('button').onclick = ()=> {
+        //     // window.open('https://www.jd.com', '_self') // 打开窗口
+        //     // location.reload() // 刷新
+        //     location.reload(true) // 刷新（不传就是普通刷新，传入true表示强制刷新），走不走浏览器缓存
+        // }
+    </script>
+</body>
+</html>

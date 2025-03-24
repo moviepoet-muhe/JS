@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            数组对象
+            + 真正数组
+              => new Array()
+              => []
+            + 伪（类）数组
+              => 类似数组，但不是真正的数组
+              => 为什么说是类数组呢？因为虽然不是真正的数组，但是可以使用数组相关的属性和方法（并不是所有的都可以使用，例如：遍历、[]、下标、length等等）
+            arguments
+            + 伪数组
+            + arguments里面保存的是实参的数据
+            + 主要用于当形参的个数过多或者不确定的情况下
+        */
+        // function getSum(a, b, c, d, e, f, g, h, j, k, m){
+        // }
+        // getSum(10, 20, 30, 66, 12, 15, 18, 22, 16, 32)
+
+        // function getSum(){
+        //     // console.log(arguments)
+        //     // console.log(arguments[0])
+        //     // console.log(arguments[1])
+        //     // console.log(arguments.length)
+        //     var sum = 0
+        //     // 遍历
+        //     for(var i=0; i<arguments.length; i++){
+        //         sum += arguments[i]
+        //     }
+        //     return sum
+        // }
+        // console.log(getSum(10, 20, 30, 66, 12, 15, 18, 22, 16, 32))
+
+        // arguments.callee 表示的是当前函数的名称，例如：递归函数的调用
+        // var i = 0
+        // function wjFn2(){
+        //     i++
+        //     console.log(i+'哈哈')
+        //     if(i<10){
+        //         arguments.callee()
+        //     }
+        // }
+        // wjFn2()
+    </script>
+</body>
+</html>

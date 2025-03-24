@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            晨测
+            + 什么是预解析？
+            + 函数声明方式有几种？
+            + 你怎么理解 return ？
+            + 常用事件有哪些？
+            + 获取元素的方式有哪些？
+            + 作用域链的访问规则是什么？
+        */
+        // var a = 666;
+        // test();
+        // function test(){
+        //     var b = 777;
+        //     console.log(a);
+        //     console.log(b);
+        //     console.log(c);
+        //     var a = 888;
+        // }
+        /*
+            0
+            var a
+            function test(){
+                var b = 777;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                var a = 888;
+            }
+            a = 666;
+            test();
+            1
+            var a
+            function test(){
+                var b
+                var a
+                b = 777;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                a = 888;
+            }
+            a = 666;
+            test();
+        */
+        fn()
+        function fn(){
+            console.log(a)
+            var a = 10
+            function fn2(){
+                console.log(b)
+                var b = 66
+            }
+            var fn2 = 88
+            fn2()
+        }
+        /*
+            function fn() {
+                var a
+                var fn2
+                function fn2() {
+                    var b
+                    console.log(b)
+                    b = 66
+                }
+                console.log(a)
+                a = 10
+                fn2 = 88
+                fn2()
+            }
+            fn()
+        */
+    </script>
+</body>
+</html>

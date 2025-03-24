@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            padding: 20px;
+            font-size: 12px;
+            position: absolute;
+            left: 50px;
+        }
+
+        div::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>王江</div>
+    <script src="./js/tools.js"></script>
+    <script>
+        // getComputedStyle() 用于获取各种样式，参数1表示要获取样式的元素，参数2表示的是一个伪对象，可以不写或者为null
+        const box = $('div')
+        console.log(getComputedStyle(box).width)
+        console.log(getComputedStyle(box).height)
+        console.log(getComputedStyle(box).backgroundColor)
+        console.log(getComputedStyle(box).fontSize)
+        console.log(getComputedStyle(box).left)
+
+        console.log(getComputedStyle(box, '::after').width)
+
+        function getStyle(ele, attr) {
+            //     getComputedStyle(box)['width']
+            //     getComputedStyle(box)['left']
+            return getComputedStyle(ele)[attr]
+        }
+        console.log(getStyle(box, 'width'))
+        console.log(getStyle(box, 'left'))
+    </script>
+</body>
+
+</html>

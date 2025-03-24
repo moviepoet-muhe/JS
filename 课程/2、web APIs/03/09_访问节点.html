@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <p>这是p标记</p>
+        嘿嘿
+        <h1>老大哥</h1>
+        <!-- span标记 -->
+        <span>呵呵</span>
+    </div>
+    <script>
+        const box = document.querySelector('.box')
+        // 访问 box 这个元素下的第一个子节点
+        // console.log(box.firstChild)
+        // 访问 box 这个元素下的最后一个子节点
+        // console.log(box.lastChild)
+        // 访问 box 这个元素下所有子节点
+        // console.log(box.childNodes)
+        // console.log(box.childNodes[0])
+        // console.log(box.childNodes[1])
+
+        // nodeName 节点名称，如果是标记节点，那么返回的名称是大写的标记名
+        // nodeType 节点类型，以数值的形式返回
+        // nodevalue 节点值，并不是所有的节点都存在值
+        // console.log(box.childNodes[0].nodeName)
+        // console.log(box.childNodes[0].nodeType)
+        // console.log(box.childNodes[0].nodeValue)
+
+        // console.log(box.childNodes[1].nodeName)
+        // console.log(box.childNodes[1].nodeType)
+        // console.log(box.childNodes[1].nodeValue)
+
+        // console.log(box.childNodes[5].nodeName)
+        // console.log(box.childNodes[5].nodeType)
+        // console.log(box.childNodes[5].nodeValue)
+
+        // 获取 box 下第一个元素节点
+        // console.log(box.firstElementChild)
+        // 获取 box 下最后一个元素节点
+        // console.log(box.lastElementChild)
+        // 获取 box 下的所有的子标记
+        // console.log(box.children)
+
+        var h1 = document.querySelector('h1')
+        // 获取兄弟节点
+        // console.log(h1.previousElementSibling)
+        // console.log(h1.nextElementSibling)
+
+        // 获取父节点
+        console.log(h1.parentNode)
+        console.log(h1.parentElement)
+    </script>
+</body>
+</html>

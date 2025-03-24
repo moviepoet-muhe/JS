@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="豆瓣,小组,电影,同城,豆品,广播,登录豆瓣">
+  <meta name="description" content="提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活。">
+  <title>豆瓣</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./iconfont/iconfont.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <!-- 
+
+    网页布局：
+    一、顶部导航：global-nav
+    二、主页导航：nav
+    三、版心内容：wrapper
+        1、主要内容 main content  两栏布局
+          a.左侧区域 section
+          b.右侧区域 aside
+        2、网页尾部 footer
+    
+    -->
+
+  <!-- 顶部导航 start-->
+  <div class="global-nav">
+    <!-- 左侧导航 -->
+    <ul>
+      <li><a href="#">豆瓣</a></li>
+      <li><a href="#">读书</a></li>
+      <li><a href="#">电影</a></li>
+      <li><a href="#">音乐</a></li>
+      <li><a href="#">同城</a></li>
+      <li><a href="#">小组</a></li>
+      <li><a href="#">阅读</a></li>
+      <li><a href="#">FM</a></li>
+      <li><a href="#">时间</a></li>
+      <li><a href="#">豆品</a></li>
+    </ul>
+    <!-- 右侧导航 -->
+    <ol>
+      <li><a href="#">下载豆瓣客户端</a>
+        <!-- 下拉菜单 -->
+        <div class="more-items">
+          <p class="appintro-title">豆瓣</p>
+          <p class="qrcode">扫码直接下载</p>
+          <div class="download">
+            <a href="">iPhone</a>
+            <span>·</span>
+            <a href="" class="download-android">Android</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="#">提醒</a></li>
+      <li><a href="#">豆邮</a></li>
+      <li><a href="#">牧和的诗账号<i class="iconfont icon-24gf-arrowDown3"></i></a></li>
+    </ol>
+  </div>
+  <!-- 顶部导航 stop-->
+
+  <!-- 主页导航 start-->
+  <nav>
+    <!-- 版心 -->
+    <div class="wrapper">
+      <!-- 主页导航左侧 -->
+      <div class="left">
+        <!-- 主页导航左侧-logo -->
+        <h1 class="nav-logo"><a href="">豆瓣社区</a></h1>
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">我的豆瓣</a></li>
+          <li><a href="#">浏览发现</a></li>
+          <li><a href="#">话题广场<img src="./assets/images/new_menu.gif" alt=""></a></li>
+        </ul>
+      </div>
+      <!-- 主页导航右侧 -->
+      <div class="right">
+        <!-- 表单区域 -->
+        <form>
+          <input class="inpt" type="search" placeholder="搜索你感兴趣的内容和人...">
+          <input class="btn" type="submit">
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- 主页导航 stop-->
+
+  <!-- 版心 start -->
+  <div class="wrapper">
+    <!-- 主要内容 start-->
+    <main class="content">
+      <!-- 左边内容区域 start-->
+      <section>
+        <!-- 用户档案 -->
+        <div class="usr-profile">
+          <!-- 用户头像 -->
+          <div class="usr-pic">
+            <a href="#" title="">
+              <img src="">
+            </a>
+            <div class="icon"></div>
+          </div>
+          <!-- 用户资料 -->
+          <div class="usr-info">
+            <h1 class="usr-name">
+              <!-- 签名档 -->
+              <div class="signature">
+                <!-- 签名内容 -->
+                <span class="signature-txt" style="display: inline;"></span>
+                <!-- 编辑按钮 -->
+                <span class="edit" style="display: inline;">
+                  (<a href="#"></a>)
+                </span>
+                <!-- 表单 -->
+                <form style="display:none;">
+                  <!-- 输入框 -->
+                  <input class="signature-input" type="text" size="30" maxlength="30" value="">
+                  <input class="submit" type="submit" value="修改">
+                  <input class="cancel" type="button" value="取消">
+                </form>
+              </div>
+            </h1>
+            <!-- 用户菜单导航 -->
+            <ul>
+              <li><a href="#">我的主页</a></li>
+              <li><a href="#">作品</a></li>
+              <li><a href="#">广播</a></li>
+              <li><a href="#">相册</a></li>
+              <li><a href="">日记</a></li>
+              <li><a href="">豆列</a></li>
+              <li><a href="#">片单</a></li>
+              <li class="sub-menu"><a href="#">书单</a></li>
+              <li><a href="#">设置</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 用户作品 -->
+        <div class="works">
+          <!-- 标题 -->
+          <h2>牧和的诗的作品&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;( <a href="#">管理作品</a>&nbsp;·&nbsp;<a href="#" target="_blank">全部
+                1</a> ) </span>
+          </h2>
+          <!-- 作品列表 -->
+          <ul class="work-wrapper">
+            <!-- 单个作品 -->
+            <li class="work-item">
+              <a href="#" title="诗有了意义就没有了生命" target="_blank">
+                <!-- 作品封面 -->
+                <div class="cover">
+                  <img src="./assets/uploads/works.jpg" class="climg" alt="诗有了意义就没有了生命">
+                </div>
+                <!-- 作品信息 -->
+                <div class="info">
+                  <!-- 作品信息标题  -->
+                  <h3 class="work-title">
+                    诗有了意义就没有了生命
+                  </h3>
+                  <!-- 评价 -->
+                  <p class="rating">评价人数不足</p>
+                  <p class="more">香江出版社 / 2018-12</p>
+                  <!-- 作者 -->
+                  <p class="role">作者</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 我的日记 通用条目 entry-->
+        <div class="entry note">
+          <!-- 标题 -->
+          <h2 class="entry-title">
+            <div class="entry-title-left">
+              我的日记
+              &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+              <span class="pl">&nbsp;(
+                <a href="#">全部</a>
+                ) </span>
+            </div>
+            <div> <a class="entry-title-btn" href="#"><i>+</i>写日记</a></div>
+          </h2>
+          <!-- 日记内容 -->
+          <div class="note-content">
+            <!-- 每一个日记 -->
+            <div class="note-content-item">
+              <div class="note-header pl2">
+                <a title="《牧和的诗》——另一个黎明" href="" class="ll">《牧和的诗》——另一个黎明</a>
+                <br>
+                <div><span class="pl">2024-08-11 13:37:02</span></div>
+              </div>
+              <!-- 日记摘要 -->
+              <div class="note-abstract">风暴席卷后的街道，时间如堵塞沟渠的水， 淹没了那些忘记名字或 很久也没有人喊出名字的人。 日子、账单和疲惫的身体，依然在每天经过的拐角处
+                徒劳地等待着你。一束温顺的光，从朦胧的雾里， 射穿暗淡的幽灵，为你指示步履的方向。 它从另一个黎明而来，从另一个日子呼唤你 在你迷失于雨雾中塌落的房屋之前。风暴席卷后的街道，时间如堵塞沟渠的水，
+                淹没了那些忘记名字或 很久也没有人喊出名字的人。 日子、账单和疲惫的身体，依然在每天经过的拐角处
+                徒劳地等待着你。一束温顺的光，从朦胧的雾里， 射穿暗淡的幽灵，为你指示步履的方向。 它从另一个黎明而来，从另一个日子呼唤你 在你迷失于雨雾中塌落的房屋之前。风暴席卷后的街道，时间如堵塞沟渠的水，
+                淹没了那些忘记名字或 很久也没有人喊出名字的人。 日子、账单和疲惫的身体，依然在每天经过的拐角处
+                徒劳地等待着你。一束温顺的光，从朦胧的雾里， 射穿暗淡的幽灵，为你指示步履的方向。 它从另一个黎明而来，从另一个日子呼唤你 在你迷失于雨雾中塌落的房屋之前。风暴席卷后的街道，时间如堵塞沟渠的水，
+                淹没了那些忘记名字或 很久也没有人喊出名字的人。 日子、账单和疲惫的身体，依然在每天经过的拐角处
+                徒劳地等待着你。一束温顺的光，从朦胧的雾里， 射穿暗淡的幽灵，为你指示步履的方向。 它从另一个黎明而来，从另一个日子呼唤你 在你迷失于雨雾中塌落的房屋之前。风暴席卷后的街道，时间如堵塞沟渠的水，
+                淹没了那些忘记名字或 很久也没有人喊出名字的人。 日子、账单和疲惫的身体，依然在每天经过的拐角处
+                徒劳地等待着你。一束温顺的光，从朦胧的雾里， 射穿暗淡的幽灵，为你指示步履的方向。 它从另一个黎明而来，从另一个日子呼唤你 在你迷失于雨雾中塌落的房屋之前。风暴席卷后的街道，时间如堵塞沟渠的水，
+                淹没了那些忘记名字或 很久也没有人喊出名字的人。 日子、账单和疲惫的身体，依然在每天经过的拐角处
+                徒劳地等待着你。一束温顺的光，从朦胧的雾里， 射穿暗淡的幽灵，为你指示步履的方向。 它从另一个黎明而来，从另一个日子呼唤你 在你迷失于雨雾中塌落的房屋之前。风暴席卷后的街道，时间如堵塞沟渠的水，
+                淹没了那些忘记名字或 很久也没有人喊出名字的人。 日子、账单和疲惫的身体，依然在每天经过的拐角处
+                徒劳地等待着你。一束温顺的光，从朦胧的雾里， 射穿暗淡的幽灵，为你指示步履的方向。 它从另一个黎明而来，从另一个日子呼唤你 在你迷失于雨雾中塌落的房屋之前。</div>
+
+            </div>
+
+            <!-- 每一个日记 -->
+            <div class="note-content-item">
+              <div class="note-header pl2">
+                <a title="《牧和的诗》——骤雨" href="#" class="ll">《牧和的诗》——骤雨</a>
+                <br>
+                <div><span class="pl">2024-07-22 18:23:58</span></div>
+              </div>
+              <!-- 日记摘要 -->
+              <div class="note-abstract">1 行星的咆哮声， 从夜空的深处浮现。 古老的词语， 从床尾的角落淌出。 午夜过后， 雨水由此开始。 一辆卡车撞向桥墩， 巨响飞速穿过城市。
+                电线杆是路的警卫， 树的荫翳遮住了月亮的眼睛。 窗台暗淡的锈迹， 随着摇摇晃晃的风， 推开熙熙攘攘的人群， 逃离孤独的城市， 仓促间染上鸟的血迹， 混合着雨后原野温凉的雾气， 抹湿了干涸的井。 2
+                峭壁间的植被柔软， 叶子长出银色的水珠。 稠密的河水将泥沙挟卷怀中， 开始一场新生漫长的旅程。 河道中间有一架小小的唱片机， 播放的音乐缓慢...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 我的相册 通用条目 entry-->
+        <div class="entry photo">
+          <!-- 标题 -->
+          <h2 class="entry-title">
+            <div class="entry-title-left">
+              我的相册
+              &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+              <span class="pl">&nbsp;(
+                <a href="#">创建1</a>
+                <span>·</span>
+                <a href="#">关注0</a>
+                ) </span>
+            </div>
+            <div>
+              <a class="entry-title-btn" href="#"><i>+</i>发照片</a>
+              <a class="entry-title-btn" href="#"><i>+</i>新建相册</a>
+            </div>
+
+          </h2>
+          <!-- 照片 -->
+          <div class="photo-content">
+            <ul>
+              <li>
+                <a class="nbg" href="#" title="Flan" alt="Flan">
+                  <img src="./assets/uploads/photo.jpg" class="photo-img">
+                </a>
+                <div class="ll pl" style="padding-top:8px;width:138px">
+                  <a href="#">Flan</a>
+                  <br>2021-12-07更新
+                </div>
+              </li>
+              <li>
+                <a class="nbg" href="#" title="Flan" alt="Flan">
+                  <img src="./assets/uploads/photo.jpg" class="photo-img">
+                </a>
+                <div class="ll pl" style="padding-top:8px;width:138px">
+                  <a href="#">Flan</a>
+                  <br>2021-12-07更新
+                </div>
+              </li>
+              <li>
+                <a class="nbg" href="#" title="Flan" alt="Flan">
+                  <img src="./assets/uploads/photo.jpg" class="photo-img">
+                </a>
+                <div class="ll pl" style="padding-top:8px;width:138px">
+                  <a href="#">Flan</a>
+                  <br>2021-12-07更新
+                </div>
+              </li>
+              <li>
+                <a class="nbg" href="#" title="Flan" alt="Flan">
+                  <img src="./assets/uploads/photo.jpg" class="photo-img">
+                </a>
+                <div class="ll pl" style="padding-top:8px;width:138px">
+                  <a href="#">Flan</a>
+                  <br>2021-12-07更新
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 我读 通用条目 entry-->
+        <div class="entry book">
+          <!-- 标题 -->
+          <h2 class="entry-title">
+            <div class="entry-title-left">
+              我读
+              &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+              <span class="pl">&nbsp;(
+                <a href="#">2本在读</a>
+                <span>·</span>
+                <a href="#">370本想读</a>
+                <span>·</span>
+                <a href="#">585本读过</a>
+                <span>·</span>
+                <a href="#">6个书单</a>
+                ) </span>
+            </div>
+          </h2>
+          <!-- 条目内容 -->
+          <div class="entry-content">
+            <div class="entry-content-title">在读</div>
+            <ul>
+              <!--  -->
+              <li class="entry-content-li">
+                <a title="暗处的女儿" href="#">
+                  <img alt="暗处的女儿" class="climg" src="./assets/uploads/book-1.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/book-2.jpg">
+                </a>
+              </li>
+          </div>
+          <div class="entry-content">
+            <div class="entry-content-title">想读</div>
+            <ul>
+              <!--  -->
+              <li class="entry-content-li">
+                <a title="暗处的女儿" href="#">
+                  <img alt="暗处的女儿" class="climg" src="./assets/uploads/book-3.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/book-4.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="图像" href="#">
+                  <img alt="图像" class="climg" src="./assets/uploads/book-5.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="色彩" href="#">
+                  <img alt="色彩" class="climg" src="./assets/uploads/book-6.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="我胆小如鼠" href="#">
+                  <img alt="我胆小如鼠" class="climg" src="./assets/uploads/book-7.jpg">
+                </a>
+              </li>
+
+              <li class="entry-content-li">
+                <a title="暗处的女儿" href="#">
+                  <img alt="暗处的女儿" class="climg" src="./assets/uploads/book-3.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/book-4.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="图像" href="#">
+                  <img alt="图像" class="climg" src="./assets/uploads/book-5.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="色彩" href="#">
+                  <img alt="色彩" class="climg" src="./assets/uploads/book-6.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="我胆小如鼠" href="#">
+                  <img alt="我胆小如鼠" class="climg" src="./assets/uploads/book-7.jpg">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 我看 通用条目 entry-->
+        <div class="entry movie">
+          <!-- 标题 -->
+          <h2 class="entry-title">
+            <div class="entry-title-left">
+              我看
+              &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+              <span class="pl">&nbsp;(
+                <a href="#">13部想看</a>
+                <span>·</span>
+                <a href="#">2290部看过</a>
+                <span>·</span>
+                <a href="#">51个片单</a>
+                ) </span>
+            </div>
+          </h2>
+          <!-- 条目内容 -->
+          <div class="entry-content">
+            <div class="entry-content-title">想看</div>
+            <ul>
+              <li class="entry-content-li">
+                <a title="排球少年！！垃圾场决战" href="#">
+                  <img alt="排球少年！！垃圾场决战" class="climg" src="./assets/uploads/movie-1.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-2.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-3.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-4.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-5.webp">
+                </a>
+              </li>
+          </div>
+          <div class="entry-content">
+            <div class="entry-content-title">看过</div>
+            <ul>
+              <li class="entry-content-li">
+                <a title="排球少年！！垃圾场决战" href="#">
+                  <img alt="排球少年！！垃圾场决战" class="climg" src="./assets/uploads/movie-6.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-7.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-8.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-9.webp">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/movie-10.webp">
+                </a>
+              </li>
+          </div>
+        </div>
+
+
+        <!-- 我听 通用条目 entry-->
+        <div class="entry music">
+          <!-- 标题 -->
+          <h2 class="entry-title">
+            <div class="entry-title-left">
+              我听
+              &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+              <span class="pl">&nbsp;(
+                <a href="#">1146张听过</a>
+                ) </span>
+            </div>
+          </h2>
+          <div class="entry-content">
+            <div class="entry-content-title">看过</div>
+            <ul>
+              <li class="entry-content-li">
+                <a title="排球少年！！垃圾场决战" href="#">
+                  <img alt="排球少年！！垃圾场决战" class="climg" src="./assets/uploads/music-1.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/music-2.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/music-3.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/music-4.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="无尽的玩笑" href="#">
+                  <img alt="无尽的玩笑" class="climg" src="./assets/uploads/music-5.jpg">
+                </a>
+              </li>
+          </div>
+        </div>
+
+        <!-- 我的游戏 通用条目 entry-->
+        <div class="entry games">
+          <!-- 标题 -->
+          <h2 class="entry-title">
+            <div class="entry-title-left">
+              我的游戏
+              &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+              <span class="pl">&nbsp;(
+                <a href="#">玩过96</a>
+                ) </span>
+            </div>
+          </h2>
+          <!-- 条目内容 -->
+          <div class="entry-content">
+            <!-- 条目内容左侧标题 -->
+            <div class="entry-content-title">玩过</div>
+            <ul>
+              <li class="entry-content-li">
+                <a title="人间地狱 Hell Let Loose" href="#">
+                  <img alt="人间地狱 Hell Let Loose" class="climg" src="./assets/uploads/game-1.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="风之旅人 Journey" href="#">
+                  <img alt="风之旅人 Journey" class="climg" src="./assets/uploads/game-2.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="去月球 To the Moon" href="#">
+                  <img alt="去月球 To the Moon" class="climg" src="./assets/uploads/game-3.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="传送门2 Portal 2" href="#">
+                  <img alt="传送门2 Portal 2" class="climg" src="./assets/uploads/game-4.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="帝国时代4：苏丹崛起 Age of Empires IV: The Sultans Ascend" href="#">
+                  <img alt="帝国时代4：苏丹崛起 Age of Empires IV: The Sultans Ascend" class="climg"
+                    src="./assets/uploads/game-5.jpg">
+                </a>
+              </li>
+              <li class="entry-content-li">
+                <a title="帝国时代4：苏丹崛起 Age of Empires IV: The Sultans Ascend" href="#">
+                  <img alt="帝国时代4：苏丹崛起 Age of Empires IV: The Sultans Ascend" class="climg"
+                    src="./assets/uploads/game-5.jpg">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 留言版 -->
+        <div class="entry board">
+          <!-- 标题 -->
+          <h2 class="entry-title">
+            <div class="entry-title-left">
+              留言板
+              &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+              <span class="pl">&nbsp;(
+                <a href="#">全部</a>
+                ) </span>
+            </div>
+          </h2>
+
+          <form style="margin-bottom:12px">
+            <textarea></textarea>
+            <div class="total">0/200字</div>
+            <button type="button">留言</button>
+            <ul></ul>
+          </form>
+        </div>
+
+      </section>
+      <!-- 左边内容区域 stop-->
+
+      <!-- 右边内容区域 start-->
+      <aside>
+
+        <!-- 用户档案 -->
+        <div class="profile">
+          <!-- 基本信息 -->
+          <div class="basic-info">
+            <!-- 用户图片 -->
+            <img src="./assets/uploads/muhe.jpg" class="userface" alt="">
+            <!-- 用户信息 -->
+            <div class="user-info">
+              常居:&nbsp;<a href="">四川成都</a><br>
+              <div class="pl">
+                Flan20210724 <br>
+                2016-05-06加入 <br>
+                <span class="ip-location">IP属地：四川</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 创作者认证 -->
+          <div class="user-verify pl">
+            <a aria-label="创作者认证">
+              <span class="profile-verify">
+                作者
+              </span>
+            </a>
+            <span class="verify-name">邓为/牧和</span>
+          </div>
+          <!-- 分割线 -->
+          <div class="sep-line"></div>
+
+          <!-- 用户引言 -->
+          <div class="user-intro">
+            <div class="edit_intro pl">
+              <span>写诗的漆匠<br></span>
+              <span>
+                (<a class="" href="#">编辑
+                </a>)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 我的广播 -->
+        <div class="broadcast">
+          <!-- 标题 -->
+          <h2>
+            我的广播
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(<a href="#">全部</a>) </span>
+          </h2>
+          <!-- 广播内容 -->
+          <div class="broadcast-item">
+            <p class="text">
+              <a href="#">牧和的诗</a>&nbsp;&nbsp;读过&nbsp;&nbsp;<a href="#">暗处的女儿</a>
+              <span class="star"></span>
+            </p>
+            <div class="actions">
+              <span class="created_at">
+                <a href="#">1月11日</a>
+              </span>&nbsp;&nbsp;
+              <a href="#">回应</a>&nbsp;&nbsp;<a href="#">删除</a>
+            </div>
+          </div>
+          <!-- 广播内容 -->
+          <div class="broadcast-item">
+            <p class="text">
+              <a href="#">牧和的诗</a>&nbsp;&nbsp;读过&nbsp;&nbsp;<a href="#">黑塞书信集</a>
+              <span class="star star-2"></span>
+            </p>
+            <div class="actions">
+              <span class="created_at">
+                <a href="#">1月11日</a>
+              </span>&nbsp;&nbsp;
+              <a href="#">回应</a>&nbsp;&nbsp;<span class="like-count">1赞</span>&nbsp;&nbsp;<a href="#">删除</a>
+            </div>
+          </div>
+          <!-- 广播内容 -->
+          <div class="broadcast-item">
+            <p class="text">
+              <a href="#">牧和的诗</a>&nbsp;&nbsp;读过&nbsp;&nbsp;<a href="#">大地上我们转瞬即逝的绚烂</a>
+              <span class="star star-3"></span>
+            </p>
+            <div class="actions">
+              <span class="created_at">
+                <a href="#">1月11日</a>
+              </span>&nbsp;&nbsp;
+              <a href="#">回应</a>&nbsp;&nbsp;<a href="#">删除</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 我的关注 -->
+        <div class="sort friend">
+          <h2>我的关注&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(<a href="#"> 成员8</a>&nbsp;·&nbsp;<a href="#">小站0</a> ) </span>
+          </h2>
+          <ul>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-1.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">gingol</a>
+            </li>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-2.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">Alyssaaa</a>
+            </li>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-3.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">贝果儿</a>
+            </li>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-4.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">阿娆</a>
+            </li>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-5.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">Vikka</a>
+            </li>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-6.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">Wanker</a>
+            </li>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-7.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">Adonis</a>
+            </li>
+            <li>
+              <!-- 头像 -->
+              <a href="#">
+                <img src="./assets/uploads/friend-8.jpg" alt="gingol">
+              </a>
+              <!-- 名字 -->
+              <a class="dis" href="#">慧</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 被关注 -->
+        <p class="rev-link"><a href="#">&gt;&nbsp;我被204人关注</a></p>
+
+        <!-- 我常去的小组 -->
+        <div class=" sort group">
+          <h2>我常去的小组(2)&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·</h2>
+          <ul>
+            <li>
+              <a href="#"><img src="./assets/uploads/group.webp"></a>
+              <div class="dis"> <a href="#" class="">超级单体风暴</a><span> (1195)</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 我添加的条目 -->
+        <p class="rev-link pl2">&gt; <a href="#">我添加的条目</a></p>
+        <p class="rev-link pl2"><a href="#">&gt; 添加我的豆瓣收藏秀</a></p>
+        <p class="rev-link pl2"><a href="#">&gt; 青少年模式</a></p>
+
+        <p class="rev-link pl">
+          本页永久链接:
+          <a href="#">https://www.douban.com/people/Flan20210724/</a>
+        </p>
+
+        <p class="pl">订阅我的收藏: <br><span class="feed">
+            <a href="#"> feed: rss 2.0</a></span></p>
+
+
+        <div style="margin-top: 300px;" contenteditable="">测试</div>
+      </aside>
+      <!-- 右边内容区域 stop-->
+
+    </main>
+    <!-- 主要内容 stop-->
+
+    <!-- 尾部区域 start -->
+    <footer>
+      <span>
+        © 2005-2025 douban.com, all rights reserved 北京豆网科技有限公司
+      </span>
+      <span>
+        <a href="#">关于豆瓣</a>
+        · <a href="#">在豆瓣工作</a>
+        · <a href="#">联系我们</a>
+        · <a href="#">法律声明</a>
+        · <a href="#">帮助中心</a>
+        · <a href="#">移动应用</a>
+      </span>
+    </footer>
+    <!-- 尾部区域 stop -->
+
+  </div>
+  <!-- 版心 stop -->
+
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

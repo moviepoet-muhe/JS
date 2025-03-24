@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+        作用域
+        + 访问数据的规则
+        + 作用域分为全局和局部作用域
+          => 全局作用域，函数外部的区域就属于全局作用域
+          => 局部作用域，函数内部的区域就属于局部作用域
+        + 变量分为全局变量和局部变量
+          => 定义在全局作用域里面的变量称之为全局变量。全局变量可以在函数外部和内部访问
+          => 定义在函数内部的变量属于局部变量。局部变量只能在函数内部访问
+        + 设计缺陷 bug
+          => 定义在函数内部的变量，如果没有加 var 关键字，那么就属于全局变量
+    */
+    // 全局作用域
+    var a = '小A同学'
+
+    function fn() {
+      // 局部作用域
+      console.log(a)
+      var b = '小B同学'
+      console.log(b)
+      c = '小C同学'
+    }
+    fn()
+
+    // console.log(a)
+
+    // console.log(b) // b is not defined
+
+    // console.log(c)
+  </script>
+</body>
+
+</html>

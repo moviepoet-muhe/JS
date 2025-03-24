@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 问题：固定代码写了很多遍，如果涉及到代码增多或者减少的情况，那么需要修改的地方比较多，也不利于后期的维护
+        // document.write('<p>王江喜欢学习英语！</p>')
+        // document.write('<p>王江喜欢学习英语！</p>')
+        // document.write('<p>王江喜欢学习英语！</p>')
+        // document.write('<p>王江喜欢学习英语！</p>')
+        // document.write('<p>王江喜欢学习英语！</p>')
+        // document.write('<p>王江喜欢学习英语！</p>')
+
+        // 循环结构可以解决重复的问题，可以方便的控制代码的增加和减少
+        /*
+            var i = 1       变量初始化（循环开始）
+            while(i<=10){   i<=10 循环的结束条件
+                输出功能代码
+                i++         变量更新
+            }
+            while整体称之为循环体
+        */
+        // var i = 1
+        // while(i<=5){
+        //     document.write('<p>'+i+'、王江喜欢学习英语！</p>')
+        //     i++
+        // }
+
+        /*
+            while循环执行过程
+            + 第一次执行
+              => var i = 1 变量初始化，只执行一次（在整个循环开始到结束，只执行一次）
+              => i<=5 执行判断条件，如果满足条件就进入循环体，不满足条件就退出循环结构
+              => document.write('<p>'+i+'、王江喜欢学习英语！</p>') 满足条件执行功能代码
+              => i++ 变量更新
+            + 第二次执行
+              => i<=5 执行判断条件，如果满足条件就进入循环体，不满足条件就退出循环结构
+              => document.write('<p>'+i+'、王江喜欢学习英语！</p>') 满足条件执行功能代码
+              => i++ 变量更新
+            + 第三次执行
+              => i<=5 执行判断条件，如果满足条件就进入循环体，不满足条件就退出循环结构
+              => document.write('<p>'+i+'、王江喜欢学习英语！</p>') 满足条件执行功能代码
+              => i++ 变量更新
+            + ...
+        */
+    </script>
+</body>
+</html>

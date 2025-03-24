@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、&& 逻辑与(也可以叫并且)。如果左右两个操作符都为true，则结果为true，否则，结果为false。逻辑与，就是两个条件同时满足时，结果为true
+        // console.log(10 > 20 && 10 < 20) // false
+        // console.log(30 > 20 && 10 < 20) // true
+
+        // 2、|| 逻辑或。左右两个条件，只要一个满足，就返回true，否则，就返回false
+        // console.log(10 > 20 || 10 < 20) // true
+        // console.log(10 < 20 || 20 <= 20) // true
+        
+        // 3、!  取反运算
+        // console.log(!(10 > 20))
+        // console.log(!true)
+
+        // 注意点：如果遇到非布尔值结果来进行逻辑运算，那么在运算的过程中是把其他类型转成布尔值来运算，但是最终结果还是以自己之前的数据类型来返回的
+        // console.log(1 && 20)
+        // console.log(30 && 20)
+
+        // console.log(0 && 66)
+
+        // console.log(null && undefined)
+
+        // 运算符优先级问题：&& 符号优先级是高于 || 
+        // 链接：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+        // console.log(1 && 2 || 0)
+        // 1 || 0
+        // console.log(1 || 2 && 0)
+
+    </script>
+</body>
+</html>

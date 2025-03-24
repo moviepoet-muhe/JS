@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            height: 100%;
+        }
+        .drag1{
+            width: 200px;
+            height: 200px;
+            background-color: hotpink;
+            position: absolute;
+        }
+        .drag2{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="drag1"></div>
+    <div class="drag2"></div>
+    <script>
+        class Drag {
+            constructor(ele){
+                this.ele = document.querySelector(ele)
+                this.init()
+            }
+            init(){
+                this.down()
+                this.up()
+            }
+            down(){
+                this.ele.onmousedown = (e)=>{
+                    let l = e.offsetX
+                    let t = e.offsetY
+                    this.move(l, t)
+                }
+            }
+            move(l, t){
+                document.onmousemove = (e)=>{
+                    let x = e.pageX - l
+                    let y = e.pageY - t
+                    this.ele.style.left = x + 'px'
+                    this.ele.style.top = y + 'px'
+                }
+            }
+            up(){
+                this.ele.onmouseup = ()=>{
+                    document.onmousemove = null
+                }
+            }
+        }
+        new Drag('.drag1')
+
+        // 希望第二个盒子在拖拽的时候限定可移动范围
+        class Drag2 extends Drag {
+            constructor(ele){
+                super(ele)
+            }
+            // 重写move函数
+            move(l, t){
+                document.onmousemove = (e)=>{
+                    let x = e.pageX - l
+                    let y = e.pageY - t
+                    if(x<=0){
+                        x = 0
+                    }else if(x>=document.body.offsetWidth - this.ele.offsetWidth){
+                        x = document.body.offsetWidth - this.ele.offsetWidth
+                    }
+                    if(y<=0){
+                        y = 0
+                    }else if(y>=document.body.offsetHeight - this.ele.offsetHeight){
+                        y = document.body.offsetHeight - this.ele.offsetHeight
+                    }
+                    this.ele.style.left = x + 'px'
+                    this.ele.style.top = y + 'px'
+                }
+            }
+        }
+        new Drag2('.drag2')
+    </script>
+</body>
+</html>

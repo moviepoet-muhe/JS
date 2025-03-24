@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        // window 对象是 js 里面最大的对象，编写的所有 js 代码都是存储在这个 window 对象里面的
+        // 注意点：因为 window 是最大的对象，因此使用的时候可以把 window 省略不写
+        // var a = 10
+        // console.log(window)
+        // console.log(window.a)
+        // console.log(a)
+
+        // name 属于 window 对象的一个默认的名称，在 window 里面是一个空字符串
+        // var name = '王江'
+        // console.log(window)
+
+        // var myName = '王旭'
+        // console.log(myName)
+
+        // 注意点：变量命名的时候不要使用 top 单词，因为默认也表示 window
+        // console.log(top)
+
+        // 注意点：后面看到变量前面加 _ 表示用于进行名称区分
+        // var _name = '哈哈'
+        // console.log(_name)
+        // var _top = '嘿嘿'
+        // console.log(_top)
+
+        // 通过函数名称加括号调用函数，函数里面的 this 指向的是全局对象 window（在严格模式下无法指向 window，是 undefined）
+        // console.log(this)
+    </script>
+</body>
+
+</html>

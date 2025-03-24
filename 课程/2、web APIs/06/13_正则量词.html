@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            量词
+            + 也叫限定符，可以指定正则表达式的一个给定组，必须要出现多少次才能满足匹配
+            + 通过量词可以设置一个内容出现的次数。注意点：量词只对它前边的一个内容起作用。 都是必须连续出现
+            + {n}：匹配前一个字符正好出现n次 
+            + {n,}：匹配前一个字符出现n次以上，没有限制
+            + {n,m}：匹配一个字符出现n到m次
+            + ^ 开头
+            + $ 结尾
+        */
+        // let str = 'aa'
+        // let reg = /^a{2}$/
+        // let reg = /^a{2}$/
+        // console.log(reg.test(str))
+        // console.log(reg.exec(str))
+
+        // let str = 'aaaaaaaa'
+        // let reg = /^a{2,}$/
+        // console.log(reg.test(str))
+        // console.log(reg.exec(str))
+
+        // let str = 'aaaaa'
+        // let reg = /^a{2,5}$/
+        // console.log(reg.test(str))
+        // console.log(reg.exec(str))
+
+        // let str = 'abb'
+        // let reg = /^ab{2}$/  // 表示以a开头，以b结尾
+        // console.log(reg.test(str))
+        // console.log(reg.exec(str))
+
+        // let str = 'abab'
+        // let reg = /^(ab){2}$/  // () 表示分组
+        // console.log(reg.test(str))
+        // console.log(reg.exec(str))
+
+        // 正则模式：分为惰性模式、贪婪模式
+        // *表示允许的次数是0 至 正无穷次，有没有都行
+        // let str = 'b'
+        // let reg = /^a*$/  
+        // console.log(reg.test(str))
+    
+        // +表示允许的次数是1 至 正无穷次，至少有一个
+        // let str = 'aa'
+        // let reg = /^a+$/  
+        // console.log(reg.test(str))
+
+        // ? 表示允许的次数是0至1，最多出现1次 
+        // let str = ''
+        // let reg = /^a?$/  
+        // console.log(reg.test(str))
+    </script>
+</body>
+</html>

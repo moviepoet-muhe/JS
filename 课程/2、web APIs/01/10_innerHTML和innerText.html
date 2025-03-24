@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            width: 120px;
+            height: 200px;
+            border: 1px solid;
+            float: left;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <p>你好</p> -->
+    </div>
+
+    <ul>
+        <!-- <li>
+            <h3>小米电视</h3>
+            <p>2999</p>
+        </li> -->
+    </ul>
+    <script>
+        /*
+            innerHTML
+            + 可以给标记设置内容，可以解析标记
+            + 获取标记内容
+            innerText
+            + 可以给标记设置内容，不可以解析标记
+            + 获取标记内容
+        */
+        // var box = document.querySelector('.box')
+        // 获取内容
+        // console.log(box.innerHTML)
+        // console.log(box.innerText)
+
+        // 设置内容
+        // box.innerHTML = '<h1>哈哈</h1>'
+        // box.innerText = '<h1>哈哈</h1>'
+
+        var shoppingList = [
+            {
+                id: 1,
+                title: '小米电视',
+                price: 2999,
+            },
+            {
+                id: 2,
+                title: '华为mate70',
+                price: 9999,
+            },
+            {
+                id: 3,
+                title: '小米15',
+                price: 4999,
+            }
+        ]
+        var ul = document.querySelector('ul')
+        var str = ''
+        shoppingList.forEach(function (item) {
+            str += '<li>'
+            str += '<h3>' + item.title + '</h3>'
+            str += '<p>' + item.price + '</p>'
+            str += '</li>'
+            ul.innerHTML = str
+        })
+    </script>
+</body>
+
+</html>

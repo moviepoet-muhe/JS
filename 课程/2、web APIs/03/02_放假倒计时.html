@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            margin-top: 100px;
+            color: red;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>距离放假还有剩1天20小时30分钟20秒</h1>
+    <script>
+        // 获取元素
+        var h1 = document.querySelector('h1')
+        // 计算时间差 = 将来的时间 - 现在的时间
+        // 设置将来的时间
+        var endDate = new Date('2025-01-17 18:00:00')
+        // 使用定时器获取现在的时间并进行日期转换
+        function djs(){
+            var nowDate = new Date()
+            // 计算时间差（获取到是最的秒数）
+            var secondes = parseInt((endDate.getTime() - nowDate.getTime())/1000)
+            // 计算天
+            var d = patchFn(parseInt(secondes/3600/24))
+            // 计算小时
+            var h = patchFn(parseInt(secondes/3600%24))
+            // 计算分钟
+            var m = patchFn(parseInt(secondes/60%60))
+            // 计算秒
+            var s = patchFn(parseInt(secondes%60))
+
+            // 补位操作
+            // d < 10 ? d = '0' + d : d
+            // h < 10 ? h = '0' + h : h
+            // m < 10 ? m = '0' + m : m
+            // s < 10 ? s = '0' + s : s
+
+            // 进行赋值
+            h1.innerHTML = `距离放假还有剩${d}天${h}小时${m}分钟${s}秒`
+        }
+        djs()
+        setInterval(djs, 1000)
+
+        // 补位操作封装处理
+        function patchFn(num){
+            return num < 10 ? num = '0' + num : num
+        }
+    </script>
+</body>
+</html>

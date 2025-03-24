@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <script>
+    /*
+        声明变量
+        + 之前只能使用 var 关键字来声明，存在变量声明提升
+        + ES6新增了变量声明的方式
+        + let 第一种方式
+          => 没有声明提升
+          => 块级作用域
+          => 不能被重复声明
+        + const 第二种方式
+          => 没有声明提升
+          => 块级作用域
+          => 不能被重复声明
+          => 用来声明常量（值不能被重新赋值）
+        + 块级作用域是什么
+          => 以 花 括号为界限的作用域
+    */
+    // console.log(a) // undefined
+    // var a = 10
+
+    // console.log(a) // Cannot access 'a' before initialization
+    // let a = 10
+
+    // var b = 20
+    // var b = 66
+    // console.log(b)
+
+    // let b = 20 
+    // var b = 66 // 不能被重复声明
+
+    // let c = 30
+    // c = 66
+    // console.log(c) // 可以被重新赋值
+
+    // const c = 30
+    // c = 66
+    // console.log(c) // Assignment to constant variable.
+
+    // {
+    //     // var d = 10
+    //     // let d = 10
+    //     // const d = 10
+    // }
+    // console.log(d) // d is not defined
+
+    // for(let i=0; i<10; i++){
+    //     // console.log(i)
+    // }
+    // console.log(i) // i is not defined
+
+    // 适合使用 const 来获取元素
+    var btn = document.querySelector('button')
+    let btn = document.querySelector('button')
+    const btn = document.querySelector('button')
+    btn = 30
+
+    // 第三方的库、插件、框架里面会使用，因为不希望使用者进行变量名称的重新赋值
+
+    // axios 专门用来发送请求的，导入文件的时候可以使用 const，可以避免这个名称被修改
+
+    function fn() {
+      console.log('hello')
+    }
+    fn = 66
+
+    // 声明函数 表达式方式
+    var fn = function () {
+      console.log('hello')
+    }
+    const fn = function () {
+      console.log('hello')
+    }
+    fn = 66
+
+    const aBtn = document.querySelectorAll('button')
+    for (let i = 0; i < aBtn.length; i++) {
+      // console.log(i)
+      aBtn[i].onclick = function () {
+        alert(i)
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        const h1 = document.querySelector('h1')
+        // let name = '王江'
+        // h1.innerHTML = `他的名字叫做：${name}, 是江湖里面曾经的传说！由于修仙...`
+        // name = '王旭'
+        // h1.innerHTML = `他的名字叫做：${name}, 是江湖里面曾经的传说！由于修仙...`
+        // name = '邓为'
+        // h1.innerHTML = `他的名字叫做：${name}, 是江湖里面曾经的传说！由于修仙...`
+
+        // 使用数据劫持实现响应式数据（数据改变了，那么页面也会跟着更新）
+        // 目标对象
+        const target = {}
+        // 设置数据对象
+        const setValue = {
+            name: '王江'
+        }
+        // 使用数据劫持
+        Object.defineProperty(target, 'name', {
+            get(){
+                return setValue.name
+            },
+            set(value){
+                setValue.name = value
+                render()
+            }
+        })
+        function render(){
+            h1.innerHTML = `他的名字叫做：${target.name}, 是江湖里面曾经的传说！由于修仙...`
+        }
+        render()
+    </script>
+</body>
+</html>

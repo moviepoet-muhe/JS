@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        div{
+            width: 200px;
+            height: 300px;
+            background-color: hotpink;
+        }
+        section{
+            width: 150px;
+            height: 200px;
+            background-color: greenyellow;
+            position: fixed;
+            top: 230px;
+            right: 0;
+            opacity: 0;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <section>侧边栏</section>
+    <script>
+        // onresize 事件，当窗口大小改变时触发
+        // innerWidth 获取浏览器可见宽度
+        // innerHeight 获取浏览器可见高度
+        // window.onresize = ()=> {
+        //     // console.log(window.innerWidth)
+        //     // console.log(window.innerHeight)
+        //     if(window.innerWidth <= 750){
+        //         document.body.bgColor = 'orange'
+        //     }
+        // }
+
+        // onscroll 滚动事件，当浏览器滚动条滚动的时候触发
+        // scrollTop 获取滚动距离
+        const section = document.querySelector('section')
+        window.onscroll = ()=> {
+            // console.log(document.documentElement.scrollTop)
+            // console.log(document.body.scrollTop)
+            // 短路运算符
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+            if(scrollTop>=300){
+                section.style.opacity = 1
+            }else{
+                section.style.opacity = 0
+            }
+        }
+    </script>
+</body>
+</html>

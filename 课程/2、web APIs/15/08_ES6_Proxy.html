@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        const h1 = document.querySelector('h1')
+        // 目标对象（代理的原始对象，你需要操作的对象，最终返回一个结果，可以使用这个结果进行一些列其他的操作）
+        const obj = {
+            name: '王江',
+            age: 18
+        } 
+        // 使用代理，Proxy是代理的意思，其实就是对数据劫持进行了封装和升级改造
+        const result = new Proxy(obj, {
+            get(target, property){
+                return target[property]
+            },
+            set(target, property, value){
+                target[property] = value
+                render()
+            }
+        })
+        function render(){
+            h1.innerHTML = `他的名字叫做：${result.name}, 是江湖里面曾经的传说！由于修仙...，已经过来无数岁月，他的年龄看起来像${result.age}岁！`
+        }
+        render()
+        console.log(result)
+    </script>
+</body>
+</html>

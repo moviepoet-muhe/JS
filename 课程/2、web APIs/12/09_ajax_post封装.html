@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            ajax_post封装
+            + 请求参数
+              => @params { string } url 请求地址
+              => @params { string } querystr 请求参数
+              => @params { function } success 请求成功时的回调
+              => @params { function } error 请求失败时的回调
+        */
+        function ajax_post(options){
+            const xhr = new XMLHttpRequest()
+            xhr.open('post', options.url)
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+            xhr.onreadystatechange = ()=> {
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200){
+                        options.success && options.success(xhr.responseText)
+                    }else{
+                        options.error && options.error()
+                    }
+                }
+            }
+            if(options.querystr){
+                let str = ''
+                for(let key in options.querystr){
+                    str += `${key}=${options.querystr[key]}&`
+                }
+                str = str.slice(0, -1)
+                xhr.send(str)
+            }else{
+                xhr.send()
+            }
+        }
+        ajax_post({
+            url: 'http://localhost:8888/test/fourth',
+            querystr: {name: 'zhangsan', age: 18},
+            success(res){
+                console.log(res)
+            }
+        })
+    </script>
+</body>
+</html>

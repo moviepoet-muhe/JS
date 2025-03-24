@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一种随机颜色写法
+        // var colorArr = ['orange', 'yellow', 'black', 'blue', 'purple', 'green', 'pink', 'skyblue', 'hotpink']
+
+        // 页面初始化
+        document.body.bgColor = colorArr[0]
+
+        setInterval(function () {
+            var index = Math.floor(Math.random() * colorArr.length)
+            document.body.bgColor = colorArr[index]
+        }, 1000)
+
+        // 第二种随机颜色写法（采用的是纯数字的十六进制的颜色值）
+        var max = 999999
+        var min = 100000
+
+        setInterval(function () {
+            var random = Math.round(Math.random() * (max - min) + min)
+            document.body.bgColor = '#' + random
+        }, 1000)
+
+        /*
+            直接可以使用的元素，不需要使用js选择器获取的
+            document.body
+            document.documentELement
+            document.head
+
+            document.title
+            设置网页的标题
+            获取网页的标题
+        */
+        // console.log(document.documentElement)
+        // console.log(document.head)
+        // console.log(document.title)
+        // document.title = '哈哈，我是新设置的标题'
+
+    </script>
+</body>
+
+</html>

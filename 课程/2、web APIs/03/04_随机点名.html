@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>start</button>
+    <button>end</button>
+    <h1></h1>
+    <script>
+        var aBtn = document.querySelectorAll('button')
+        var h1 = document.querySelector('h1')
+        var arrName = ['王江', '王旭', '陈辰', '陈天雨', '马彬', '吴林', '邓为', '扬磊', '杨策']
+        /*
+            定时器累加问题
+            + 当连续点击按钮时，相当于是一次开启了很多的定时器，点击关闭定时器按钮时，关闭是最后一次的定时器，前面的定时器并没有被关闭，因此还会执行下去，
+            这个就是定时器累加问题
+            + 为什么执行速度会越来越快呢？
+              => 200毫秒执行一次
+              => 多个定时器的时候，时间保持不变，但是200毫秒后多个任务都有对应的输出，因此看到速度越来越快
+            + 解决方案
+              => 先清除，再开启
+        */
+        // 初始化
+        h1.innerHTML = arrName[0]
+        var timer = null
+        aBtn[0].onclick = function(){
+            clearInterval(timer)
+            timer = setInterval(function(){
+                var index = Math.floor(Math.random()*arrName.length)
+                h1.innerHTML = arrName[index]
+            }, 200)
+        }
+        aBtn[1].onclick = function(){
+            // clearInterval('定时器的id')，定时器的id是setInterval()函数的返回值，默认是数值类型的。一般从1开始，但是不同的浏览器返回的不一样
+            clearInterval(timer)
+        }
+    </script>
+</body>
+</html>

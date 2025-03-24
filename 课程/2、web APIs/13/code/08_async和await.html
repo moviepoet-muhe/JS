@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/ajax.js"></script>
+    <script>
+        /*
+            async
+            + 异步
+            + 可以让普通函数变成异步函数
+            await
+            + 等待
+            async和await
+            + 它们两个是一个组合，也是基于Promise来实现的
+            + 作用
+              => 可以帮助咱们解决回调嵌套问题
+              => 可以让咱们把代码写的更为优雅
+
+            回调地狱问题（回调函数不断嵌套形成的）
+            ajax_get({
+                url: 'http://localhost:2402/user/test1',
+                success(res){
+                    console.log(`第一个请求返回的结果：${res}`)
+                    ajax_get({
+                        url: 'http://localhost:2402/user/test2',
+                        querystr: {a: res},
+                        success(res){
+                            console.log(`第二个请求返回的结果：${res}`)
+                            ajax_get({
+                                url: 'http://localhost:2402/user/test3',
+                                querystr: {b: res},
+                                success(res){
+                                    console.log(`第三个请求返回的结果：${res}`)
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+
+            通过Promise改进的回调嵌套的方案
+            pAjax({
+                url: 'http://localhost:2402/user/test1'
+            })
+            .then(res=>{
+                console.log(`这是第一次请求的结果：${res}`)
+                return pAjax({url: 'http://localhost:2402/user/test2', querystr: {a: res}})
+            })
+            .then(res=>{
+                console.log(`这是第二次请求的结果：${res}`)
+                return pAjax({url: 'http://localhost:2402/user/test3', querystr: {b: res}})
+            })
+            .then(res=>{
+                console.log(`这是第三次请求的结果：${res}`)
+            })
+        */
+        // 回调地狱问题解决终极方案
+        // 总结：工作中如果遇到请求嵌套请求的情况，可以直接使用async和await。如果不是请求嵌套的情况，可以直接使用Promise
+        async function requestFn() {
+            const res1 = await pAjax({url: 'http://localhost:2402/user/test1'})
+            console.log(res1)
+            const res2 = await pAjax({url: 'http://localhost:2402/user/test2', querystr: {a: res1}})
+            console.log(res2)
+            const res3 = await pAjax({url: 'http://localhost:2402/user/test3', querystr: {b: res2}})
+            console.log(res3)
+        }
+        requestFn()
+    </script>
+</body>
+</html>

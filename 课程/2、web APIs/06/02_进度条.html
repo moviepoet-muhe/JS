@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .progress-bar{
+            width: 600px;
+            height: 35px;
+            margin: 50px auto;
+        }
+        .progress-bar .left{
+            width: 550px;
+            height: 35px;
+            background-color: #e5e5e5;
+            float: left;
+            position: relative;
+        }
+        .progress-bar .left .bg{
+            width: 0;
+            height: 35px;
+            background-color: red;
+        }
+        .progress-bar .left .bar{
+            width: 60px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: -7px;
+            cursor: move;
+        }
+        .progress-bar .right{
+            width: 50px;
+            height: 35px;
+            float: left;
+            text-align: center;
+            line-height: 35px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="left">
+            <div class="bg"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="right">0%</div>
+    </div>
+    <!-- <input type="range" value="0"><span></span> -->
+    <script>
+        // 使用表单实现进度条功能
+        // const range = document.querySelector('input')
+        // const num = document.querySelector('span')
+        // num.innerHTML = 0 + '%'
+        // range.onmousemove = function(){
+        //     console.log(this.value)
+        //     num.innerHTML = this.value + '%'
+        // }
+
+        // 自定义进度条功能
+        const bar = document.querySelector('.bar')
+        const bg = document.querySelector('.bg')
+        const num = document.querySelector('.right')
+
+        bar.onmousedown = (e)=> {
+            let l = e.offsetX
+            document.onmousemove = (e)=> {
+                let x = e.pageX - l - bar.parentNode.parentNode.offsetLeft
+                if(x<=0){
+                    x = 0
+                }else if(x>=bar.parentNode.offsetWidth - bar.offsetWidth){
+                    x = bar.parentNode.offsetWidth - bar.offsetWidth
+                }
+                bar.style.left = x + 'px'
+                bg.style.width = x + 'px'
+                num.innerHTML = parseInt(x / (bar.parentNode.offsetWidth - bar.offsetWidth) * 100) + '%'
+            }
+        }
+        bar.onmouseup = ()=> {
+            document.onmousemove = null
+        }
+    </script>
+</body>
+</html>

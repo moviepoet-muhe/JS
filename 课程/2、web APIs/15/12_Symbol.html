@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 注意点：在ES5的规范中，无论把什么类型添加进对象作为key，最终都会转成字符串类型。默认会调用toString()方法进行转换操作
+        // const obj = {}
+        // obj[1] = '数字'
+        // obj[[1, 2, 3]] = '数组'
+        // for(let key in obj){
+        //     console.log(typeof key) // string
+        // }
+        // console.log(obj)
+
+        // console.log([1, 2, 3].toString()) // 1,2,3
+
+        // 产生冲突问题
+        // const obj = {name: '王江'}
+        // obj['name'] = '王旭'
+        // console.log(obj)
+
+        // Symbol() 函数，这个函数返回的类型岁独一无二的，不是引用数据类型，而是一个基本数据类型。Symbol()放的是描述信息，其实你可以理解为值
+        // let num1 = 10
+        // let num2 = 10
+        // console.log(num1 == num2) // true
+
+        // let num1 = Symbol(10)
+        // let num2 = Symbol(10)
+        // console.log(num1 == num2) // false
+
+        // const obj = {name: '王江'}
+        // obj[Symbol('name')] = '王旭'
+        // console.log(obj)
+
+        const obj = {
+            name: '王江',
+            [Symbol('name')]: '王旭',
+            [Symbol('name')]: '邓为',
+        }
+        console.log(obj)
+        let arr = Object.getOwnPropertySymbols(obj)
+        console.log(obj[arr[0]])
+        console.log(obj[arr[1]])
+    </script>
+</body>
+</html>

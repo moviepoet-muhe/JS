@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #000;
+        }
+        .hot{
+            width: 500px;
+            height: 300px;
+            background: url("./img/5.jpg") no-repeat;
+            background-size: 100% 100%;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            transition: all 1s;
+            opacity: 0;
+        }
+        .hot h1{
+            color: red;
+            margin-top: 50px;
+        }
+        .hot span{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            opacity: .5;
+            background-color: #fff;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="hot">
+        <span>&times;</span>
+        <marquee>
+            <h1>王江喜欢学习英语...</h1>
+        </marquee>
+    </div>
+    <script>
+        /*
+            setTimeout()
+            + 延时器
+            + 只执行一次，时间到了调用一次函数结束
+            + params
+              => 参数1 callback 回调函数
+              => 参数2 时间 s 表示秒 ms 毫秒 默认是毫秒
+            clearTimeout('延时器id')
+        */
+        // var timer = setTimeout(function(){
+        //     alert(123)
+        // }, 2000)
+
+        // clearTimeout(timer)
+
+
+        // var hot = document.querySelector('.hot')
+        // var span = document.querySelector('span')
+
+        // setTimeout(function(){
+        //     hot.style.opacity = 1
+        // }, 3000)
+
+        // span.onclick = function(){
+        //     hot.style.opacity = 0
+        // }
+
+
+    </script>
+</body>
+</html>

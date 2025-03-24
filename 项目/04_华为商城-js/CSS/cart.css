@@ -1,0 +1,114 @@
+
+.header .site-header .container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: url(https://res.vmallres.com/bporder/rn/imageArray/i-step.svg)no-repeat right;
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo-container .logo-pic a{
+  display: inline-block;
+ width: 103px;
+ height: 74px;
+}
+.logo-container .logo-pic a img{
+  width: 103px;
+  height: 74px;
+}
+
+.logo-container .logo-txt{
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.info-bg{
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: rgb(241, 243, 245);
+}
+
+.info-bg .info-container{
+  display: flex;
+  margin: 0 auto;
+  width: 1226px;
+  align-items: center;
+  height: 48px;
+  padding-left: 16px;
+  background-color: rgb(255, 253, 238);
+  border: 1px solid  rgb(234, 206, 133);
+}
+.info-bg .info-container .iconfont{
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(202, 20, 29);
+  margin-right: 5px;
+}
+.info-bg .info-container .info-txt{
+  font-size: 12px;
+  color: rgb(202, 20, 29);
+}
+
+.info-bg .info-container button{
+  width: 70px;
+  height: 30px;
+  background-color: rgb(202, 20, 29);
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+}
+
+
+.cart-container{
+  width: 100%;
+  height: 402px;
+  background-color: rgb(241, 243, 245);
+  padding-top: 20px;
+}
+
+.cart-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 260px;
+  height: 382px;
+}
+
+.cart-info img{
+  width: 160px;
+  height: 160px;
+}
+
+.cart-info .cart-txt{
+  padding-top: 32px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+}
+
+.cart-info .cart-btn{
+  margin-top: 20px;
+  width: 120px;
+  height: 40px;
+  background-color: rgb(207, 10, 44);
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.cart-info .cart-btn a{
+  color: #fff;
+  text-decoration: none;
+}

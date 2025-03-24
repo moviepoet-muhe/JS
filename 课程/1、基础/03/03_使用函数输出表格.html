@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  print() 可以自动调用打印功能
+
+        // 封装规则：把代码里面需要变化的地方提成一个参数即可
+        function printTable(rows, cols) {
+            var str = '<table border="1" width="500" height="200">'
+            for (var i = 1; i <= rows; i++) {
+                str += '<tr>'
+                for (var j = 1; j <= cols; j++) {
+                    str += '<td></td>'
+                }
+                str += '</tr>'
+            }
+            str += '</table>'
+            document.write(str)
+            document.write('<hr/>')
+        }
+        printTable(3, 5)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            npm启动项目流程
+            + 第一步
+              => 拿到项目，查看是否存在package.json文件
+            + 第二步
+              => 执行pnpm i || install
+              => 下载包的时候，会报错（终端飘红 error）
+              => 这个时候要把错误信息翻译出来，看看是什么意思（翻译了你还是不明白，那么现在直接丢给ai）
+              => 一般的问题都是node版本过高或者高低（老项目使用的node版本都是比较低的，新项目使用是高版本nvm）
+              => 一般的问题都是npm镜像源地址（npm默认地址是国外、可以使用cnpm、pnpm，切换镜像源地址nrm）
+              => 一般的问题都是网络或者丢包现象，清除缓存
+              => mac系统下载npm包的时候，如果是全局的那么需要加sudo权限，权限后面跟下载的命名
+              => ...
+            + 第三步
+              => 查看项目启动命名
+              => README.md 项目说明文件（项目的技术栈的介绍、启动命名、后端使用的是什么，包含数据类型等等）
+              => 如果没有这个文件，直接去package.json文件查看
+              => package.json文件里面有一个script选项，这个选项里面就可以设置启动命名
+              => start命名前面不需要加run，其他配置的命名默认需要加run  例如：npm run dev
+        */
+    </script>
+</body>
+</html>

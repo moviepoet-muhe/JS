@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    /*
+        数据类型
+        + 基本（原始）数据类型
+          => number 数值（数字）类型
+          => string 字符串字符串
+          => boolean 布尔类型
+          => null 空类型
+          => undefined 未定义类型
+          => symbol 独一无二的类型（后续讲，现在只需要做了解）
+        + 引用（复杂、引用）数据类型
+          => array 数组类型
+          => function 函数类型
+          => object 对象类型
+        + 查看数据类型
+          => typeof(变量名)
+          => typeof 变量名
+    */
+    // number 数值类型，分为整型和浮点型
+    // 注意点：js里面定义数值类型的时候是不需要区分，由值来决定变量类型的
+    // var num1 = 12
+    // var num2 = 12.66
+    // console.log(typeof(num1)) // nummber
+    // console.log(typeof num2) // number
+
+    // NaN 非数字类型（not a number）
+    // 场景：当把其他的类型转成数值类型，无法呈现数字形态的时候，返回NaN。例如：abc 字符转成数值类型，怎么去呈现呢？
+    // var num3 = NaN
+    // console.log(typeof num3) // number
+
+    // Infinity 表示的是无穷大
+    // var num4 = Infinity
+    // console.log(typeof num4) // number
+
+    // var num5 = -Infinity
+    // console.log(typeof num5) // number
+
+    // string 字符串字符串，使用双引号或者单引号包裹起来的字符称之为字符串
+    // 注意点：如果不使用双引号或者单引号包裹字符，那么js会把这个字符当成变量来解析（关键字、保留字）
+    // var str1 = '1'
+    // var str2 = 'a'
+    // var str3 = '哈哈'
+    // var str4 = ''
+    // var str5 = '你好啊'
+    // console.log(typeof str1, typeof str2, typeof str3, typeof str4, typeof str5) // string string string string string
+
+    // 字符串拼接，使用加号进行字符的连接（拼接）
+    // var str6 = 'hello '
+    // var str7 = '王江'
+    // console.log(str6 + str7) // hello 王江
+
+    // var myName = '王江'
+    // console.log('你好, '+myName+'喜欢黑丝！')
+
+    // boolean 布尔类型，分别是true（真）和false（假）。主要用于判断
+    // var bool1 = true
+    // var bool2 = false
+    // console.log(typeof bool1, typeof bool2) // boolean boolean
+
+    // console.log(10 > 20) // false
+    // console.log(10 < 20) // true
+
+    // undefined 未定义类型。当一个变量声明了，但是没有进行赋值，返回的就是undefined
+    // var und = undefined
+    // console.log(typeof und) // undefined
+
+    // var username
+    // console.log(username) // undefined
+
+    // null 空类型，起了一个占位和清除变量的作用
+    // 注意点：null类型返回的类型是object
+    // var nl = null
+    // console.log(typeof nl) // object
+
+    // var username = null
+    // username = '王江'
+    // console.log(username)
+
+    // var admin = '王江vip'
+    // admin = null
+    // console.log(admin)
+
+    /*
+        null 和 undefined
+        + 大家发现其实它们两个所表示的意义很像
+        + 一开始 js 里面其实只有 null 类型，因为其他语言里面存在这个类型，把它划分为基本数据类型，结果在使用的过程中发现它返回的类型是 object，其实这个属于 js 的设计bug
+        + 后面为了解决这个问题，在 null 类型的基础之上衍生出了一个undefined类型
+    */
+  </script>
+</body>
+
+</html>

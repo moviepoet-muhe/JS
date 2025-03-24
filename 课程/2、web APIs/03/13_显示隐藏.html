@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 0;
+            background-color: hotpink;
+            /* display: none; */
+            overflow: hidden;
+            transition: all 1s;
+        }
+
+        /* .show{
+            display: block;
+        } */
+
+        .show {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示/隐藏</button>
+    <!-- <div style="display: none;"></div> -->
+    <div>123</div>
+    <script>
+        const btn = document.querySelector('button')
+        const box = document.querySelector('div')
+
+        btn.onclick = () => {
+            // if(box.style.display === 'none'){
+            //     box.style.display = 'block'
+            // }else{
+            //     box.style.display = 'none'
+            // }
+            box.classList.toggle('show')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Map() 是一种数据结构，可以把任意数据类型作为对象的key，之前对象key的类型只能是字符串
+        let arr = ['a', 'b']
+        let obj = {name: '王江'}
+        const mp = new Map([
+            [arr, '我是一个数组'],
+            [obj, '对象'],
+            [10, '我是数字']
+        ])
+        // console.log(mp.size)
+        // `keys()` : 取出Map里面所有的键
+        // console.log(mp.keys())
+
+        // `values()` : 取出Map里面所有的值
+        // console.log(mp.values())
+
+        // `entries()` ：取出里面所有的键和值
+        // console.log(mp)
+        // console.log(mp.entries())
+
+        // `set()` :  增加、修改
+        // mp.set('age', 18)
+        // mp.set(obj, 10)
+
+        // `get()`:  获取
+        // console.log(mp.get(obj))
+        // console.log(mp.get(arr))
+
+        // `has()`: 判断里面有没有这个值 true / false
+        // console.log(mp.has(arr))
+
+        // `delete()` : 删除
+        // mp.delete(arr)
+
+        // `clear()` : 清除
+        // mp.clear()
+        // console.log(mp)
+    </script>
+</body>
+</html>

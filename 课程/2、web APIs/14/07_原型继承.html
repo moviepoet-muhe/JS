@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 继承：一个对象继承另一个对象的属性和方法
+        // 注意点：继承一定是发生在同类之间的
+        // 原型继承：利于的是原型链的规则来实现继承
+        function Father(name, age){
+            this.name = name
+            this.age = age
+        }
+        Father.prototype.money = function(){
+            console.log('父：非常能赚钱！')
+        }
+
+        function Son(name, age){
+            // this.name = name
+            // this.age = age
+        }
+        // 问题：虽然实现了继承，但是给子构造函数的原型上面添加的方法，父类构造函数还是能使用，这个肯定不能影响父类构造函数才行
+        // Son.prototype = Father.prototype
+
+        // 折中处理，可以把父类的实例化对象赋值给子类构造函数的原型对象
+        Son.prototype = new Father('王炎煦阳', 18)
+
+        Son.prototype.love = function(){
+            console.log('子：潇洒恋爱')
+        }
+
+        const s1 = new Son()
+        s1.money()
+        s1.love()
+
+        // new Father('王江', 30).love() // 报错
+
+        console.log('子原型对象：', Son.prototype)
+        console.log(s1.name)
+        console.log(s1.age)
+    </script>
+</body>
+</html>

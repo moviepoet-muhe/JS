@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6的继承实际上实现原理就是组合继承
+        class Father{
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+            money(){
+                console.log('小目标')
+            }
+        }
+        class Son extends Father {
+            constructor(name, age, sex){
+                // 注意点：super() 函数必须放在构造函数的最前面
+                super(name, age)
+                this.sex = sex
+            }
+            love(){
+                console.log('恋爱了')
+            }
+        }
+        const s = new Son('王小江', 18, '男')
+        console.log(s)
+        s.love()
+        s.money()
+    </script>
+</body>
+</html>

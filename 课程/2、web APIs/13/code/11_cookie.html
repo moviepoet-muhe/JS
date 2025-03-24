@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            问题
+            + 一个网页的数据无法给另一个网页进行共享的
+            + cookie  
+              => 可以把数据给另一个网页进行共享
+              => 存储大小有限定，大概4kb左右
+              => 存在安全性问题，cookie可能会被禁用
+              => 存储的cookie，发送请求的时候，会默认携带到服务端
+              => cookie必须在服务器环境下使用
+              => ...
+        */
+        // 存储
+        // document.cookie = 'name=wangjiang'
+        // document.cookie = 'age=18'
+
+        // 读取
+        // console.log(document.cookie.split('; '))
+        // let arr = document.cookie.split('; ')
+        // let obj = {}
+        // arr.forEach(item=>{
+        //     let newArr = item.split('=')
+        //     console.log(newArr)
+        //     obj[newArr[0]] = newArr[1]
+        // })
+        // console.log(obj)
+
+        // let d = new Date('2025-02-20 00:00:00')
+        // document.cookie = `username=zhangsan; expires=${d}; path=/`
+    </script>
+</body>
+</html>

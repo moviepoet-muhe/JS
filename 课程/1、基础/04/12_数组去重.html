@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组去重（利于选择排序实现数组去重）
+        var arr = ['a', 'a', 'a', 'b', 'b', 'c', 'f', 'c', 'f', 'd', 'j', 'k']
+        /*
+             0    1    2    3    4    5    6
+            'a', 'b', 'b', 'c', 'f', 'c', 'f', 'd', 'j', 'k'
+            'a', 'a', 'a', 'b', 'b', 'c', 'f', 'c', 'f', 'd', 'j', 'k'
+        */
+        for(var i=0; i<arr.length-1; i++){
+            for(var j=i+1; j<arr.length; j++){
+                // arr[0] == arr[1] 'a' == 'a' 满足条件，进入判断体里面
+                // arr[0] == arr[1] 'a' == 'a' 满足条件，进入判断体里面
+                // arr[0] == arr[1] 'a' == 'b' 不满足条件，继续执行比较
+                if(arr[i] == arr[j]){
+                    //         1
+                    //         1
+                    arr.splice(j, 1)
+                    j--
+                }
+            }
+        }
+        console.log(arr)
+    </script>
+</body>
+</html>

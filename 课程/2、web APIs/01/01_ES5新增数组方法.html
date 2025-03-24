@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+        map() 映射
+        + 可以修改和获取数组里面的满足条件的选项
+        + 参数是函数
+        + 作为参数的函数的参数
+          => 参数1表示当前数组元素
+          => 参数2表示当前数组元素下标
+          => 参数3表示当前数组
+        + 返回值
+          => 就是你筛选满足条件的数组元素的一个新数组
+    */
+    var info = [
+      {
+        id: 1,
+        name: '陈辰',
+        tel: 13266082325,
+        score: 70
+      },
+      {
+        id: 2,
+        name: '王江',
+        tel: 13366082326,
+        score: 80
+      },
+      {
+        id: 3,
+        name: '邓为',
+        tel: 13166082328,
+        score: 86
+      }
+    ]
+    // 需求：需要把每一个的电话号码拿出来放在一个单独的数组里面
+    var result = info.map(function (item) {
+      // return item.tel
+      return { name: item.name, tel: item.tel, score: item.score += 10 }
+    })
+    console.log(result)
+
+    /*
+        filter 过滤
+        + 只能根据条件进行数组元素的过滤
+        + 参数是函数
+        + 作为参数的函数的参数
+          => 参数1表示当前数组元素
+          => 参数2表示当前数组元素下标
+          => 参数3表示当前数组
+        + 返回值
+          => 就是你筛选满足条件的数组元素的一个新数组
+        + 注意点
+          => 每次返回的结果都是数组当前元素里面所有的值，而不像map那样可以进行指定
+    */
+    var info = [
+      {
+        id: 1,
+        name: '陈辰',
+        tel: 13266082325,
+        score: 70
+      },
+      {
+        id: 2,
+        name: '王江',
+        tel: 13366082326,
+        score: 80
+      },
+      {
+        id: 3,
+        name: '邓为',
+        tel: 13166082328,
+        score: 86
+      }
+    ]
+    // 需求：把成绩大于等于80的筛选出来？
+    var result = info.filter(function (item) {
+      return item.name += '@'
+    })
+
+    var result = info.map(function (item) {
+      return item.name
+    })
+    console.log(result) 
+  </script>
+</body>
+
+</html>

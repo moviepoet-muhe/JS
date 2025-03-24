@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // new Date() 日期对象，返回现在的日期。通过提供的日期对象，拿到需要的年月日 小时、分钟、秒、毫秒等待
+        // 时间戳：指的是1970年1月1日零时到现在经过的毫秒数
+        var d = new Date()
+        // 获取年
+        console.log(d.getFullYear())
+        // 获取月 因为月默认是从0开始的，因此需要手动+1
+        console.log(d.getMonth() + 1)
+        // 获取周
+        console.log(d.getDay())
+        // 获取日
+        console.log(d.getDate())
+        // 获取小时
+        console.log(d.getHours())
+        // 获取分钟
+        console.log(d.getMinutes())
+        // 获取秒
+        console.log(d.getSeconds())
+        // 获取毫秒
+        console.log(d.getMilliseconds())
+
+        // 获取时间戳
+        console.log(d.getTime()) // 17337 9725 6124
+
+        // 设置日期
+        d.setFullYear(2025)
+        console.log(d)
+
+        // 简单设置
+        var d = new Date('2025-11-11 00:30:00')
+        var d = new Date('2025/11/11 00:30:00')
+        console.log(d)
+
+    </script>
+</body>
+
+</html>

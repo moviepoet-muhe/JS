@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        div{
+            width: 200px;
+            height: 300px;
+            background-color: hotpink;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // e.clientX 获取鼠标坐标（横向坐标）
+        // e.clientY 获取鼠标坐标（纵向坐标）
+        // e.pageX 获取鼠标坐标（横向坐标，包含网页滚动距离）
+        // e.pageY 获取鼠标坐标（纵向坐标，包含网页滚动距离）
+        // e.offsetX 鼠标在元素中的横向坐标
+        // e.offsetY 鼠标在元素中的纵向坐标
+        // e.keyCode
+        // e.altKey
+        // ...
+        document.onclick = (e)=> {
+            console.log(`x: ${e.clientX}, y: ${e.clientY}`)
+            console.log('-----------------')
+            console.log(`x: ${e.pageX}, y: ${e.pageY}`)
+            console.log('-----------------')
+            console.log(`ele-x: ${e.offsetX}, ele-y: ${e.offsetY}`)
+        }
+
+        console.log(screenX, screenY)
+    </script>
+</body>
+</html>

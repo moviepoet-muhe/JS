@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            [abc]  查找方括号之间的任何字符。
+
+            [0-9]   查找任何从 0 至 9 的数字。
+
+            [a-z]   查找任何从小写 a 到小写 z 的字符。
+
+            [A-Z]  查找任何从大写 A 到大写 Z 的字符。
+
+            [A-z]  查找任何从大写 A 到小写 z 的字符。
+        */
+        let str = 'a13'
+        // let reg = /a|b|c/  // | 表示或的意思，注意不是两个杠
+        // let reg = /[abc]/
+        // let reg = /[a-c]/
+        // let reg = /[0-9a-z]/
+        let reg = /^a[0-6]{2}$/
+        console.log(reg.test(str))
+    </script>
+</body>
+</html>

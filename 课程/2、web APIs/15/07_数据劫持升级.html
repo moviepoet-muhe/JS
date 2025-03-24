@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 目标对象（被劫持的对象，需要做操作的对象）
+        let obj = {}
+
+        // 为了解决全局变量的命名污染问题，可以使用一个对象的结构来专门做这个事情
+        const setValue = {
+            name: '王江',
+            age: 18
+        }
+
+        // 参数1表示你要对那个对象做限定（目标对象）, 参数2表示对对象里面的那个属性进行限定，参数3表示配置项（是一个对象）
+        // Object.defineProperty(obj, 'name', {
+        //     get(){
+        //         console.log('获取：每次你获取属性值的时候都会被默认调用')
+        //         return setValue.name
+        //     },
+        //     set(value){
+        //         // 注意点：在外界设置的属性值，通过set函数的value参数拿到
+        //         setValue.name = value
+        //         console.log('修改：每次你设置属性值的时候都会被默认调用')
+        //     }
+        // })
+
+        // Object.defineProperty(obj, 'age', {
+        //     get(){
+        //         console.log('获取：每次你获取属性值的时候都会被默认调用')
+        //         return setValue.age
+        //     },
+        //     set(value){
+        //         // 注意点：在外界设置的属性值，通过set函数的value参数拿到
+        //         setValue.age = value
+        //         console.log('修改：每次你设置属性值的时候都会被默认调用')
+        //     }
+        // })
+
+        // 数据劫持升级版本
+        Object.defineProperties(obj, {
+            'name': {
+                get(){
+                    return setValue.name
+                },
+                set(value){
+                    setValue.name = value
+                }
+            },
+            'age': {
+                get(){
+                    return setValue.age
+                },
+                set(value){
+                    setValue.age = value
+                }
+            }
+        })
+        obj.name = '邓为'
+        obj.age = 20
+        console.log(obj.name, obj.age)
+    </script>
+</body>
+</html>

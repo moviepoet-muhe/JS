@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式：制定验证字符的规则，这个规则是由你自己制定的
+        // 构造函数
+        // let reg = new RegExp('a', 'i') // 制定了一个验证字符串里面是否存在a这个字符的规则
+
+        // 字面量
+        let reg = /a/i
+        let str = 'Aa'
+        // 正则方法：test() 如果满足规则返回true，不满足就返回false。exec() 捕获方法，可以把满足规则的字符以数组的形式给返回，如果没有匹配到返回的是一个null
+        // 修饰符：g 全局匹配 i 表示忽略大小写
+        console.log(reg.test(str))
+        console.log(reg.exec(str))
+    </script>
+</body>
+</html>

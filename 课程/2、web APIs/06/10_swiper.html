@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./libs/css/swiper-bundle.min.css">
+    <style>
+        .swiper {
+            width: 600px;
+            height: 500px;
+            border: 1px solid orange;
+            margin: 50px auto;
+        }  
+    </style>
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./img/29.jpg"/></div>
+            <div class="swiper-slide"><img src="./img/30.jpg"/></div>
+            <div class="swiper-slide"><img src="./img/31.jpg"/></div>
+            <div class="swiper-slide"><img src="./img/32.jpg"/></div>
+            <div class="swiper-slide"><img src="./img/33.jpg"/></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <script src="./libs/js/swiper-bundle.min.js"></script>
+    <script>
+          var mySwiper = new Swiper ('.swiper', {
+            loop: true, // 循环模式选项
+            // autoplay:true,
+            autoplay: {
+                pauseOnMouseEnter:true,
+                disableOnInteraction:false,
+            },
+            
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        })   
+        //鼠标滑过pagination控制swiper切换
+        // for(i=0;i<mySwiper.pagination.bullets.length;i++){
+        //     mySwiper.pagination.bullets[i].onmouseover=function(){
+        //         this.click();
+        //     };
+        // } 
+    </script>
+</body>
+</html>

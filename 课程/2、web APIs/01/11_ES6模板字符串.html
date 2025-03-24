@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul></ul>
+    <script>
+        /*
+            `` 模版字符串
+            + 简化了字符串繁琐的拼接
+            + 可以让字符串进行换行操作
+            + 如果需要解析变量 直接使用 ${变量名称}
+        */
+        // var str = `你好
+
+        // 啊`
+        // console.log(str)
+
+        var shoppingList = [
+            {
+                id: 1,
+                title: '小米电视',
+                price: 2999,
+            },
+            {
+                id: 2,
+                title: '华为mate70',
+                price: 9999,
+            },
+            {
+                id: 3,
+                title: '小米15',
+                price: 4999,
+            }
+        ]
+        var ul = document.querySelector('ul')
+        shoppingList.forEach(function (item) {
+            ul.innerHTML += `
+                <li>
+                    <h3>${item.title}</h3>
+                    <p>${item.price}</p>
+                </li>
+            `
+        })
+    </script>
+</body>
+
+</html>

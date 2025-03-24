@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .picSwitching{
+            width: 500px;
+            min-height: 500px;
+            border: 1px solid;
+            margin: 50px auto;
+            position: relative;
+        }
+        .picSwitching .page{
+            height: 45px;
+            background-color: hotpink;
+            text-align: center;
+            line-height: 45px;
+        }
+        .picSwitching .pic{
+            width: 500px;
+            height: 500px;
+        }
+        .picSwitching .pic img{
+            width: 100%;
+            height: 100%;
+        }
+        .picSwitching .des{
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            background-color:hotpink;
+        }
+        .picSwitching .btn{
+            width: 500px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .picSwitching .btn span{
+            float: left;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+            background-color: black;
+            opacity: .7;
+            cursor: pointer;
+            color: #fff;
+        }
+        .picSwitching .btn span:last-child{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="picSwitching">
+        <div class="page"></div>
+        <div class="pic">
+            <img src="">
+        </div>
+        <div class="btn">
+            <span>&lt;</span>
+            <span>&gt;</span>
+        </div>
+        <p class="des"></p>
+    </div>
+    <script src="./js/tools.js"></script>
+    <script>
+        // 获取元素
+        const page = $('.page')
+        const pic = $('.pic>img')
+        const previos = $('.btn span:nth-child(1)')
+        const next = $('.btn span:nth-child(2)')
+        const des = $('.des')
+        
+        // 准备数据
+        let data = [
+            {
+                url: './img/10.jpg',
+                desc: '王江不喜欢的1'
+            },
+            {
+                url: './img/12.jpg',
+                desc: '马彬喜欢的'
+            },
+            {
+                url: './img/13.jpg',
+                desc: '陈辰喜欢的'
+            },
+            {
+                url: './img/8.jpg',
+                desc: '王江不喜欢的2'
+            },
+            {
+                url: './img/9.jpg',
+                desc: '王江不喜欢的3'
+            }
+        ]
+
+        // 声明一个下标操作数组
+        let index = 0
+
+        // 用于接收定时器的 id
+        let timer = null
+
+        // 页面初始化
+        function init(){
+            page.innerHTML = (index + 1) + '/' + data.length
+            pic.src = data[index].url
+            des.innerHTML = data[index].desc
+        }
+        init()
+
+        // 点击右侧按钮切换图片
+        next.onclick = ()=>{
+            index++
+            if(index === data.length){
+                index = 0
+            }
+            init()
+        }
+
+        // 点击左侧按钮切换图片
+        previos.onclick = ()=>{
+            if(index === 0){
+                index = data.length
+            }
+            index--
+            init()
+        }
+        
+        // 让图片自动切换
+        function auto(){
+            timer = setInterval(()=>{
+                // next.onclick 接收到的就是函数本身，加括号就可以调用函数
+                next.onclick()
+            }, 1000)
+        }
+        auto()
+
+        // 当鼠标移入到 最大 盒子的时候让暂停执行
+        page.parentNode.onmouseover = ()=>{
+            clearInterval(timer)
+        }
+
+        // 当鼠标移出到 最大 盒子的时候让图片继续执行
+        page.parentNode.onmouseout = ()=>{
+            auto()
+        }
+    </script>
+</body>
+</html>

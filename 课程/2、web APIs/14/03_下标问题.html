@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <script>
+        var btn = document.querySelectorAll('button')
+        // for(var i=0; i<btn.length; i++){
+        //     btn[i].index = i
+        //     btn[i].onclick = function(){
+        //         console.log(this.index)
+        //     }
+        // }
+
+        // 利于闭包拿到下标
+        for(var i=0; i<btn.length; i++){
+            // function indexFn(i){
+            //     // i 属于indexFn的变量或者叫做形参
+            //     return function(){
+            //         console.log(i)
+            //     }
+            // }
+            /*
+                执行步骤
+                + 点击第一个按钮的时候
+                  => indexFn(i) i --- 0，函数调用进行实参的传递 indexFn(0)
+                  => 在进入函数体之前，先进行形参赋值 i = 0
+                  => 进入函数体后，执行返回值操作，返回给外界的是一个函数 function(){
+                        console.log(i)
+                    }
+                  => btn[i].onclick 进行赋值，btn[i].onclick = function(){
+                        console.log(i)
+                    }
+                  => 当点击按钮的时候，赋值函数输出的是0
+                + 点击第二个按钮的时候
+                  => indexFn(i) i --- 1，函数调用进行实参的传递 indexFn(1)
+                  => 在进入函数体之前，先进行形参赋值 i = 1
+                  => 进入函数体后，执行返回值操作，返回给外界的是一个函数 function(){
+                        console.log(i)
+                    }
+                  => btn[i].onclick 进行赋值，btn[i].onclick = function(){
+                        console.log(i)
+                    }
+                  => 当点击按钮的时候，赋值函数输出的是1
+                + ...
+            */
+            // btn[i].onclick = indexFn(i)
+
+            // 闭包可以配合自执行函数一起使用（简化代码、自执行、优化存储空间）
+            btn[i].onclick = (function(i){
+                return function(){
+                    console.log(i)
+                }
+            })(i)
+        }
+    </script>
+</body>
+</html>

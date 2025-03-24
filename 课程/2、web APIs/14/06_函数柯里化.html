@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            柯里化
+            + 是把接收多个参数的函数，变换成接收一个单一参数（最初函数的第一个参数）的函数，并且返回接收余下的参数而且返回结果的新函数的技术
+            + 作用
+              => 可以固定相同参数，实现函数调用传参的简单化
+              => 可以让参数复用
+        */
+        // 通过函数的参数传递输出一个完整的网址
+        // function urlFn(protocol, domain, port){
+        //     return protocol+ domain + port
+        // }
+        // const url1 = urlFn('https://', 'www.baidu.com', ':5050')
+        // const url2 = urlFn('https://', 'www.jd.com', ':8080')
+        // console.log(url1)
+        // console.log(url2)
+
+        // 函数柯里化改造：把多个参数改成传递单一的参数，把相同的参数进行固定化
+        // function urlFn(protocol){
+        //     return function(domain){
+        //         return function(port){
+        //             return protocol+ domain + port
+        //         }
+        //     }
+        // }
+        // const addressFn = urlFn('https://')
+        // const url1 = addressFn('www.baidu.com')(':5050')
+        // const url2 = addressFn('www.jd.com')(':8080')
+        // console.log(url1)
+        // console.log(url2)
+
+        // 假设你是一个商家，要出售商品，为了卖出去更多的商品，今天决定打9折进行售卖，我们可以使用以下函数进行折扣后的售出价格计算
+        // function totalPrice(price, disc){
+        //     return price * (1 - disc)
+        // }
+        // console.log(totalPrice(1000, 0.1))
+
+        // 函数柯里化
+        function totalPrice(disc){
+            return function(price){
+                return price * (1 - disc)
+            }
+        }
+        const priceFn = totalPrice(.2)
+        const goods1 = priceFn(1000)
+        const goods2 = priceFn(2000)
+        console.log(goods1)
+        console.log(goods2)
+    </script>
+</body>
+</html>

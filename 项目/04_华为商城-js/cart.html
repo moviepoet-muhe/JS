@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华为商城VMALL</title>
+  <meta name="description"
+    content="华为商城是华为公司旗下官方电商平台，提供华为手机、PC、平板、穿戴、音频、智慧屏、IoT等智能终端产品，持续打造便捷、暖心的购物体验，力争将全场景智慧生活带给每一位消费者。">
+  <meta name="keywords" content="华为、华为官网、华为5G、华为手机、华为笔记本、华为平板、华为穿戴、华为智慧屏、华为配件、华为智能家居">
+  <link rel="shortcut icon" href="https://www.vmall.com/favicon.ico">
+  <link rel="stylesheet" href="iconfont/iconfont.css">
+  <link rel="stylesheet" href="./CSS/VMALL.css">
+  <link rel="stylesheet" href="./CSS/cart.css">
+  <link rel="stylesheet" href="./CSS/cart2.css">
+</head>
+
+<body>
+  <!-- 头部区域 -->
+  <div class="header">
+    <!-- 顶部上梁 -->
+    <div class="site-topbar">
+      <!-- 顶部中间内容容器 -->
+      <div class="container">
+        <!-- 上梁导航栏 -->
+        <div class="topbar-nav">
+          <a href="#">首页</a>
+          <span class="sep">|</span>
+          <a href="#">消费者业务网站</a>
+          <span class="sep">|</span>
+          <a href="#">优购码</a>
+          <span class="sep">|</span>
+          <a href="#">企业商用</a>
+          <span class="sep">|</span>
+          <a href="#">Select Region</a>
+          <span class="sep">|</span>
+          <a href="#">更多精彩<i class="iconfont icon-arrow-down-bold"></i></a>
+        </div>
+        <!-- 购物车 -->
+        <div class="topbar-cart"><i class="iconfont icon-gouwuche"></i>购物车（0）</div>
+        <!-- 登录信息 -->
+        <div class="topbar-info">
+          <a href="">请登录</a>
+          <span class="sep">|</span>
+          <a href="">注册</a>
+          <span class="sep">|</span>
+          <a href="">我的订单</a>
+          <span class="sep">|</span>
+          <a href="">联系客服</a>
+          <span class="sep">|</span>
+          <a href="">网站导航<i class="iconfont icon-arrow-down-bold"></i></a>
+          <span class="sep">|</span>
+          <a href="">手机版</a>
+        </div>
+      </div>
+    </div>
+    <!-- 第二层header -->
+    <div class="site-header">
+      <!-- 内容容器 -->
+      <div class="container">
+        <!-- logo -->
+        <div class="logo-container">
+          <div class="logo-pic"><a href="#"><img src="./img/logo_app.png" alt=""></a></div>
+          <div class="logo-txt">我的购物车</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 请登录 -->
+  <div class="info-bg">
+    <div class="info-container">
+      <i class="iconfont icon-tishi"></i>
+      <div class="info-txt">您还没有登录！登录后可查看之前加入的商品</div>
+      <button>登录</button>
+    </div>
+  </div>
+  <!-- 购物车内容 -->
+
+  <div class="cart-container">
+    <div class="cart-info">
+      <div><img src="https://res.vmallres.com/bporder/rn/20250115/h5/images/convemptyCart.png" alt=""></div>
+      <div class="cart-txt">您的购物车暂时没有商品</div>
+      <div class="cart-btn"><a target="_blank" href="./VMALL.html">去购物</a></div>
+    </div>
+  </div>
+
+
+  <div class="cartTable">
+    <table>
+      <thead>
+        <tr>
+          <th>全选</th>
+          <th>商品</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>小计</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr>
+                <td><input type="checkbox" value="" class="select"></td>
+                <td>
+                    <img src="" >
+                    <span style="font-size:14px;">小米手机</span>
+                </td>
+                <td><span>150</span></td>
+                <td>
+                    <button class="sub">-</button>
+                    <input type="text" value="2" class="count">
+                    <button class="add" data-id=${item.id}>+</button>
+                </td>
+                <td><span class="price">300元</span></td>
+                <td><span class="del">删除</span></td>
+            </tr> -->
+      </tbody>
+    </table>
+    <div class="footer">
+      <!-- <div class="left">
+            <input type="checkbox" value="" class="allCheck" ${_state && "checked"}/>
+            <span class="dlAll">删除</span>
+        </div>
+        <div class="rirght">
+            <div class="allNum">已选商品<b class="totalNum">3</b>件</div>
+            <div class="allCount">合计 ￥<b class="money">200</b>元</div>
+            <div class="calc">结算</div>
+        </div> -->
+    </div>
+  </div>
+
+
+  <script src="./JS/VMALL.js"></script>
+  <script src="./JS/cart.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 根据用户的分数(0-100之间)，给其相应的评语：大于90为优秀，大于等于80为良好，大于等于70为中等，大于等于60为及格，小于60为不及格
+        var score = prompt('请输入你的分数？')
+        if(score>90){
+            alert('你很优秀')
+        }else if(score>=80){
+            alert('良好')
+        }else if(score>=70){
+            alert('中等')
+        }else if(score>60){
+            alert('恭喜你及格了！')
+        }else{
+            alert('搞毛线！')
+        }
+    </script>
+</body>
+</html>

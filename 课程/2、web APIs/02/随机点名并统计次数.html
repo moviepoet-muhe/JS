@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border: 1px solid;
+      border-collapse: collapse;
+      width: 300px;
+      height: 80px;
+    }
+
+    table.tr,
+    th,
+    td {
+      border: 1px solid;
+      height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <button>开始</button>
+  <button>停止</button>
+  <h3>点击开始按钮开始点名</h3>
+  <table>
+    <tr>
+      <th>张三</th>
+      <th>李四</th>
+      <th>wangwu</th>
+      <th>1233</th>
+      <th>caesar</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </table>
+  <script>
+    // 获取元素
+    let startBtn = document.querySelectorAll('button')[0]
+    let stopBtn = document.querySelectorAll('button')[1]
+    let h3 = document.querySelector('h3')
+    let poor = document.querySelector('.poor')
+    let td = document.querySelectorAll('td')
+
+    // 声明名字数组
+    let nameArr = ['张三', '李四', 'wangwu', 1233, 'caesar']
+
+    // 声明出现的次数
+    let count = [0, 0, 0, 0, 0]
+
+    // 声明当前选中的名字的下标(默认还没有选中)
+    let selectedIndex = -1
+
+    // 初始化计时器id
+    let timer = null
+    // 点击开始事件
+    startBtn.onclick = function () {
+      // 清除上一次的定时器
+      clearInterval(timer)
+      timer = setInterval(function () {
+        // 根据数组长度与随机函数运算得到随机的下标值赋值给selectedIndex
+        selectedIndex = Math.floor(Math.random() * nameArr.length)
+        // 赋值给h3
+        h3.innerHTML = nameArr[selectedIndex]
+      }, 500)
+    }
+
+    // 点击停止事件
+    stopBtn.onclick = function () {
+      // 清除定时器
+      clearInterval(timer)
+      if (selectedIndex !== -1) {
+        // 更新计数
+        count[selectedIndex]++
+        // 更新对应单元格的值
+        td[selectedIndex].innerText = count[selectedIndex]
+        // 重置当前选中的索引
+        selectedIndex = -1
+      }
+    }
+  </script>
+</body>
+
+</html>

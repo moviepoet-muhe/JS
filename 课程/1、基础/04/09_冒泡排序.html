@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            冒泡排序
+            + 思路
+              => 一组无序的数，两两依次进行比较，如果那个大就和小的交换位置，直到比较完为止
+            + 无序的数：
+              => 5, 3, 7, 1
+            + 手动模拟冒泡排序的过程
+              => 第一轮比较
+                 -> 3, 5, 1, 7  --- 第一轮比较已经把最大的比较出来了
+              => 第二轮比较
+                 -> 3, 1, 5, 7  --- 第二轮比较已经把第二大的比较出来了
+              => 第三轮比较
+                 -> 1, 3, 5, 7  ...
+            + 发现四个数比较了三轮就出结果了
+        */
+        var arr = [5, 3, 7, 1]
+        // 表示外层循环的执行次数
+        var count1 = 0
+        // 表示内层循环的执行次数
+        var count2 = 0
+        // 外层循环控制的是轮数
+        // 外层循环 arr.length-1 原因：四个数三轮就出结果，没有必要循环执行四次，因此-1
+        for(var i=0; i<arr.length-1; i++){
+            // 内层循环控制的是次数
+            // 内层循环 arr.length-1 原因：没有下标为4的这个数组元素，因此需要-1
+            /*
+                         j<4-1-0 执行三次
+                         j<4-1-1 执行两次，而不是三次
+                         j<4-1-2 执行一次 ，而不是两次
+                         通过观察 arr.length-1-i 刚好满足以上的规则
+            */
+            for(var j=0; j<arr.length-1-i; j++){
+                // 比较原理：每次都是使用前面一个数和后面一个数比较 当 j=0 表示第一个数，j+1 = 0+1=1 表示的是第二个数，依次类推
+                // console.log(j, j+1)
+                if(arr[j]>arr[j+1]){
+                    var temp
+                    temp = arr[j]
+                    arr[j] = arr[j+1]
+                    arr[j+1] = temp
+                }
+                count2++
+            }
+            // console.log('-----------')
+            count1++
+        }
+        console.log(arr)
+        console.log('外层循环执行了'+count1+'次')
+        console.log('内层循环执行了'+count2+'次')
+    </script>
+</body>
+</html>
